@@ -1,13 +1,12 @@
-import { sendLoginInfo } from '@features';
+import { sendLoginInfo } from '@modules/login';
 
-export const authUserReducer = (builder) => {
+export const loginUserReducer = (builder) => {
   builder
     .addCase(sendLoginInfo.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(sendLoginInfo.fulfilled, (state, action) => {
+    .addCase(sendLoginInfo.fulfilled, (state) => {
       state.isLoading = false;
-      state.userData = action.payload;
     })
     .addCase(sendLoginInfo.rejected, (state) => {
       state.isLoading = false;

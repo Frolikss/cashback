@@ -1,10 +1,10 @@
-import { Input } from './Input';
+import { Input } from '@components/Form/Input';
 import { EMAIL_PATTERN, INVALID_EMAIL, MIN_PASS_LENGTH } from '@constants';
 
-export const fieldsData = [
+export const loginFieldsData = [
   {
     name: 'email',
-    Component: Input,
+    component: Input,
     type: 'email',
     placeholder: 'Email',
     validation: {
@@ -17,7 +17,7 @@ export const fieldsData = [
   },
   {
     name: 'password',
-    Component: Input,
+    component: Input,
     type: 'password',
     placeholder: 'Password',
     validation: {

@@ -6,10 +6,11 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@constants': path.resolve(__dirname, 'src/constants'),
-      '@http': path.resolve(__dirname, 'src/http'),
+      '@config': path.resolve(__dirname, 'src/config'),
       '@apis': path.resolve(__dirname, 'src/apis'),
-      '@features': path.resolve(__dirname, 'src/features'),
-      '@fields': path.resolve(__dirname, 'src/components/Form/fieldsData')
+      '@modules': path.resolve(__dirname, 'src/modules'),
+      '@modules/login': path.resolve(__dirname, 'src/modules/login'),
+      '@fields': path.resolve(__dirname, 'src/constants/fields')
     }
   }
 };

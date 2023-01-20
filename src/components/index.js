@@ -1,4 +1,2 @@
-import { Input } from './Form/Input';
-import { LoginForm } from './LoginForm';
-
-export { Input, LoginForm };
+export { Input } from './Form/Input';
+export { LoginForm } from './LoginForm';

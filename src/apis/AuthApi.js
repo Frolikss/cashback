@@ -1,8 +1,14 @@
-import { cashbackApiClient } from '@http';
+import { cashbackApiClient } from '@config';
 import { ENDPOINTS } from '@constants';
 
-export class AuthApi {
-  static sendLoginInfo(email, password) {
-    return cashbackApiClient.post(ENDPOINTS.login, { email, password });
+class AuthApi {
+  constructor(url) {
+    this.url = url;
+  }
+
+  checkLoginInfo(payload, config) {
+    return cashbackApiClient.post(`${this.url}${ENDPOINTS.login}`, payload, config);
   }
 }
+
+export const authApi = new AuthApi(process.env.REACT_APP_BASE_URL);
