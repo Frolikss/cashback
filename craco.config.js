@@ -10,7 +10,8 @@ module.exports = {
       '@apis': path.resolve(__dirname, 'src/apis'),
       '@modules': path.resolve(__dirname, 'src/modules'),
       '@modules/login': path.resolve(__dirname, 'src/modules/login'),
-      '@fields': path.resolve(__dirname, 'src/constants/fields')
+      '@fields': path.resolve(__dirname, 'src/constants/fields'),
+      '@form': path.resolve(__dirname, 'src/components/Form')
     }
   }
 };

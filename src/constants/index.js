@@ -9,7 +9,13 @@ const TOAST_ID = {
 };
 const LOGIN_TOKEN_NAME = 'token';
 const LOGIN_ERROR_MESSAGE = 'Something went wrong. Please, try again';
+const PRIMARY_BUTTON_STYLE =
+  'flex-1 text-base-100 rounded-lg bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 hover:bg-accent-dark';
+const SECONDARY_BUTTON_STYLE =
+  'flex-1 text-accent-primary rounded-lg border-3 border-accent-primary hover:border-accent-dark';
 export {
+  PRIMARY_BUTTON_STYLE,
+  SECONDARY_BUTTON_STYLE,
   EMAIL_PATTERN,
   ENDPOINTS,
   INVALID_EMAIL,
