@@ -10,6 +10,5 @@ export const loginUserReducer = (builder) => {
     })
     .addCase(sendLoginInfo.rejected, (state) => {
       state.isLoading = false;
-      state.userData = null;
     });
 };

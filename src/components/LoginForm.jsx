@@ -25,10 +25,24 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <CreateFields fields={loginFieldsData} register={register} />
-      <button onClick={notify}>Log In</button>
-      <button>Sign Up</button>
-    </form>
+    <div className="basis-1/3 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">
+      <div>
+        <h2 className="text-base-1000 text-32 font-eUkraine font-bold">Login</h2>
+        <p className="text-base-500 text-lg">Login to your account</p>
+      </div>
+      <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
+        <CreateFields fields={loginFieldsData} register={register} />
+        <div className="flex gap-4">
+          <button
+            className="flex-1 text-base-100 rounded-lg bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 hover:bg-accent-dark"
+            onClick={notify}>
+            Log In
+          </button>
+          <button className="flex-1 text-accent-primary rounded-lg border-3 border-accent-primary hover:border-accent-dark">
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };

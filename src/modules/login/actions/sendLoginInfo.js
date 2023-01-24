@@ -3,7 +3,7 @@ import { TOAST_ID } from '@constants';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-export const sendLoginInfo = createAsyncThunk('login', async (payload) => {
+export const sendLoginInfo = createAsyncThunk('login', async (payload, thunkAPI) => {
   try {
     await authApi.checkLoginInfo({
       email: payload.email,
@@ -12,5 +12,6 @@ export const sendLoginInfo = createAsyncThunk('login', async (payload) => {
     toast.success('Logged In', { toastId: TOAST_ID.login });
   } catch (error) {
     toast.error('Something went wrong. Please, try again');
+    return thunkAPI.rejectWithValue(error.response);
   }
 });
