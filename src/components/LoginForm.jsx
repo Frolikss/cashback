@@ -25,7 +25,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="basis-1/3 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">
+    <div className="md:basis-1/3 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">
       <div>
         <h2 className="text-base-1000 text-32 font-eUkraine font-bold">Login</h2>
         <p className="text-base-500 text-lg">Login to your account</p>
