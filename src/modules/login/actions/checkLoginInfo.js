@@ -3,7 +3,7 @@ import { TOAST_ID } from '@constants';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-export const sendLoginInfo = createAsyncThunk('login', async (payload, thunkAPI) => {
+export const createLoginInfo = createAsyncThunk('login', async (payload, thunkAPI) => {
   try {
     await authApi.checkLoginInfo({
       email: payload.email,
