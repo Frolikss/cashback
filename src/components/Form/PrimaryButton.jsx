@@ -8,5 +8,6 @@ export const PrimaryButton = ({ className, text }) => {
 
 PrimaryButton.propTypes = {
   className: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
+  onClick: PropTypes.func
 };

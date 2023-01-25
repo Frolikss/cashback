@@ -1,14 +1,15 @@
-import { sendLoginInfo } from '@modules/login';
+import { checkLoginInfo } from '@modules/login';
 
 export const loginUserReducer = (builder) => {
   builder
-    .addCase(sendLoginInfo.pending, (state) => {
+    .addCase(checkLoginInfo.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(sendLoginInfo.fulfilled, (state) => {
+    .addCase(checkLoginInfo.fulfilled, (state) => {
       state.isLoading = false;
+      state.isAuthorized = true;
     })
-    .addCase(sendLoginInfo.rejected, (state) => {
+    .addCase(checkLoginInfo.rejected, (state) => {
       state.isLoading = false;
     });
 };
