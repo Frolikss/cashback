@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#root > div {
+#root > div:first-child {
     min-width: 100vw;
     min-height: 100vh;
 }

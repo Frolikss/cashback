@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      inset: {
+        2: '2%'
+      },
       borderWidth: {
         3: '3px'
       },

@@ -1,14 +1,19 @@
+import { useEffect } from 'react';
+
 import { PRIMARY_BUTTON_STYLE, SECONDARY_BUTTON_STYLE } from '@constants';
 import { loginFieldsData } from '@fields/loginFieldsData';
 import { CreateFields, PrimaryButton, SecondaryButton } from '@form';
-import { sendLoginInfo } from '@modules/login';
+import { checkLoginInfo } from '@modules/login';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+  const { isAuthorized } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => dispatch(sendLoginInfo(data));
+  const onSubmit = (data) => dispatch(checkLoginInfo(data));
 
   const {
     register,
@@ -16,19 +21,17 @@ export const LoginForm = () => {
     formState: { errors }
   } = useForm();
 
+  useEffect(() => {
+    if (isAuthorized) navigate('/list');
+  }, [isAuthorized]);
+
   return (
-    <div className="md:basis-2/4 lg:basis-1/3 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">
-      <div>
-        <h2 className="text-base-1000 text-32 font-eUkraine font-bold">Login</h2>
-        <p className="text-base-500 text-lg">Login to your account</p>
+    <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
+      <CreateFields errors={errors} fields={loginFieldsData} register={register} />
+      <div className="flex gap-4">
+        <PrimaryButton className={PRIMARY_BUTTON_STYLE} text="Log In" />
+        <SecondaryButton className={SECONDARY_BUTTON_STYLE} text="Sign Up" />
       </div>
-      <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
-        <CreateFields errors={errors} fields={loginFieldsData} register={register} />
-        <div className="flex gap-4">
-          <PrimaryButton className={PRIMARY_BUTTON_STYLE} text="Log In" />
-          <SecondaryButton className={SECONDARY_BUTTON_STYLE} text="Sign Up" />
-        </div>
-      </form>
-    </div>
+    </form>
   );
 };

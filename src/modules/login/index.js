@@ -1,2 +1,2 @@
-export { sendLoginInfo } from './actions';
+export { checkLoginInfo } from './actions';
 export { loginUserReducer } from './reducers';

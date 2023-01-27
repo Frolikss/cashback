@@ -1,4 +1,4 @@
-import { Input } from '@components/Form/Input';
+import { Input } from '@components/form/Input';
 import { EMAIL_PATTERN, INVALID_EMAIL, MIN_PASS_LENGTH } from '@constants';
 
 export const loginFieldsData = [

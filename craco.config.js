@@ -11,7 +11,10 @@ module.exports = {
       '@modules': path.resolve(__dirname, 'src/modules'),
       '@modules/login': path.resolve(__dirname, 'src/modules/login'),
       '@fields': path.resolve(__dirname, 'src/constants/fields'),
-      '@form': path.resolve(__dirname, 'src/components/Form')
+      '@form': path.resolve(__dirname, 'src/components/form'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@routes': path.resolve(__dirname, 'src/routes')
     }
   }
 };

@@ -1,1 +1,1 @@
-export { sendLoginInfo } from './sendLoginInfo';
+export { checkLoginInfo } from './checkLoginInfo';
