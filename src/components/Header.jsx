@@ -28,15 +28,15 @@ export const Header = () => {
             type="button"
           />
           <span className="text-base-1000 text-2xl font-bold">Admin Users</span>
+          <ModalWrapper isOpened={menuOpened} variant={MODAL_VARIANTS.LEFT_SIDE}>
+            <HeaderMenuModal />
+          </ModalWrapper>
         </div>
         <div className="flex gap-4">
           {HEADER_MODALS.map((modal) => (
             <HeaderModal key={modal.variant} {...modal} />
           ))}
         </div>
-        <ModalWrapper isOpened={menuOpened} variant={MODAL_VARIANTS.LEFT_SIDE}>
-          <HeaderMenuModal />
-        </ModalWrapper>
       </header>
       <span className={menuOpened ? OVERLAY_STYLE : 'hidden'} />
     </>
