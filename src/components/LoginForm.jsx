@@ -1,19 +1,14 @@
-import { useEffect } from 'react';
-
-import { PRIMARY_BUTTON_STYLE, SECONDARY_BUTTON_STYLE } from '@constants';
+import { BUTTON_VARIANTS } from '@constants';
 import { loginFieldsData } from '@fields/loginFieldsData';
-import { CreateFields, PrimaryButton, SecondaryButton } from '@form';
-import { checkLoginInfo } from '@modules/login';
+import { CreateFields, Button } from '@form';
+import { asyncLogin } from '@login/actions';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  const { isAuthorized } = useSelector((state) => state.auth);
-  const navigate = useNavigate();
 
-  const onSubmit = (data) => dispatch(checkLoginInfo(data));
+  const onSubmit = (data) => dispatch(asyncLogin(data));
 
   const {
     register,
@@ -21,16 +16,12 @@ export const LoginForm = () => {
     formState: { errors }
   } = useForm();
 
-  useEffect(() => {
-    if (isAuthorized) navigate('/list');
-  }, [isAuthorized]);
-
   return (
     <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
       <CreateFields errors={errors} fields={loginFieldsData} register={register} />
       <div className="flex gap-4">
-        <PrimaryButton className={PRIMARY_BUTTON_STYLE} text="Log In" />
-        <SecondaryButton className={SECONDARY_BUTTON_STYLE} text="Sign Up" />
+        <Button variant={BUTTON_VARIANTS.PRIMARY} text="Log In" />
+        <Button variant={BUTTON_VARIANTS.SECONDARY} text="Sign Up" />
       </div>
     </form>
   );

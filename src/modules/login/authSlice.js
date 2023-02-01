@@ -1,9 +1,14 @@
 import { loginUserReducer } from '@modules/login';
 import { createSlice } from '@reduxjs/toolkit';
 
+import { getCurrentUserReducer } from './reducers/getCurrentUserReducer';
+import { getUsersReducer } from './reducers/getUsersReducer';
+
 const initialState = {
   isLoading: false,
-  isAuthorized: false
+  isAuthorized: false,
+  currentUser: {},
+  users: []
 };
 
 const authSlice = createSlice({
@@ -12,6 +17,8 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     loginUserReducer(builder);
+    getUsersReducer(builder);
+    getCurrentUserReducer(builder);
   }
 });
 

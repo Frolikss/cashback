@@ -1,15 +1,15 @@
-import { checkLoginInfo } from '@modules/login';
+import { asyncLogin } from '@modules/login';
 
 export const loginUserReducer = (builder) => {
   builder
-    .addCase(checkLoginInfo.pending, (state) => {
+    .addCase(asyncLogin.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(checkLoginInfo.fulfilled, (state) => {
+    .addCase(asyncLogin.fulfilled, (state) => {
       state.isLoading = false;
       state.isAuthorized = true;
     })
-    .addCase(checkLoginInfo.rejected, (state) => {
+    .addCase(asyncLogin.rejected, (state) => {
       state.isLoading = false;
     });
 };

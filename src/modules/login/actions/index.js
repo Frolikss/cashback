@@ -1,1 +1,2 @@
-export { checkLoginInfo } from './checkLoginInfo';
+export { asyncGetUsers } from './asyncGetUsers';
+export { asyncLogin } from './asyncLogin';

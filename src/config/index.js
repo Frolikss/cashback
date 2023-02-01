@@ -1,3 +1,3 @@
-export { cashbackApiConfig } from './cashbackApiConfig';
-export { cashbackApiResponse } from './cashbackApiResponse';
+export { requestConfig } from './requestConfig';
+export { responseConfig } from './responseConfig';
 export { cashbackApiClient } from './cashbackApiClient';

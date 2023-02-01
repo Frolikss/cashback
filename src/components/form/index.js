@@ -1,4 +1,3 @@
 export { CreateFields } from './CreateFields';
-export { SecondaryButton } from './SecondaryButton';
-export { PrimaryButton } from './PrimaryButton';
+export { Button } from './Button';
 export { Input } from './Input';

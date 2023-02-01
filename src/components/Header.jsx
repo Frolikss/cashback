@@ -1,57 +1,44 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
-import filter from '@assets/svg/filter.svg';
-import menu from '@assets/svg/menu.svg';
-import notification from '@assets/svg/notification.svg';
-import userLogo from '@assets/svg/userLogo.svg';
+import { ReactComponent as MenuIcon } from '@assets/svg/menu.svg';
+import { ModalWrapper, HeaderMenuModal } from '@components';
+import { BUTTON_VARIANTS, MODAL_VARIANTS, OVERLAY_STYLE } from '@constants';
+import { HEADER_MODALS } from '@constants/headerModules';
+import { Button } from '@form';
+import { useModal } from '@hooks/useModal';
 
-import { Modal } from './Modal';
-import { UserModal } from './UserModal';
+import { HeaderModal } from './HeaderModal';
 
 export const Header = () => {
-  const [userOpened, setUserOpened] = useState(false);
-  const btnRef = useRef();
+  const [menuOpened, setMenuOpened, menuBtnRef] = useModal();
 
-  useEffect(() => {
-    const closeModal = (event) => {
-      if (event.target !== btnRef.current) {
-        setUserOpened(false);
-      }
-    };
-
-    document.body.addEventListener('click', closeModal);
-
-    return () => document.body.removeEventListener('click', closeModal);
-  }, []);
-
-  const userModalOnClick = () => {
-    setUserOpened((prev) => !prev);
+  const menuModalOnClick = () => {
+    setMenuOpened((prev) => !prev);
   };
 
   return (
-    <header className="container self-start mx-auto bg-base-100 rounded-lg px-6 py-4 flex items-center justify-between">
-      <div className="flex items-center justify-between gap-6">
-        <button type="button" className="bg-accent-primary p-1 rounded-lg hover:bg-accent-dark">
-          <img src={menu} alt="menu" />
-        </button>
-        <span className="text-base-1000 text-2xl font-bold">Admin Users</span>
-      </div>
-      <div className="flex gap-4">
-        <button>
-          <img src={filter} alt="filter" />
-        </button>
-        <button>
-          <img src={notification} alt="notification" />
-        </button>
-        <div className="flex items-center">
-          <button ref={btnRef} onClick={userModalOnClick}>
-            <img className="w-10 h-10 pointer-events-none" src={userLogo} alt="userLogo" />
-          </button>
-          <Modal isOpened={userOpened}>
-            <UserModal />
-          </Modal>
+    <>
+      <header className="z-10 relative container mx-auto bg-base-100 rounded-lg px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center justify-between gap-6">
+          <Button
+            modalRef={menuBtnRef}
+            variant={BUTTON_VARIANTS.PRIMARY}
+            onClick={menuModalOnClick}
+            content={<MenuIcon className="pointer-events-none" />}
+            type="button"
+          />
+          <span className="text-base-1000 text-2xl font-bold">Admin Users</span>
         </div>
-      </div>
-    </header>
+        <div className="flex gap-4">
+          {HEADER_MODALS.map((modal) => (
+            <HeaderModal key={modal.variant} {...modal} />
+          ))}
+        </div>
+        <ModalWrapper isOpened={menuOpened} variant={MODAL_VARIANTS.LEFT_SIDE}>
+          <HeaderMenuModal />
+        </ModalWrapper>
+      </header>
+      <span className={menuOpened ? OVERLAY_STYLE : 'hidden'} />
+    </>
   );
 };

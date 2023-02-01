@@ -7,7 +7,13 @@ export const CreateFields = forwardRef(({ fields, register, errors }, ref) => {
     <>
       {fields.map(({ component: Component, ...field }, index) => (
         <React.Fragment key={index}>
-          <Component key={field.name} field={field} register={register} ref={ref} />
+          <Component
+            key={field.name}
+            field={field}
+            register={register}
+            ref={ref}
+            variant={field.variant}
+          />
           {errors[field.name] && (
             <p key={Date.now()} className="text-right text-red-regular font-medium">
               {errors[field.name].message}

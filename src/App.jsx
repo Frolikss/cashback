@@ -1,16 +1,22 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { LoginPage, ListViewPage } from '@pages';
+import { ROUTES } from '@constants';
+import { auth } from '@login';
+import { ListViewPage, LoginPage } from '@pages';
 import { ProtectedRoute } from '@routes';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 
 function App() {
+  const { isAuthorized } = auth();
+
   return (
     <>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route element={<ProtectedRoute />}>
-          <Route path="/list" element={<ListViewPage />} />
+        <Route element={<ProtectedRoute isAuth={isAuthorized} to={ROUTES.HOME} />}>
+          <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+        </Route>
+        <Route element={<ProtectedRoute isAuth={!isAuthorized} to={ROUTES.LOGIN} />}>
+          <Route element={<ListViewPage />} path={ROUTES.HOME} />
         </Route>
       </Routes>
       <ToastContainer />
