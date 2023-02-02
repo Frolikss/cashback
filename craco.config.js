@@ -12,7 +12,8 @@ module.exports = {
       '@login': path.resolve(__dirname, 'src/modules/login'),
       '@fields': path.resolve(__dirname, 'src/constants/fields'),
       '@form': path.resolve(__dirname, 'src/components/form'),
-      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@svg': path.resolve(__dirname, 'src/assets/svg'),
+      '@png': path.resolve(__dirname, 'src/assets/png'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@routes': path.resolve(__dirname, 'src/routes'),
       '@hooks': path.resolve(__dirname, 'src/hooks')

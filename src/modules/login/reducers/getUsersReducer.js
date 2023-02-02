@@ -5,9 +5,9 @@ export const getUsersReducer = (builder) => {
     .addCase(asyncGetUsers.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(asyncGetUsers.fulfilled, (state, payload) => {
+    .addCase(asyncGetUsers.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.users = payload;
+      state.users = payload.data;
     })
     .addCase(asyncGetUsers.rejected, (state) => {
       state.isLoading = false;

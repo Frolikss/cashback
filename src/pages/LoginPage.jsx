@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 
-import { ReactComponent as LogoIcon } from '@assets/svg/logo.svg';
 import { LoginForm } from '@components';
+import { asyncGetCurrentUser } from '@login/actions/asyncGetCurrentUser';
+import { ReactComponent as LogoIcon } from '@svg/logo.svg';
 import { useDispatch } from 'react-redux';
-
-import { asyncGetCurrentUser } from '../modules/login/actions/asyncGetCurrentUser';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();

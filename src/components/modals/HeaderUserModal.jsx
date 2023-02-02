@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import avatar from '@assets/png/avatarBig.png';
 import { BUTTON_VARIANTS, AUTH_TOKEN } from '@constants';
 import { Button } from '@form';
 import { auth } from '@login';
 import { asyncGetCurrentUser } from '@login/actions/asyncGetCurrentUser';
+import avatar from '@png/avatarBig.png';
 import { useDispatch } from 'react-redux';
 
 export const HeaderUserModal = () => {

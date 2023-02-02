@@ -24,3 +24,10 @@
     src: local("eUkraineLight"),
     url("./fonts/e-Ukraine/e-Ukraine-Light.otf") format("opentype");
 }
+
+.rc-pagination-item-active {
+    color: #fff;
+    background: #ED664B;
+
+    border-radius: 8px;
+}

@@ -1,10 +1,11 @@
-import { ReactComponent as AdminIcon } from '@assets/svg/adminUsers.svg';
-import { ReactComponent as BlacklistIcon } from '@assets/svg/blacklistIcon.svg';
-import { ReactComponent as ReportIcon } from '@assets/svg/reportIcon.svg';
-import { ReactComponent as ShopsIcon } from '@assets/svg/shopsIcon.svg';
-import { ReactComponent as TransactionIcon } from '@assets/svg/transactionIcon.svg';
-import { ReactComponent as UsersIcon } from '@assets/svg/usersIcon.svg';
-import { ReactComponent as WithdrawalIcon } from '@assets/svg/withdrawalIcon.svg';
+import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
+import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
+import { ReactComponent as ReportIcon } from '@svg/reportIcon.svg';
+import { ReactComponent as ShopsIcon } from '@svg/shopsIcon.svg';
+import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
+import { ReactComponent as UsersIcon } from '@svg/usersIcon.svg';
+import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
+
 const OVERLAY_STYLE = 'block fixed w-screen h-screen bg-base-1000 opacity-50 top-0 right-0';
 const ROUTES = {
   LOGIN: '/login',
@@ -57,8 +58,10 @@ const TOAST_ID = {
 const LOGIN_ERROR_MESSAGE = 'Something went wrong. Please, try again';
 const EXPIRED_TOKEN_MESSAGE = 'Session expired, please log in again';
 const AUTH_ERROR_MESSAGE = 'Please log in first';
+const TABLE_HEADINGS = ['Name', 'Status', 'ID', 'Phone', 'E-mail'];
 
 export {
+  TABLE_HEADINGS,
   OVERLAY_STYLE,
   AUTH_TOKEN,
   MENU_CONTENT,

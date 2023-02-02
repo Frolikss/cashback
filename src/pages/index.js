@@ -1,2 +1,2 @@
-export { ListViewPage } from './ListViewPage';
+export { ListPage } from './ListPage';
 export { LoginPage } from './LoginPage';

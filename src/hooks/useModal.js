@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 export const useModal = () => {
   const [modalOpened, setModalOpened] = useState(false);
   const btnRef = useRef();
+
   const closeModal = (event) => {
     if (event.target !== btnRef.current) {
       setModalOpened(false);

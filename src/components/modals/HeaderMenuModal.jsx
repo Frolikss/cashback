@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ReactComponent as Logo } from '@assets/svg/logoColored.svg';
 import { MENU_CONTENT, MENU_VARIANTS } from '@constants';
+import { ReactComponent as Logo } from '@svg/logoColored.svg';
 import { Link, useLocation } from 'react-router-dom';
 
 export const HeaderMenuModal = () => {

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { ReactComponent as MenuIcon } from '@assets/svg/menu.svg';
-import { ModalWrapper, HeaderMenuModal } from '@components';
+import { ModalWrapper, HeaderMenuModal, HeaderModal } from '@components';
 import { BUTTON_VARIANTS, MODAL_VARIANTS, OVERLAY_STYLE } from '@constants';
 import { HEADER_MODALS } from '@constants/headerModules';
 import { Button } from '@form';
 import { useModal } from '@hooks/useModal';
-
-import { HeaderModal } from './HeaderModal';
+import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 
 export const Header = () => {
   const [menuOpened, setMenuOpened, menuBtnRef] = useModal();
