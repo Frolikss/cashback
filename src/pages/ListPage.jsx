@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 import { Header, TableView, CollectionView, Footer } from '@components';
+import { auth } from '@login';
 import { asyncGetUsers } from '@login/actions';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export const ListPage = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const ListPage = () => {
     dispatch(asyncGetUsers());
   }, []);
 
-  const { users } = useSelector((state) => state.auth);
+  const { users } = auth();
   return (
     <div className="min-h-screen select-none bg-base-200 p-4 flex flex-col gap-10 justify-between font-eUkraine text-lg">
       <Header />
