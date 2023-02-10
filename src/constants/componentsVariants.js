@@ -12,12 +12,14 @@ const MENU_VARIANTS = {
     icon: 'fill-base-1000'
   }
 };
+
 const MODAL_VARIANTS = {
   RIGHT_SIDE:
     'absolute mt-4 top-full right-0 bg-base-100 rounded-lg shadow-2xl flex flex-col items-center p-6 gap-4 w-1/3',
   LEFT_SIDE:
     'absolute mt-4 top-full left-0 bg-base-100 rounded-lg shadow-2xl flex flex-col p-6 gap-4 w-1/3'
 };
+
 const INPUT_VARIANTS = {
   LOGIN:
     'bg-base-100 text-lg px-6 py-3.5 rounded-lg leading-5 placeholder:text-base-600 active:placeholder:text-base-600 outline-none hover:outline-3 focus:bg-base-100 focus:outline-3 hover:outline-offset-0 focus:outline-offset-0 hover:outline-accent-primary focus:outline-accent-primary hover:bg-accent-lighter hover:placeholder:text-accent-dark'
@@ -29,4 +31,5 @@ const BUTTON_VARIANTS = {
   SECONDARY:
     'flex-1 text-accent-primary rounded-lg border-3 border-accent-primary hover:border-accent-dark'
 };
+
 export { MENU_VARIANTS, MODAL_VARIANTS, INPUT_VARIANTS, BUTTON_VARIANTS };

@@ -26,8 +26,5 @@
 }
 
 .rc-pagination-item-active {
-    color: #fff;
-    background: #ED664B;
-
-    border-radius: 8px;
+    @apply bg-accent-primary text-base-100 rounded-lg;
 }

@@ -6,13 +6,11 @@ import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
 import { ReactComponent as UsersIcon } from '@svg/usersIcon.svg';
 import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
 
-const OVERLAY_STYLE = 'block fixed w-screen h-screen bg-base-1000 opacity-50 top-0 right-0';
-const ROUTES = {
-  LOGIN: '/login',
-  HOME: '/'
-};
-const AUTH_TOKEN = 'token';
-const MENU_CONTENT = [
+import { ROUTES } from './routes';
+
+const TABLE_COLS_HEADINGS = ['Name', 'Status', 'ID', 'Phone', 'E-mail'];
+const SHOW_MAX_CELLS = [10, 20, 50];
+const MODAL_MENU_CONTENT = [
   {
     route: ROUTES.HOME,
     icon: AdminIcon,
@@ -49,28 +47,5 @@ const MENU_CONTENT = [
     name: 'Reports'
   }
 ];
-const EMAIL_PATTERN = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-const INVALID_EMAIL = 'Invalid email address';
-const MIN_PASS_LENGTH = 'Minimal password length is 6';
-const TOAST_ID = {
-  login: 'login'
-};
-const LOGIN_ERROR_MESSAGE = 'Something went wrong. Please, try again';
-const EXPIRED_TOKEN_MESSAGE = 'Session expired, please log in again';
-const AUTH_ERROR_MESSAGE = 'Please log in first';
-const TABLE_HEADINGS = ['Name', 'Status', 'ID', 'Phone', 'E-mail'];
 
-export {
-  TABLE_HEADINGS,
-  OVERLAY_STYLE,
-  AUTH_TOKEN,
-  MENU_CONTENT,
-  AUTH_ERROR_MESSAGE,
-  EXPIRED_TOKEN_MESSAGE,
-  ROUTES,
-  EMAIL_PATTERN,
-  INVALID_EMAIL,
-  MIN_PASS_LENGTH,
-  TOAST_ID,
-  LOGIN_ERROR_MESSAGE
-};
+export { TABLE_COLS_HEADINGS, SHOW_MAX_CELLS, MODAL_MENU_CONTENT };

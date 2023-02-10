@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { MENU_CONTENT, MENU_VARIANTS } from '@constants';
+import { MenuListItem } from '@components';
+import { MODAL_MENU_CONTENT } from '@constants';
 import { ReactComponent as Logo } from '@svg/logoColored.svg';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export const HeaderMenuModal = () => {
   const { pathname } = useLocation();
@@ -12,20 +13,8 @@ export const HeaderMenuModal = () => {
       <Logo />
       <nav>
         <ul className="flex flex-col gap-8 text-xl text-base-1000">
-          {MENU_CONTENT.map(({ name, route, icon: Icon }) => {
-            const style = route === pathname ? MENU_VARIANTS.active : MENU_VARIANTS.default;
-
-            return (
-              <li key={name} className="group">
-                <Link to={route} className="flex gap-2">
-                  <span className={style.list} />
-                  <div className={style.container}>
-                    <Icon className={style.icon} />
-                    {name}
-                  </div>
-                </Link>
-              </li>
-            );
+          {MODAL_MENU_CONTENT.map((menuItem) => {
+            return <MenuListItem key={menuItem.name} pathname={pathname} {...menuItem} />;
           })}
         </ul>
       </nav>

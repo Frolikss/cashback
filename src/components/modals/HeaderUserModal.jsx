@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
-import { BUTTON_VARIANTS, AUTH_TOKEN } from '@constants';
+import { BUTTON_VARIANTS } from '@constants';
 import { Button } from '@form';
-import { auth } from '@login';
-import { asyncGetCurrentUser } from '@login/actions/asyncGetCurrentUser';
 import avatar from '@png/avatarBig.png';
-import { useDispatch } from 'react-redux';
+import { selectUsersState, asyncGetCurrentUser } from '@users';
+import cn from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const HeaderUserModal = () => {
-  const [isLogged, setIsLogged] = useState(false);
   const dispatch = useDispatch();
+
   const {
     currentUser: { role, id }
-  } = auth();
+  } = useSelector(selectUsersState);
+
+  const logOutOnClick = () => {
+    localStorage.removeItem('token');
+  };
 
   useEffect(() => {
     dispatch(asyncGetCurrentUser());
-  }, [isLogged]);
-
-  const logOutOnClick = () => {
-    localStorage.removeItem(AUTH_TOKEN);
-    setIsLogged((prev) => !prev);
-  };
+  }, []);
 
   return (
     <>
@@ -31,12 +30,14 @@ export const HeaderUserModal = () => {
         <span>{role}</span>
         <span>{`#${id}`}</span>
       </div>
-      <Button variant={BUTTON_VARIANTS.PRIMARY + ' self-stretch'} text="Edit Profile" />
-      <button
+      <Button variant={cn(BUTTON_VARIANTS.PRIMARY, 'self-stretch')}>
+        <>Edit Profile</>
+      </Button>
+      <Button
         onClick={logOutOnClick}
-        className="w-full text-red-regular font-medium transition duration-300 hover:text-red-darker">
-        Log Out
-      </button>
+        variant="w-full text-red-regular font-medium transition duration-300 hover:text-red-darker">
+        <>Log Out</>
+      </Button>
     </>
   );
 };

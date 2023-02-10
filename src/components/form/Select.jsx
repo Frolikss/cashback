@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 export const Select = ({ options }) => {
   const [initialValue, setInitialValue] = useState(options[0]);
   const [isOpened, setIsOpened] = useState(false);
-  options.sort((a, b) => b - a);
 
   const optionOnClick = (event) => {
     setInitialValue(+event.currentTarget.textContent);
@@ -35,14 +34,16 @@ export const Select = ({ options }) => {
             hidden: !isOpened
           }
         )}>
-        {options.map((option) => {
-          if (option === initialValue) return;
-          return (
-            <span key={option} onClick={optionOnClick}>
-              {option}
-            </span>
-          );
-        })}
+        {options
+          .sort((a, b) => b - a)
+          .map((option) => {
+            if (option === initialValue) return;
+            return (
+              <span key={option} onClick={optionOnClick}>
+                {option}
+              </span>
+            );
+          })}
       </div>
     </div>
   );

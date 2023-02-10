@@ -1,4 +1,4 @@
-import { asyncLogin } from '@modules/login';
+import { asyncLogin } from './actions';
 
 export const loginUserReducer = (builder) => {
   builder
@@ -7,7 +7,6 @@ export const loginUserReducer = (builder) => {
     })
     .addCase(asyncLogin.fulfilled, (state) => {
       state.isLoading = false;
-      state.isAuthorized = true;
     })
     .addCase(asyncLogin.rejected, (state) => {
       state.isLoading = false;

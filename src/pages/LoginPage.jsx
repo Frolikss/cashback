@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { LoginForm } from '@components';
-import { asyncGetCurrentUser } from '@login/actions/asyncGetCurrentUser';
 import { ReactComponent as LogoIcon } from '@svg/logo.svg';
-import { useDispatch } from 'react-redux';
 
 export const LoginPage = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(asyncGetCurrentUser());
-  }, []);
-
   return (
     <div className="parent w-full flex md:items-center justify-end bg-login flex-col-reverse md:flex-row">
       <div className="md:basis-2/4 lg:basis-1/3 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">

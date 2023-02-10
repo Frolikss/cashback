@@ -1,12 +1,8 @@
 import { cashbackApiClient } from '@config';
 
-class CashbackApi {
+class CashbackUsersApi {
   constructor(url) {
     this.url = url;
-  }
-
-  signIn(payload, config) {
-    return cashbackApiClient.post(this.url, payload, config);
   }
 
   getUsers(payload, config) {
@@ -18,6 +14,5 @@ class CashbackApi {
   }
 }
 
-export const authApi = new CashbackApi('/login');
-export const usersApi = new CashbackApi('/users');
-export const userSelfApi = new CashbackApi('/users/self');
+export const usersApi = new CashbackUsersApi('/users');
+export const userSelfApi = new CashbackUsersApi('/users/self');

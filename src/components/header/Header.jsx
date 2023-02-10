@@ -6,6 +6,7 @@ import { HEADER_MODALS } from '@constants/headerModules';
 import { Button } from '@form';
 import { useModal } from '@hooks/useModal';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
+import cn from 'classnames';
 
 export const Header = () => {
   const [menuOpened, setMenuOpened, menuBtnRef] = useModal();
@@ -22,9 +23,9 @@ export const Header = () => {
             modalRef={menuBtnRef}
             variant={BUTTON_VARIANTS.PRIMARY}
             onClick={menuModalOnClick}
-            content={<MenuIcon className="pointer-events-none" />}
-            type="button"
-          />
+            type="button">
+            <MenuIcon className="pointer-events-none" />
+          </Button>
           <span className="text-base-1000 text-2xl font-bold">Admin Users</span>
           <ModalWrapper isOpened={menuOpened} variant={MODAL_VARIANTS.LEFT_SIDE}>
             <HeaderMenuModal />
@@ -36,7 +37,11 @@ export const Header = () => {
           ))}
         </div>
       </header>
-      <span className={menuOpened ? OVERLAY_STYLE : 'hidden'} />
+      <span
+        className={cn(OVERLAY_STYLE, {
+          hidden: !menuOpened
+        })}
+      />
     </>
   );
 };

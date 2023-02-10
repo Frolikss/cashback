@@ -4,20 +4,22 @@ import { ReactComponent as ArrowIcon } from '@svg/paginationArrow.svg';
 import PropTypes from 'prop-types';
 import Pagination from 'rc-pagination';
 
+import { Button } from './form';
+
 export const ListPagination = ({ style }) => {
   const paginationRender = (current, type, element) => {
     if (type === 'prev' && current !== 0) {
       return (
-        <button type="button">
+        <Button type="button">
           <ArrowIcon className="rotate-180" />
-        </button>
+        </Button>
       );
     }
     if (type === 'next') {
       return (
-        <button type="button">
+        <Button type="button">
           <ArrowIcon />
-        </button>
+        </Button>
       );
     }
     if (type === 'jump-next' || type === 'jump-prev') {

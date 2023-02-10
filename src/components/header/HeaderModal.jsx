@@ -2,9 +2,11 @@ import React from 'react';
 
 import { ModalWrapper } from '@components';
 import { useModal } from '@hooks/useModal';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-export const HeaderModal = ({ icon: Icon, modal: Modal, variant, iconStyle }) => {
+import { Button } from '../form';
+export const HeaderModal = ({ icon: Icon, modal: Modal, variant, iconStyle, isHoverable }) => {
   const [modalOpened, setModalOpened, btnRef] = useModal();
 
   const openModalOnClick = () => {
@@ -13,9 +15,14 @@ export const HeaderModal = ({ icon: Icon, modal: Modal, variant, iconStyle }) =>
 
   return (
     <>
-      <button ref={btnRef} onClick={openModalOnClick}>
+      <Button
+        variant={cn('', {
+          'hover:bg-base-200/70 transition-all duration-300 bg-base-100 rounded-full': isHoverable
+        })}
+        modalRef={btnRef}
+        onClick={openModalOnClick}>
         <Icon className={iconStyle} />
-      </button>
+      </Button>
       <ModalWrapper isOpened={modalOpened} variant={variant}>
         <Modal />
       </ModalWrapper>
@@ -27,5 +34,6 @@ HeaderModal.propTypes = {
   icon: PropTypes.object,
   iconStyle: PropTypes.string,
   modal: PropTypes.func,
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  isHoverable: PropTypes.bool
 };
