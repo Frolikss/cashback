@@ -1,4 +1,4 @@
-import { asyncLogin } from './actions';
+import { asyncLogin } from '@auth';
 
 export const loginUserReducer = (builder) => {
   builder

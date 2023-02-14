@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const HeaderNotifModal = () => {
+export const HeaderNotificationModal = () => {
   return (
     <>
       <h2 className="font-bold text-2xl">Notifications</h2>

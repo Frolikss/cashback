@@ -1,7 +1,6 @@
-import React from 'react';
-
 import { MENU_VARIANTS } from '@constants';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const MenuListItem = ({ name, route, pathname, icon: Icon }) => {

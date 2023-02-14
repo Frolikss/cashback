@@ -1,10 +1,8 @@
-import React from 'react';
-
+import { Button } from '@form';
 import { ReactComponent as ArrowIcon } from '@svg/paginationArrow.svg';
 import PropTypes from 'prop-types';
 import Pagination from 'rc-pagination';
-
-import { Button } from './form';
+import React from 'react';
 
 export const ListPagination = ({ style }) => {
   const paginationRender = (current, type, element) => {

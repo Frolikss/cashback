@@ -1,18 +1,17 @@
-import React from 'react';
-
 import { CollectionViewCell } from '@components';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-export const CollectionView = ({ users }) => {
+export const CollectionView = ({ contents }) => {
   return (
     <div className="container content-start gap-4 flex flex-wrap justify-between items-start flex-1 mx-auto">
-      {users.map((user) => {
-        return <CollectionViewCell key={user.id} {...user} />;
+      {contents.map((contentItem) => {
+        return <CollectionViewCell key={contentItem.id} {...contentItem} />;
       })}
     </div>
   );
 };
 
 CollectionView.propTypes = {
-  users: PropTypes.array
+  contents: PropTypes.array
 };

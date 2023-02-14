@@ -1,12 +1,9 @@
-import React from 'react';
-
 import { ListPagination, Select } from '@components';
 import { SHOW_MAX_CELLS } from '@constants';
+import { Button } from '@form';
 import { ReactComponent as CollectionViewIcon } from '@svg/collectionView.svg';
 import { ReactComponent as TableViewIcon } from '@svg/tableView.svg';
 import PropTypes from 'prop-types';
-
-import { Button } from './form';
 
 export const Footer = ({ viewType, setView }) => {
   const changeViewOnClick = () => {
@@ -28,7 +25,7 @@ export const Footer = ({ viewType, setView }) => {
       <div className="flex">
         <ListPagination style="flex gap-4 items-center [&>*]:flex [&>*]:items-center [&>*]:justify-center [&>*]:w-2.5 [&>*]:h-2.5 [&>*]:cursor-pointer [&>*]:p-5" />
         <Button variant="bg-accent-primary px-6 py-2 text-base-100 rounded-lg text-xl font-medium">
-          <>Show All</>
+          Show All
         </Button>
       </div>
     </div>

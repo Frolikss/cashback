@@ -1,11 +1,9 @@
-import React from 'react';
-
 import { ModalWrapper } from '@components';
+import { Button } from '@form';
 import { useModal } from '@hooks/useModal';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { Button } from '../form';
 export const HeaderModal = ({ icon: Icon, modal: Modal, variant, iconStyle, isHoverable }) => {
   const [modalOpened, setModalOpened, btnRef] = useModal();
 
@@ -16,7 +14,7 @@ export const HeaderModal = ({ icon: Icon, modal: Modal, variant, iconStyle, isHo
   return (
     <>
       <Button
-        variant={cn('', {
+        variant={cn({
           'hover:bg-base-200/70 transition-all duration-300 bg-base-100 rounded-full': isHoverable
         })}
         modalRef={btnRef}

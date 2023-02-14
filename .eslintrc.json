@@ -26,24 +26,40 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
+        "import/first": "error",
+        "import/no-default-export": "error",
+        "import/no-duplicates": "error",
         "import/order": [
             "error",
             {
-                "groups": ["builtin", "external", "internal"],
+                "groups": [
+                    "external",
+                    "builtin",
+                    "internal"
+                ],
                 "pathGroups": [
                     {
                         "pattern": "react",
                         "group": "external",
                         "position": "before"
+                    },
+                    {
+                        "pattern": "@/**",
+                        "group": "parent",
+                        "position": "before"
                     }
                 ],
-                "pathGroupsExcludedImportTypes": ["react"],
                 "newlines-between": "always",
                 "alphabetize": {
                     "order": "asc",
                     "caseInsensitive": true
                 }
             }
-        ]
+        ],
+        "import/newline-after-import": ["error", {
+            "count": 1
+        }]
     }
 }
+
+

@@ -1,3 +1,3 @@
-export { CreateFields } from './CreateFields';
-export { Button } from './Button';
-export { Input } from './Input';
+export * from './FillForm';
+export * from './Button';
+export * from './Input';

@@ -1,6 +1,5 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
+import React from 'react';
 
 export const Button = ({ variant, modalRef, children, ...props }) => {
   return (
@@ -11,7 +10,7 @@ export const Button = ({ variant, modalRef, children, ...props }) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   variant: PropTypes.string,
   modalRef: PropTypes.object
 };

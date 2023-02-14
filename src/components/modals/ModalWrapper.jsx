@@ -1,12 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
 export const ModalWrapper = ({ children, isOpened, variant }) => {
-  if (!isOpened) return null;
-
   const clickOutsideDiv = (event) => event.stopPropagation();
 
+  if (!isOpened) return null;
   return (
     <div onClick={clickOutsideDiv} className={variant}>
       {children}

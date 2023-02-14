@@ -1,7 +1,5 @@
-import { requestConfig, responseConfig } from '@config';
+import { requestConfig, responseConfig, responseErrorHandling } from '@config';
 import axios from 'axios';
-
-import { responseErrorHandling } from './responseConfig';
 
 export const cashbackApiClient = axios.create({
   withCredentials: true,

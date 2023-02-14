@@ -17,7 +17,7 @@ module.exports = {
       },
       backgroundImage: {
         login:
-          "url('/src/assets/png/bg-pattern.png'), linear-gradient(to top right, #F9CDA9 0%, #F6B2A5 100%)",
+          "url('/src/assets/png/bgPattern.png'), linear-gradient(to top right, #F9CDA9 0%, #F6B2A5 100%)",
         corner: "url('/src/assets/svg/selectCorner.svg')"
       },
       backgroundPosition: {

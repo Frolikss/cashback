@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCurrentUserReducer, getUsersReducer } from '@users';
-
-import { setUserReducer } from './reducers';
+import { getCurrentUserReducer, getUsersReducer, setSelfReducer } from '@users';
 
 const initialState = {
   isAuthorized: false,
@@ -15,7 +13,7 @@ const usersSlice = createSlice({
   extraReducers: (builder) => {
     getUsersReducer(builder);
     getCurrentUserReducer(builder);
-    setUserReducer(builder);
+    setSelfReducer(builder);
   }
 });
 

@@ -1,25 +1,23 @@
-import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
-
-import { ROUTES } from '@constants';
+import { ROUTES, ACCESS_TOKEN } from '@constants';
 import { ListPage, LoginPage } from '@pages';
 import { ProtectedRoute } from '@routes';
+import { asyncGetCurrentUser, selectAuthState } from '@users';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { asyncGetCurrentUser, selectUsersState } from './modules/users';
-
-function App() {
-  const { isAuthorized } = useSelector(selectUsersState);
+export function App() {
+  const isAuthorized = useSelector(selectAuthState);
   const dispatch = useDispatch();
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem(ACCESS_TOKEN);
 
   useEffect(() => {
     if (token) {
       dispatch(asyncGetCurrentUser());
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -35,5 +33,3 @@ function App() {
     </>
   );
 }
-
-export default App;

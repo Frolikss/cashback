@@ -1,3 +1,5 @@
+export { HeaderNotificationModal } from './modals/HeaderNotificationModal';
+export { HeaderMenuModal } from './modals/HeaderMenuModal';
 export { MenuListItem } from './MenuListItem';
 export { HeaderModal } from './header/HeaderModal';
 export { Footer } from './Footer';
@@ -5,8 +7,6 @@ export { Select } from './form/Select';
 export { ListPagination } from './ListPagination';
 export { CollectionViewCell } from './collection/CollectionViewCell';
 export { CollectionView } from './collection/CollectionView';
-export { HeaderNotifModal } from './modals/HeaderNotifModal';
-export { HeaderMenuModal } from './modals/HeaderMenuModal';
 export { Header } from './header/Header';
 export { LoginForm } from './LoginForm';
 export { ModalWrapper } from './modals/ModalWrapper';

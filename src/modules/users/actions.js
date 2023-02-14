@@ -1,13 +1,16 @@
 import { usersApi, userSelfApi } from '@apis/CashbackUsersApi';
 import { UNAUTHORIZED_ERROR_MASSAGE } from '@constants';
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { handleError } from '@utils';
+
+export const setSelfAction = createAction('setSelf');
 
 export const asyncGetCurrentUser = createAsyncThunk(
   'getCurrentUser',
   async (payload, { rejectWithValue }) => {
     try {
-      return await userSelfApi.getCurrentUser(payload);
+      const { data } = await userSelfApi.getCurrentUser(payload);
+      return data;
     } catch (error) {
       handleError(error, UNAUTHORIZED_ERROR_MASSAGE);
       return rejectWithValue(error);
@@ -17,7 +20,8 @@ export const asyncGetCurrentUser = createAsyncThunk(
 
 export const asyncGetUsers = createAsyncThunk('getUsers', async (payload, thunkAPI) => {
   try {
-    return await usersApi.getUsers(payload);
+    const { data } = await usersApi.getUsers(payload);
+    return data;
   } catch (error) {
     handleError(error, UNAUTHORIZED_ERROR_MASSAGE);
     return thunkAPI.rejectWithValue(error.response);

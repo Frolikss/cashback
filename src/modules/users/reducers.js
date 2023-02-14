@@ -1,5 +1,4 @@
-import { asyncGetCurrentUser, asyncGetUsers } from './actions';
-import { asyncSetUser } from '../auth';
+import { asyncGetCurrentUser, asyncGetUsers, setSelfAction } from '@users';
 
 export const getCurrentUserReducer = (builder) => {
   builder
@@ -8,7 +7,7 @@ export const getCurrentUserReducer = (builder) => {
     })
     .addCase(asyncGetCurrentUser.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.currentUser = payload?.data;
+      state.currentUser = payload;
       state.isAuthorized = true;
     })
     .addCase(asyncGetCurrentUser.rejected, (state) => {
@@ -24,7 +23,7 @@ export const getUsersReducer = (builder) => {
     })
     .addCase(asyncGetUsers.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.users = payload.data;
+      state.users = payload;
     })
     .addCase(asyncGetUsers.rejected, (state) => {
       state.isLoading = false;
@@ -32,14 +31,9 @@ export const getUsersReducer = (builder) => {
     });
 };
 
-export const setUserReducer = (builder) => {
-  builder
-    .addCase(asyncSetUser.fulfilled, (state, { payload }) => {
-      state.isAuthorized = true;
-      state.currentUser = payload?.data;
-    })
-    .addCase(asyncSetUser.rejected, (state) => {
-      state.isLoading = false;
-      state.isAuthorized = false;
-    });
+export const setSelfReducer = (builder) => {
+  builder.addCase(setSelfAction, (state, { payload }) => {
+    state.isAuthorized = !!payload;
+    state.currentUser = payload;
+  });
 };

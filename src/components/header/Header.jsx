@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ModalWrapper, HeaderMenuModal, HeaderModal } from '@components';
 import { BUTTON_VARIANTS, MODAL_VARIANTS, OVERLAY_STYLE } from '@constants';
 import { HEADER_MODALS } from '@constants/headerModules';
@@ -7,6 +5,7 @@ import { Button } from '@form';
 import { useModal } from '@hooks/useModal';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 import cn from 'classnames';
+import React from 'react';
 
 export const Header = () => {
   const [menuOpened, setMenuOpened, menuBtnRef] = useModal();
