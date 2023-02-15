@@ -19,10 +19,47 @@
             "presets": ["@babel/preset-react"]
         }
     },
+
     "plugins": [
-        "react"
+        "react",
+        "eslint-plugin-import"
     ],
     "rules": {
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "import/first": "error",
+        "import/no-default-export": "error",
+        "import/no-duplicates": "error",
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "external",
+                    "builtin",
+                    "internal"
+                ],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "@/**",
+                        "group": "parent",
+                        "position": "before"
+                    }
+                ],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "import/newline-after-import": ["error", {
+            "count": 1
+        }]
     }
 }
+
+
