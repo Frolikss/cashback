@@ -1,12 +1,14 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { FieldData } from '@constants';
+import React, { FC, ForwardedRef } from 'react';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
-export const Input = ({ field, register, variant }) => {
-  return <input {...field} {...register(field.name, field.validation)} className={variant} />;
-};
+export interface InputProps {
+  field: FieldData;
+  register: UseFormRegister<FieldValues>;
+  variant: string;
+  ref: ForwardedRef<unknown>;
+}
 
-Input.propTypes = {
-  field: PropTypes.object,
-  variant: PropTypes.string,
-  register: PropTypes.func
+export const Input: FC<InputProps> = ({ field, register, variant }) => {
+  return <input {...register(field.name, field.validation)} {...field} className={variant} />;
 };
