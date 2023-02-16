@@ -1,10 +1,10 @@
-import { BUTTON_VARIANTS, ACCESS_TOKEN } from '@constants';
+import cn from 'classnames';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ACCESS_TOKEN, ButtonVariants } from '@constants';
+import { asyncGetCurrentUser, selectUsersState } from '@users';
 import { Button } from '@form';
 import avatar from '@png/avatarBig.png';
-import { selectUsersState, asyncGetCurrentUser } from '@users';
-import cn from 'classnames';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const HeaderUserModal = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export const HeaderUserModal = () => {
         <span>{role}</span>
         <span>#{id}</span>
       </div>
-      <Button variant={cn(BUTTON_VARIANTS.PRIMARY, 'self-stretch')}>Edit Profile</Button>
+      <Button variant={cn(ButtonVariants.PRIMARY, 'self-stretch')}>Edit Profile</Button>
       <Button
         onClick={logOutOnClick}
         variant="w-full text-red-regular font-medium transition duration-300 hover:text-red-darker">

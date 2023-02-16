@@ -1,6 +1,6 @@
-import { Field } from '@constants';
-import React, { FC, forwardRef } from 'react';
+import { FC, Fragment, forwardRef } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { Field } from '@constants';
 
 interface Props {
   fields: Field[];
@@ -14,12 +14,12 @@ export const FillForm: FC<Props> = forwardRef(({ fields, register, errors }, ref
       {fields.map(({ component: Component, ...field }, index) => {
         const error = (errors as Record<string, FieldError>)[field.name]?.message;
         return (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             <Component field={field} register={register} ref={ref} variant={field.variant} />
             {errors[field.name] && (
               <p className="text-right text-red-regular font-medium">{error}</p>
             )}
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </>

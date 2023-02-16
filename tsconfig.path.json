@@ -35,6 +35,9 @@
       "@svg/*": [
         "assets/svg/*"
       ],
+      "@png/*": [
+        "assets/png/*"
+      ],
       "@pages": [
         "pages"
       ],

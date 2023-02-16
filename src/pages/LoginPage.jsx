@@ -1,6 +1,6 @@
+import React from 'react';
 import { LoginForm } from '@components';
 import { ReactComponent as LogoIcon } from '@svg/logo.svg';
-import React from 'react';
 
 export const LoginPage = () => {
   return (

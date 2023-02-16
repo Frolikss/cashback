@@ -1,11 +1,10 @@
-import { ModalWrapper, HeaderMenuModal, HeaderModal } from '@components';
-import { BUTTON_VARIANTS, MODAL_VARIANTS, OVERLAY_STYLE } from '@constants';
-import { HEADER_MODALS } from '@constants/headerModules';
-import { Button } from '@form';
-import { useModal } from '@hooks/useModal';
-import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 import cn from 'classnames';
 import React from 'react';
+import { HeaderMenuModal, HeaderModal, ModalWrapper } from '@components';
+import { ButtonVariants, HEADER_MODALS, MODAL_VARIANTS, OVERLAY_STYLE } from '@constants';
+import { Button } from '@form';
+import { useModal } from '@hooks';
+import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 
 export const Header = () => {
   const [menuOpened, setMenuOpened, menuBtnRef] = useModal();
@@ -20,7 +19,7 @@ export const Header = () => {
         <div className="flex items-center justify-between gap-6">
           <Button
             modalRef={menuBtnRef}
-            variant={BUTTON_VARIANTS.PRIMARY}
+            variant={ButtonVariants.PRIMARY}
             onClick={menuModalOnClick}
             type="button">
             <MenuIcon className="pointer-events-none" />

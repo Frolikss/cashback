@@ -1,14 +1,20 @@
-import React, { FC } from 'react';
+import { FC, ReactNode, RefObject } from 'react';
+import { BUTTON_STYLES, ButtonVariants } from '@constants';
 
 interface Props {
-  variant?: string;
-  modalRef?: React.RefObject<HTMLButtonElement>;
-  children: React.ReactNode;
+  variant?: ButtonVariants;
+  modalRef?: RefObject<HTMLButtonElement>;
+  children: ReactNode;
 }
 
-export const Button: FC<Props> = ({ variant, modalRef, children, ...props }) => {
+export const Button: FC<Props> = ({
+  variant = ButtonVariants.DEFAULT,
+  modalRef,
+  children,
+  ...props
+}) => {
   return (
-    <button className={variant} ref={modalRef} {...props}>
+    <button className={BUTTON_STYLES[variant]} ref={modalRef} {...props}>
       {children}
     </button>
   );

@@ -1,20 +1,15 @@
-import { InputProps } from '@form';
 import { FC } from 'react';
+import { RegisterOptions } from 'react-hook-form';
+import { InputVariants } from '@constants';
+import { InputProps } from '@form';
 
 export interface Field {
   name: string;
   component: FC<InputProps>;
-  type: string;
   placeholder: string;
-  variant: string;
-  validation: {
-    required: boolean;
-    pattern: {
-      value: RegExp;
-      message: string;
-    };
-  };
+  variant: InputVariants;
+  type: string;
+  options: RegisterOptions;
 }
 
 export type FieldData = Omit<Field, 'component'>;
-
