@@ -11,10 +11,9 @@ import avatarSmall from '@png/avatarSmall.png';
 
 export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.PRIMARY]:
-    'flex-1 text-base-100 rounded-lg bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
+    'text-base-100 bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
   [ButtonVariants.SECONDARY]:
-    'flex-1 text-accent-primary rounded-lg border-3 border-accent-primary hover:border-accent-dark',
-  [ButtonVariants.DEFAULT]: ''
+    'text-accent-primary border-3 border-accent-primary hover:border-accent-dark'
 };
 
 export const COLLECTION_VIEW_CELL_VARIANTS: {
@@ -54,7 +53,7 @@ export const MODAL_VARIANTS = {
 };
 
 export const INPUT_STYLES: { [key in InputVariants]: string } = {
-  [InputVariants.LOGIN]:
+  [InputVariants.PRIMARY]:
     'bg-base-100 text-lg px-6 py-3.5 rounded-lg leading-5 placeholder:text-base-600 active:placeholder:text-base-600 outline-none hover:outline-3 focus:bg-base-100 focus:outline-3 hover:outline-offset-0 focus:outline-offset-0 hover:outline-accent-primary focus:outline-accent-primary hover:bg-accent-lighter hover:placeholder:text-accent-dark'
 };
 

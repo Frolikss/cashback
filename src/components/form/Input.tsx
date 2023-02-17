@@ -9,7 +9,7 @@ export interface InputProps {
   ref: ForwardedRef<HTMLInputElement>;
 }
 
-export const Input: FC<InputProps> = ({ field, register, variant = InputVariants.LOGIN }) => {
+export const Input: FC<InputProps> = ({ field, register, variant = InputVariants.PRIMARY }) => {
   return (
     <input {...register(field.name, field.options)} {...field} className={INPUT_STYLES[variant]} />
   );

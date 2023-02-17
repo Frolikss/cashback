@@ -1,13 +1,13 @@
-import { EMAIL_PATTERN, INVALID_EMAIL, InputVariants, MIN_PASS_LENGTH } from '@constants';
+import { EMAIL_PATTERN, Field, INVALID_EMAIL, InputVariants, MIN_PASS_LENGTH } from '@constants';
 import { Input } from '@form';
 
-export const LOGIN_FIELDS_DATA = [
+export const LOGIN_FIELDS_DATA: Field[] = [
   {
     name: 'email',
     component: Input,
     type: 'email',
     placeholder: 'Email',
-    variant: InputVariants.LOGIN,
+    variant: InputVariants.PRIMARY,
     options: {
       required: true,
       pattern: {
@@ -21,7 +21,7 @@ export const LOGIN_FIELDS_DATA = [
     component: Input,
     type: 'password',
     placeholder: 'Password',
-    variant: InputVariants.LOGIN,
+    variant: InputVariants.PRIMARY,
     options: {
       required: true,
       minLength: {

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { ListPagination, Select } from '@components';
-import { ButtonVariants, SHOW_MAX_CELLS } from '@constants';
+import { ButtonVariants, MAX_LIST_PAGE_ITEMS } from '@constants';
 import { Button } from '@form';
 import { ReactComponent as CollectionViewIcon } from '@svg/collectionView.svg';
 import { ReactComponent as TableViewIcon } from '@svg/tableView.svg';
@@ -13,7 +13,7 @@ export const Footer = ({ viewType, setView }) => {
   return (
     <div className="container flex justify-between mx-auto bg-base-100 rounded-lg px-6 py-4">
       <div className="flex gap-2.5">
-        <Select options={SHOW_MAX_CELLS} />
+        <Select options={MAX_LIST_PAGE_ITEMS} />
         <Button onClick={changeViewOnClick} variant={ButtonVariants.PRIMARY}>
           {viewType ? (
             <CollectionViewIcon className="pointer-events-none w-6 h-6" />
