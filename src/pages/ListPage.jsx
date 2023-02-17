@@ -1,8 +1,8 @@
-import { Header, TableView, CollectionView, Footer } from '@components';
-import { TABLE_VARIANTS } from '@constants';
-import { asyncGetUsers, selectUsersState } from '@users';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { CollectionView, Footer, Header, TableView } from '@components';
+import { CollectionViewCellVariants, TABLE_VARIANTS } from '@constants';
+import { asyncGetUsers, selectUsersState } from '@users';
 
 export const ListPage = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const ListPage = () => {
       {isTableView ? (
         <TableView contents={users} variant={TABLE_VARIANTS.USERS} />
       ) : (
-        <CollectionView contents={users} />
+        <CollectionView contents={users} variant={CollectionViewCellVariants.USERS} />
       )}
       <Footer viewType={isTableView} setView={setIsTableView} />
     </div>

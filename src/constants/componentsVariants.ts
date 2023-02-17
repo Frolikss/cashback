@@ -1,7 +1,13 @@
-import { ButtonVariants, InputVariants } from '@constants';
+import {
+  ButtonVariants,
+  CollectionViewCellVariants,
+  CollectionViewVariant,
+  InputVariants
+} from '@constants';
 import { ReactComponent as CloseIcon } from '@svg/close.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
-import avatar from '@png/avatarSmall.png';
+import avatarBig from '@png/avatarBig.png';
+import avatarSmall from '@png/avatarSmall.png';
 
 export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.PRIMARY]:
@@ -9,6 +15,20 @@ export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.SECONDARY]:
     'flex-1 text-accent-primary rounded-lg border-3 border-accent-primary hover:border-accent-dark',
   [ButtonVariants.DEFAULT]: ''
+};
+
+export const COLLECTION_VIEW_CELL_VARIANTS: {
+  [key in CollectionViewCellVariants]: CollectionViewVariant;
+} = {
+  [CollectionViewCellVariants.USERS]: {
+    image: avatarBig,
+    contents: [
+      'font-bold',
+      'text-base-700 text-base flex-1',
+      'inline text-base-700',
+      'inline-block pl-2 text-base-700'
+    ]
+  }
 };
 
 export const MENU_VARIANTS = {
@@ -40,7 +60,7 @@ export const INPUT_STYLES: { [key in InputVariants]: string } = {
 
 export const TABLE_VARIANTS = {
   USERS: {
-    image: avatar,
+    image: avatarSmall,
     head: ['Name', 'Status', 'ID', 'Phone', 'E-mail'],
     buttons: [EditIcon, CloseIcon]
   }

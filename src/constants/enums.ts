@@ -7,3 +7,7 @@ export enum ButtonVariants {
 export enum InputVariants {
   LOGIN
 }
+
+export enum CollectionViewCellVariants {
+  USERS
+}

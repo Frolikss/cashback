@@ -12,4 +12,9 @@ export interface Field {
   options: RegisterOptions;
 }
 
+export interface CollectionViewVariant {
+  image?: string;
+  contents: string[];
+}
+
 export type FieldData = Omit<Field, 'component'>;
