@@ -1,6 +1,6 @@
-import { CollectionViewCell } from '@components';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { CollectionViewCell } from '@components';
 
 export const CollectionView = ({ contents }) => {
   return (

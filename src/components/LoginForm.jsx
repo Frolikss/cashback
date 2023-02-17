@@ -1,10 +1,10 @@
-import { asyncLogin } from '@auth';
-import { BUTTON_VARIANTS, ROUTES } from '@constants';
-import { LOGIN_FIELDS_DATA } from '@fields/loginFieldsData';
-import { FillForm, Button } from '@form';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ButtonVariants, ROUTES } from '@constants';
+import { asyncLogin } from '@auth';
+import { LOGIN_FIELDS_DATA } from '@fields';
+import { Button, FillForm } from '@form';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -21,8 +21,8 @@ export const LoginForm = () => {
     <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
       <FillForm errors={errors} fields={LOGIN_FIELDS_DATA} register={register} />
       <div className="flex gap-4">
-        <Button variant={BUTTON_VARIANTS.PRIMARY}>Log In</Button>
-        <Button variant={BUTTON_VARIANTS.SECONDARY}>
+        <Button variant={ButtonVariants.PRIMARY}>Log In</Button>
+        <Button variant={ButtonVariants.SECONDARY}>
           <>
             <Link to={ROUTES.HOME} />
             Sign Up

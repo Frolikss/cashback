@@ -1,7 +1,7 @@
-import avatar from '@png/avatarBig.png';
-import { ReactComponent as MoreIcon } from '@svg/itemMore.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { ReactComponent as MoreIcon } from '@svg/itemMore.svg';
+import avatar from '@png/avatarBig.png';
 
 export const CollectionViewCell = ({ id, role }) => {
   return (

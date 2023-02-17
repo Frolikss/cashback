@@ -4,5 +4,7 @@
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "none",
-  "jsxBracketSameLine": true
+  "jsxBracketSameLine": true,
+  "importOrder": ["^@constants$", "^@app$", "^@components$", "^@config$", "^@apis$", "^@auth$", "^@users$", "^@fields$", "^@form$", "^@store$", "^@pages$", "^@routes$", "^@hooks$", "^@utils$", "^@styles$", "^@svg/(.*)$", "^@png/(.*)$", "^[./]"],
+  "importOrderSortSpecifiers": true
 }

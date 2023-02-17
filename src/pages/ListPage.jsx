@@ -1,8 +1,8 @@
-import { Header, TableView, CollectionView, Footer } from '@components';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { CollectionView, Footer, Header, TableView } from '@components';
 import { TABLE_VARIANTS } from '@constants';
 import { asyncGetUsers, selectUsersState } from '@users';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const ListPage = () => {
   const dispatch = useDispatch();

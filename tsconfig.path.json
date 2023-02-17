@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@app":[
+        "App.jsx"
+      ],
+      "@components": [
+        "components"
+      ],
+      "@constants": [
+        "constants"
+      ],
+      "@config": [
+        "config"
+      ],
+      "@apis": [
+        "apis"
+      ],
+      "@auth": [
+        "modules/auth"
+      ],
+      "@users": [
+        "modules/users"
+      ],
+      "@fields": [
+        "constants/fields"
+      ],
+      "@form": [
+        "components/form"
+      ],
+      "@store": [
+        "store.js"
+      ],
+      "@svg/*": [
+        "assets/svg/*"
+      ],
+      "@png/*": [
+        "assets/png/*"
+      ],
+      "@pages": [
+        "pages"
+      ],
+      "@routes": [
+        "routes"
+      ],
+      "@hooks": [
+        "hooks"
+      ],
+      "@utils": [
+        "utils"
+      ],
+      "@styles": [
+        "index.css"
+      ]
+    }
+  }
+}
