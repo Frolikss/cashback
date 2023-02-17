@@ -6,3 +6,7 @@ export enum ButtonVariants {
 export enum InputVariants {
   PRIMARY = 'primary'
 }
+
+export enum CollectionViewCellVariants {
+  USERS
+}

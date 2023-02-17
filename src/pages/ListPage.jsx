@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CollectionView, Footer, Header, TableView } from '@components';
 import { TABLE_VARIANTS } from '@constants';
+import { CollectionView, Footer, Header, TableView } from '@components';
 import { asyncGetUsers, selectUsersState } from '@users';
 
 export const ListPage = () => {
