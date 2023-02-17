@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import { FC, ReactNode, RefObject } from 'react';
 import { BUTTON_STYLES, ButtonVariants } from '@constants';
 
@@ -7,14 +8,12 @@ interface Props {
   children: ReactNode;
 }
 
-export const Button: FC<Props> = ({
-  variant = ButtonVariants.DEFAULT,
-  modalRef,
-  children,
-  ...props
-}) => {
+export const Button: FC<Props> = ({ variant, modalRef, children, ...props }) => {
   return (
-    <button className={BUTTON_STYLES[variant]} ref={modalRef} {...props}>
+    <button
+      className={cn(variant ? BUTTON_STYLES[variant] : '', 'flex-1 rounded-lg')}
+      ref={modalRef}
+      {...props}>
       {children}
     </button>
   );

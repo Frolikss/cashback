@@ -1,9 +1,8 @@
 export enum ButtonVariants {
-  PRIMARY,
-  SECONDARY,
-  DEFAULT
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary'
 }
 
 export enum InputVariants {
-  LOGIN
+  PRIMARY = 'primary'
 }

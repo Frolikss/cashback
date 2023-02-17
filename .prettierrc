@@ -5,6 +5,6 @@
   "singleQuote": true,
   "trailingComma": "none",
   "jsxBracketSameLine": true,
-  "importOrder": ["^@app$", "^@components$", "^@constants$", "^@config$", "^@apis$", "^@auth$", "^@users$", "^@fields$", "^@form$", "^@store$", "^@pages$", "^@routes$", "^@hooks$", "^@utils$", "^@styles$", "^@svg/(.*)$", "^@png/(.*)$", "^[./]"],
+  "importOrder": ["^@constants$", "^@app$", "^@components$", "^@config$", "^@apis$", "^@auth$", "^@users$", "^@fields$", "^@form$", "^@store$", "^@pages$", "^@routes$", "^@hooks$", "^@utils$", "^@styles$", "^@svg/(.*)$", "^@png/(.*)$", "^[./]"],
   "importOrderSortSpecifiers": true
 }

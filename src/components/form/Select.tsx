@@ -36,7 +36,7 @@ export const Select: FC<Props> = ({ options }) => {
       className={cn(VALUE_DIV_STYLE, {
         'rounded-tl-none hover:bg-accent-light': isOpened
       })}>
-      {initialValue.value}
+      <span>{initialValue.value}</span>
       <DropdownIcon />
       <div
         className={cn(OPTIONS_DIV_STYLE, {
