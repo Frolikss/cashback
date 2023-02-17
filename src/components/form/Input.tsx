@@ -6,7 +6,7 @@ export interface InputProps {
   field: FieldData;
   register: UseFormRegister<FieldValues>;
   variant: InputVariants;
-  ref: ForwardedRef<unknown>;
+  ref: ForwardedRef<HTMLInputElement>;
 }
 
 export const Input: FC<InputProps> = ({ field, register, variant = InputVariants.LOGIN }) => {
