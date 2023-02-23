@@ -1,5 +1,5 @@
-import { authReducer } from '@auth';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { authReducer } from '@auth';
 import { usersReducers } from '@users';
 
 const rootReducer = combineReducers({
@@ -14,3 +14,6 @@ export const store = configureStore({
       serializableCheck: false
     })
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

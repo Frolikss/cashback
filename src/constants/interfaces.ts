@@ -3,6 +3,12 @@ import { RegisterOptions } from 'react-hook-form';
 import { InputVariants } from '@constants';
 import { InputProps } from '@form';
 
+export interface MenuVariantStyle {
+  listType: string;
+  wrapperStyle: string;
+  iconStyle: string;
+}
+
 export interface Field {
   name: string;
   component: FC<InputProps>;
