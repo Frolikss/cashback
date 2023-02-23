@@ -3,23 +3,25 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 export const useModal = (): {
   modalOpened: boolean;
   openModal: () => void;
+  closeModal: () => void;
   btnRef: RefObject<HTMLButtonElement>;
 } => {
   const [modalOpened, setModalOpened] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
 
   const openModal = () => setModalOpened(true);
+  const closeModal = () => setModalOpened(false);
 
-  const closeModal = (event: Event) => {
+  const closeModalOnOutsideClick = (event: Event) => {
     if (event.target !== btnRef.current) {
       setModalOpened(false);
     }
   };
 
   useEffect(() => {
-    document.body.addEventListener('click', closeModal);
-    return () => document.body.removeEventListener('click', closeModal);
-  }, []);
+    document.body.addEventListener('click', closeModalOnOutsideClick);
+    return () => document.body.removeEventListener('click', closeModalOnOutsideClick);
+  }, [modalOpened]);
 
-  return { modalOpened, openModal, btnRef };
+  return { modalOpened, openModal, closeModal, btnRef };
 };
