@@ -5,6 +5,7 @@ import { ReactComponent as UserIcon } from '@svg/userLogo.svg';
 
 export const HEADER_MODALS = [
   {
+    id: 0,
     icon: NotificationIcon,
     iconStyle: 'w-10 h-10 pointer-events-none',
     modal: HeaderNotificationModal,
@@ -12,6 +13,7 @@ export const HEADER_MODALS = [
     isHoverable: true
   },
   {
+    id: 1,
     icon: UserIcon,
     iconStyle: 'w-10 h-10 pointer-events-none',
     modal: HeaderUserModal,

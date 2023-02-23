@@ -33,11 +33,9 @@ export const COLLECTION_VIEW_CELL_VARIANTS: {
   }
 };
 
-export const MODAL_VARIANTS: { [key in ModalVariants]: string } = {
-  [ModalVariants.RIGHT_SIDE]:
-    'absolute mt-4 top-full right-0 bg-base-100 rounded-lg shadow-2xl flex flex-col items-center p-6 gap-4 w-1/3',
-  [ModalVariants.LEFT_SIDE]:
-    'absolute mt-4 top-full left-0 bg-base-100 rounded-lg shadow-2xl flex flex-col p-6 gap-4 w-1/3'
+export const MODAL_STYLES: { [key in ModalVariants]: string } = {
+  [ModalVariants.RIGHT_SIDE]: 'absolute right-0 items-center',
+  [ModalVariants.LEFT_SIDE]: 'absolute left-0'
 };
 
 export const MENU_VARIANTS = {

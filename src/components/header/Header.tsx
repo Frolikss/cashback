@@ -6,13 +6,13 @@ import { useModal } from '@hooks';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 
 export const Header = () => {
-  const { modalOpened, toggleModalOpened, btnRef } = useModal();
+  const { modalOpened, openModal, btnRef } = useModal();
 
   return (
     <>
       <header className="z-10 relative container mx-auto bg-base-100 rounded-lg px-6 py-4 flex items-center justify-between">
         <div className="flex items-center justify-between gap-6">
-          <Button modalRef={btnRef} variant={ButtonVariants.PRIMARY} onClick={toggleModalOpened}>
+          <Button modalRef={btnRef} variant={ButtonVariants.PRIMARY} onClick={openModal}>
             <MenuIcon className="pointer-events-none" />
           </Button>
           <span className="text-base-1000 text-2xl font-bold">Admin Users</span>
@@ -21,8 +21,8 @@ export const Header = () => {
           </ModalWrapper>
         </div>
         <div className="flex gap-4">
-          {HEADER_MODALS.map((modal, index) => (
-            <HeaderModal key={index} {...modal} />
+          {HEADER_MODALS.map((modal) => (
+            <HeaderModal key={modal.id} {...modal} />
           ))}
         </div>
       </header>

@@ -2,13 +2,13 @@ import { RefObject, useEffect, useRef, useState } from 'react';
 
 export const useModal = (): {
   modalOpened: boolean;
-  toggleModalOpened: () => void;
+  openModal: () => void;
   btnRef: RefObject<HTMLButtonElement>;
 } => {
   const [modalOpened, setModalOpened] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  const toggleModalOpened = () => setModalOpened((prev) => !prev);
+  const openModal = () => setModalOpened(true);
 
   const closeModal = (event: Event) => {
     if (event.target !== btnRef.current) {
@@ -21,5 +21,5 @@ export const useModal = (): {
     return () => document.body.removeEventListener('click', closeModal);
   }, []);
 
-  return { modalOpened, toggleModalOpened, btnRef };
+  return { modalOpened, openModal, btnRef };
 };

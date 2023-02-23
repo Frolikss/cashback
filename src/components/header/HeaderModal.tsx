@@ -19,18 +19,14 @@ export const HeaderModal: FC<Props> = ({
   iconStyle,
   isHoverable
 }) => {
-  const { modalOpened, toggleModalOpened, btnRef } = useModal();
-
-  const openModalOnClick = () => {
-    toggleModalOpened();
-  };
+  const { modalOpened, openModal, btnRef } = useModal();
 
   return (
     <>
       <Button
         variant={isHoverable ? ButtonVariants.UTILITY : undefined}
         modalRef={btnRef}
-        onClick={openModalOnClick}>
+        onClick={openModal}>
         <Icon className={iconStyle} />
       </Button>
       <ModalWrapper isOpened={modalOpened} variant={variant}>
