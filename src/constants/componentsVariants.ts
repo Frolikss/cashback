@@ -13,7 +13,9 @@ export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.PRIMARY]:
     'text-base-100 bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
   [ButtonVariants.SECONDARY]:
-    'text-accent-primary border-3 border-accent-primary hover:border-accent-dark'
+    'text-accent-primary border-3 border-accent-primary hover:border-accent-dark',
+  [ButtonVariants.MODAL]:
+    'hover:bg-base-200/70 transition-all duration-300 bg-base-100 rounded-full'
 };
 
 export const COLLECTION_VIEW_CELL_VARIANTS: {

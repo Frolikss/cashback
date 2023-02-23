@@ -6,6 +6,7 @@ interface Props {
   variant?: ButtonVariants;
   modalRef?: RefObject<HTMLButtonElement>;
   children: ReactNode;
+  onClick?(): void;
 }
 
 export const Button: FC<Props> = ({ variant, modalRef, children, ...props }) => {

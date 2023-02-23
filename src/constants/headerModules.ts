@@ -1,7 +1,15 @@
-import { HeaderNotificationModal, HeaderUserModal } from '@components';
+import { FC, SVGProps } from 'react';
 import { MODAL_VARIANTS } from '@constants';
+import { HeaderNotificationModal, HeaderUserModal } from '@components';
 import { ReactComponent as NotificationIcon } from '@svg/notification.svg';
 import { ReactComponent as UserIcon } from '@svg/userLogo.svg';
+
+interface HeaderModal {
+  icon: FC<SVGProps<SVGSVGElement>>;
+  modal: FC;
+  iconStyle: string;
+  isHoverable: boolean;
+}
 
 export const HEADER_MODALS = [
   {
