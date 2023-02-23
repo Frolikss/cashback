@@ -3,6 +3,8 @@ import {
   CollectionViewCellVariants,
   CollectionViewVariant,
   InputVariants,
+  MenuVariant,
+  MenuVariants,
   ModalVariants
 } from '@constants';
 import { ReactComponent as CloseIcon } from '@svg/close.svg';
@@ -15,6 +17,8 @@ export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
     'text-base-100 bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
   [ButtonVariants.SECONDARY]:
     'text-accent-primary border-3 border-accent-primary hover:border-accent-dark',
+  [ButtonVariants.TERTIARY]:
+    'w-full text-red-regular font-medium transition duration-300 hover:text-red-darker flex-1 rounded-lg',
   [ButtonVariants.UTILITY]:
     'hover:bg-base-200/70 transition-all duration-300 bg-base-100 rounded-full'
 };
@@ -38,14 +42,14 @@ export const MODAL_STYLES: { [key in ModalVariants]: string } = {
   [ModalVariants.LEFT_SIDE]: 'absolute left-0'
 };
 
-export const MENU_VARIANTS = {
-  ACTIVE: {
+export const MENU_STYLES: { [key in MenuVariants]: MenuVariant } = {
+  [MenuVariants.ACTIVE]: {
     list: 'w-1.5 h-10 bg-accent-dark rounded-full',
     container:
       'flex flex-1 items-center gap-2 bg-accent-primary rounded-xl px-2.5 font-medium text-base-100',
     icon: 'fill-base-100'
   },
-  DEFAULT: {
+  [MenuVariants.DEFAULT]: {
     list: 'w-1.5 h-10 bg-base-200 rounded-full group-hover:bg-accent-primary transition duration-300',
     container:
       'flex flex-1 items-center gap-2 rounded-xl bg-transparent p-0 font-normal text-base-1000 relative left-0 group-hover:translate-x-1 transition duration-300',

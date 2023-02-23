@@ -30,7 +30,7 @@
         "components/form"
       ],
       "@store": [
-        "store.js"
+        "store.ts"
       ],
       "@svg/*": [
         "assets/svg/*"

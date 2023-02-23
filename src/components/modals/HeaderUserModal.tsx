@@ -1,17 +1,15 @@
-import cn from 'classnames';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { FC, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { ACCESS_TOKEN, ButtonVariants } from '@constants';
-import { asyncGetCurrentUser, selectUsersState } from '@users';
+import { asyncGetCurrentUser, selectCurrentUser } from '@users';
 import { Button } from '@form';
+import { useAppDispatch } from '@hooks';
 import avatar from '@png/avatarBig.png';
 
-export const HeaderUserModal = () => {
-  const dispatch = useDispatch();
+export const HeaderUserModal: FC = () => {
+  const dispatch = useAppDispatch();
 
-  const {
-    currentUser: { role, id }
-  } = useSelector(selectUsersState);
+  const { role, id } = useSelector(selectCurrentUser);
 
   const logOutOnClick = () => {
     localStorage.removeItem(ACCESS_TOKEN);
@@ -29,10 +27,8 @@ export const HeaderUserModal = () => {
         <span>{role}</span>
         <span>#{id}</span>
       </div>
-      <Button variant={cn(ButtonVariants.PRIMARY, 'self-stretch')}>Edit Profile</Button>
-      <Button
-        onClick={logOutOnClick}
-        variant="w-full text-red-regular font-medium transition duration-300 hover:text-red-darker">
+      <Button variant={ButtonVariants.PRIMARY}>Edit Profile</Button>
+      <Button variant={ButtonVariants.TERTIARY} onClick={logOutOnClick}>
         Log Out
       </Button>
     </>

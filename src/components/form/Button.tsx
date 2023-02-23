@@ -12,7 +12,7 @@ interface Props {
 export const Button: FC<Props> = ({ variant, modalRef, children, ...props }) => {
   return (
     <button
-      className={cn(variant ? BUTTON_STYLES[variant] : '', 'flex-1 rounded-lg')}
+      className={cn('self-stretch flex-1 rounded-lg', variant ? BUTTON_STYLES[variant] : '')}
       ref={modalRef}
       {...props}>
       {children}

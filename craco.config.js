@@ -12,7 +12,7 @@ module.exports = {
       '@users': path.resolve(__dirname, 'src/modules/users'),
       '@fields': path.resolve(__dirname, 'src/constants/fields'),
       '@form': path.resolve(__dirname, 'src/components/form'),
-      '@store': path.resolve(__dirname, 'src/store.js'),
+      '@store': path.resolve(__dirname, 'src/store.ts'),
       '@svg': path.resolve(__dirname, 'src/assets/svg'),
       '@png': path.resolve(__dirname, 'src/assets/png'),
       '@pages': path.resolve(__dirname, 'src/pages'),
