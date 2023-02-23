@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import { FC, SVGProps } from 'react';
 import { Link } from 'react-router-dom';
 import { MENU_STYLES, MenuVariants } from '@constants';
@@ -15,10 +16,10 @@ export const MenuListItem: FC<Props> = ({ name, route, pathname, icon: Icon }) =
 
   return (
     <li key={name} className="group">
-      <Link to={route} className="flex gap-2">
-        <span className={menuStyles.list} />
-        <div className={menuStyles.container}>
-          {Icon ? <Icon className={menuStyles.icon} /> : <span>?</span>}
+      <Link to={route} className="flex gap-2 rounded-full">
+        <span className={cn(menuStyles.listType, 'w-1.5 h-10 rounded-xl')} />
+        <div className={cn(menuStyles.wrapperStyle, 'flex flex-1 items-center gap-2 rounded-xl')}>
+          {Icon ? <Icon className={menuStyles.iconStyle} /> : <span>?</span>}
           {name}
         </div>
       </Link>

@@ -3,7 +3,7 @@ import {
   CollectionViewCellVariants,
   CollectionViewVariant,
   InputVariants,
-  MenuVariant,
+  MenuVariantStyle,
   MenuVariants,
   ModalVariants
 } from '@constants';
@@ -42,18 +42,17 @@ export const MODAL_STYLES: { [key in ModalVariants]: string } = {
   [ModalVariants.LEFT_SIDE]: 'absolute left-0'
 };
 
-export const MENU_STYLES: { [key in MenuVariants]: MenuVariant } = {
+export const MENU_STYLES: { [key in MenuVariants]: MenuVariantStyle } = {
   [MenuVariants.ACTIVE]: {
-    list: 'w-1.5 h-10 bg-accent-dark rounded-full',
-    container:
-      'flex flex-1 items-center gap-2 bg-accent-primary rounded-xl px-2.5 font-medium text-base-100',
-    icon: 'fill-base-100'
+    listType: 'bg-accent-dark',
+    wrapperStyle: 'bg-accent-primary px-2.5 font-medium text-base-100',
+    iconStyle: 'fill-base-100'
   },
   [MenuVariants.DEFAULT]: {
-    list: 'w-1.5 h-10 bg-base-200 rounded-full group-hover:bg-accent-primary transition duration-300',
-    container:
-      'flex flex-1 items-center gap-2 rounded-xl bg-transparent p-0 font-normal text-base-1000 relative left-0 group-hover:translate-x-1 transition duration-300',
-    icon: 'fill-base-1000'
+    listType: 'bg-base-200 group-hover:bg-accent-primary transition duration-300',
+    wrapperStyle:
+      'bg-transparent p-0 font-normal text-base-1000 relative left-0 group-hover:translate-x-1 transition duration-300',
+    iconStyle: 'fill-base-1000'
   }
 };
 

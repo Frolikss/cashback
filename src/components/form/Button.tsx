@@ -9,10 +9,15 @@ interface Props {
   onClick?: VoidFunction;
 }
 
-export const Button: FC<Props> = ({ variant, modalRef, children, ...props }) => {
+export const Button: FC<Props> = ({
+  variant = ButtonVariants.UTILITY,
+  modalRef,
+  children,
+  ...props
+}) => {
   return (
     <button
-      className={cn('self-stretch flex-1 rounded-lg', variant ? BUTTON_STYLES[variant] : '')}
+      className={cn('self-stretch flex-1 rounded-lg', BUTTON_STYLES[variant])}
       ref={modalRef}
       {...props}>
       {children}
