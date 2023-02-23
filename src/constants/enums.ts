@@ -1,7 +1,7 @@
 export enum ButtonVariants {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
-  MODAL = 'modal'
+  UTILITY = 'utility'
 }
 
 export enum InputVariants {
@@ -10,4 +10,9 @@ export enum InputVariants {
 
 export enum CollectionViewCellVariants {
   USERS = 'users'
+}
+
+export enum ModalVariants {
+  RIGHT_SIDE = 'right',
+  LEFT_SIDE = 'left'
 }

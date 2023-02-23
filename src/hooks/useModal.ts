@@ -1,6 +1,10 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
-export const useModal = (): [boolean, () => void, RefObject<HTMLButtonElement>] => {
+export const useModal = (): {
+  modalOpened: boolean;
+  toggleModalOpened: () => void;
+  btnRef: RefObject<HTMLButtonElement>;
+} => {
   const [modalOpened, setModalOpened] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
 
@@ -17,5 +21,5 @@ export const useModal = (): [boolean, () => void, RefObject<HTMLButtonElement>] 
     return () => document.body.removeEventListener('click', closeModal);
   }, []);
 
-  return [modalOpened, toggleModalOpened, btnRef];
+  return { modalOpened, toggleModalOpened, btnRef };
 };

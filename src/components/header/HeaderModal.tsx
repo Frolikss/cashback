@@ -1,14 +1,13 @@
-import cn from 'classnames';
-import { FC, SVGProps } from 'react';
-import { ButtonVariants } from '@constants';
+import { ComponentType, FC, SVGProps } from 'react';
+import { ButtonVariants, ModalVariants } from '@constants';
 import { ModalWrapper } from '@components';
 import { Button } from '@form';
 import { useModal } from '@hooks';
 
 interface Props {
   icon: FC<SVGProps<SVGSVGElement>>;
-  modal: FC;
-  variant: string;
+  modal: ComponentType;
+  variant: ModalVariants;
   iconStyle: string;
   isHoverable: boolean;
 }
@@ -20,7 +19,7 @@ export const HeaderModal: FC<Props> = ({
   iconStyle,
   isHoverable
 }) => {
-  const [modalOpened, toggleModalOpened, btnRef] = useModal();
+  const { modalOpened, toggleModalOpened, btnRef } = useModal();
 
   const openModalOnClick = () => {
     toggleModalOpened();
@@ -29,7 +28,7 @@ export const HeaderModal: FC<Props> = ({
   return (
     <>
       <Button
-        variant={isHoverable ? ButtonVariants.MODAL : undefined}
+        variant={isHoverable ? ButtonVariants.UTILITY : undefined}
         modalRef={btnRef}
         onClick={openModalOnClick}>
         <Icon className={iconStyle} />
