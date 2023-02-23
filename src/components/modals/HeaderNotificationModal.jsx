@@ -3,7 +3,7 @@ import React from 'react';
 export const HeaderNotificationModal = () => {
   return (
     <>
-      <h2 className="font-bold text-2xl">Notifications</h2>
+      <h2 className="font-bold text-2xl self-start">Notifications</h2>
       <div>
         <div className="flex items-center gap-4">
           <span className="w-4.5 h-4.5 shrink-0 bg-accent-primary rounded-full" />

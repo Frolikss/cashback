@@ -29,7 +29,7 @@ export const HeaderModal: FC<Props> = ({
         variant={isHoverable ? ButtonVariants.UTILITY : undefined}
         modalRef={btnRef}
         onClick={handleModalButtonClick}>
-        <Icon className={iconStyle} />
+        {Icon ? <Icon className={iconStyle} /> : <span>?</span>}
       </Button>
       <ModalWrapper isOpened={modalOpened} variant={variant}>
         <Modal />
