@@ -2,7 +2,8 @@ import {
   ButtonVariants,
   CollectionViewCellVariants,
   CollectionViewVariant,
-  InputVariants
+  InputVariants,
+  ModalVariants
 } from '@constants';
 import { ReactComponent as CloseIcon } from '@svg/close.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
@@ -13,7 +14,9 @@ export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.PRIMARY]:
     'text-base-100 bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
   [ButtonVariants.SECONDARY]:
-    'text-accent-primary border-3 border-accent-primary hover:border-accent-dark'
+    'text-accent-primary border-3 border-accent-primary hover:border-accent-dark',
+  [ButtonVariants.UTILITY]:
+    'hover:bg-base-200/70 transition-all duration-300 bg-base-100 rounded-full'
 };
 
 export const COLLECTION_VIEW_CELL_VARIANTS: {
@@ -30,6 +33,11 @@ export const COLLECTION_VIEW_CELL_VARIANTS: {
   }
 };
 
+export const MODAL_STYLES: { [key in ModalVariants]: string } = {
+  [ModalVariants.RIGHT_SIDE]: 'absolute right-0 items-center',
+  [ModalVariants.LEFT_SIDE]: 'absolute left-0'
+};
+
 export const MENU_VARIANTS = {
   ACTIVE: {
     list: 'w-1.5 h-10 bg-accent-dark rounded-full',
@@ -43,13 +51,6 @@ export const MENU_VARIANTS = {
       'flex flex-1 items-center gap-2 rounded-xl bg-transparent p-0 font-normal text-base-1000 relative left-0 group-hover:translate-x-1 transition duration-300',
     icon: 'fill-base-1000'
   }
-};
-
-export const MODAL_VARIANTS = {
-  RIGHT_SIDE:
-    'absolute mt-4 top-full right-0 bg-base-100 rounded-lg shadow-2xl flex flex-col items-center p-6 gap-4 w-1/3',
-  LEFT_SIDE:
-    'absolute mt-4 top-full left-0 bg-base-100 rounded-lg shadow-2xl flex flex-col p-6 gap-4 w-1/3'
 };
 
 export const INPUT_STYLES: { [key in InputVariants]: string } = {

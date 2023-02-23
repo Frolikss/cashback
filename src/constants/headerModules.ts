@@ -1,21 +1,23 @@
+import { ModalVariants } from '@constants';
 import { HeaderNotificationModal, HeaderUserModal } from '@components';
-import { MODAL_VARIANTS } from '@constants';
 import { ReactComponent as NotificationIcon } from '@svg/notification.svg';
 import { ReactComponent as UserIcon } from '@svg/userLogo.svg';
 
 export const HEADER_MODALS = [
   {
+    id: 0,
     icon: NotificationIcon,
     iconStyle: 'w-10 h-10 pointer-events-none',
     modal: HeaderNotificationModal,
-    variant: `${MODAL_VARIANTS.RIGHT_SIDE} items-baseline`,
+    variant: ModalVariants.RIGHT_SIDE,
     isHoverable: true
   },
   {
+    id: 1,
     icon: UserIcon,
     iconStyle: 'w-10 h-10 pointer-events-none',
     modal: HeaderUserModal,
-    variant: MODAL_VARIANTS.RIGHT_SIDE,
+    variant: ModalVariants.RIGHT_SIDE,
     isHoverable: false
   }
 ];
