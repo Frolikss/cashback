@@ -1,7 +1,7 @@
-import { CollectionViewCell } from '@components';
 import { CollectionViewCellVariants } from '@constants';
+import { CollectionViewCell } from '@components';
 
-export interface ContentItem {
+interface ContentItem {
   id: string;
   role: string;
   email: string;

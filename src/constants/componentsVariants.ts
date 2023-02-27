@@ -5,7 +5,9 @@ import {
   InputVariants,
   MenuVariantStyle,
   MenuVariants,
-  ModalVariants
+  ModalVariants,
+  TableVariant,
+  TableVariants
 } from '@constants';
 import { ReactComponent as CloseIcon } from '@svg/close.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
@@ -20,7 +22,8 @@ export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.TERTIARY]:
     'w-full text-red-regular font-medium transition duration-300 hover:text-red-darker flex-1 rounded-lg',
   [ButtonVariants.UTILITY]:
-    'hover:bg-base-200/70 transition-all duration-300 bg-base-100 rounded-full'
+    'hover:bg-base-200/70 p-1 transition-all duration-300 bg-base-100 rounded-full flex items-center',
+  [ButtonVariants.TABLE]: 'flex items-center justify-end'
 };
 
 export const COLLECTION_VIEW_CELL_VARIANTS: {
@@ -61,10 +64,10 @@ export const INPUT_STYLES: { [key in InputVariants]: string } = {
     'bg-base-100 text-lg px-6 py-3.5 rounded-lg leading-5 placeholder:text-base-600 active:placeholder:text-base-600 outline-none hover:outline-3 focus:bg-base-100 focus:outline-3 hover:outline-offset-0 focus:outline-offset-0 hover:outline-accent-primary focus:outline-accent-primary hover:bg-accent-lighter hover:placeholder:text-accent-dark'
 };
 
-export const TABLE_VARIANTS = {
-  USERS: {
+export const TABLE_VARIANTS: { [key in TableVariants]: TableVariant } = {
+  [TableVariants.USERS]: {
     image: avatarSmall,
-    head: ['Name', 'Status', 'ID', 'Phone', 'E-mail'],
-    buttons: [EditIcon, CloseIcon]
+    headings: ['Name', 'Status', 'ID', 'Phone', 'E-mail'],
+    buttonIcons: [EditIcon, CloseIcon]
   }
 };

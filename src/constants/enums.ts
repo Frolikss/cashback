@@ -2,7 +2,8 @@ export enum ButtonVariants {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
-  UTILITY = 'utility'
+  UTILITY = 'utility',
+  TABLE = 'table'
 }
 
 export enum InputVariants {
@@ -21,4 +22,8 @@ export enum ModalVariants {
 export enum MenuVariants {
   ACTIVE = 'active',
   DEFAULT = 'default'
+}
+
+export enum TableVariants {
+  USERS = 'users'
 }

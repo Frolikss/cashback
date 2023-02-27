@@ -1,19 +1,32 @@
+import { TABLE_VARIANTS, TableVariants } from '@constants';
 import { TableRow } from '@components';
 import { Button } from '@form';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
-import PropTypes from 'prop-types';
-import React from 'react';
 
-export const TableView = ({ contents, variant }) => {
+interface ContentItem {
+  id: string;
+  email: string;
+  phone: string;
+  role: string;
+}
+
+interface Props<T> {
+  contents: T[];
+  variant: TableVariants;
+}
+
+export const TableView = <T extends ContentItem>({ contents, variant }: Props<T>) => {
+  const tableVariant = TABLE_VARIANTS[variant];
+
   return (
     <div className="container flex-1 mx-auto bg-base-100 rounded-lg p-6">
       <table className="w-full">
         <thead>
           <tr className="[&>*]:text-right [&>*]:pb-6 border-b border-base-300">
-            {variant.head.map((heading, index) => {
+            {tableVariant.headings.map((heading) => {
               return (
-                <th key={index}>
-                  <Button variant="flex items-center gap-1 font-normal text-base-600">
+                <th key={heading} className="text-base-600 font-normal">
+                  <Button>
                     <>
                       {heading}
                       <ArrowIcon />
@@ -22,15 +35,17 @@ export const TableView = ({ contents, variant }) => {
                 </th>
               );
             })}
-            {variant.buttons && <th className="font-normal text-lg text-base-600">Actions</th>}
+            {tableVariant.buttonIcons && (
+              <th className="font-normal text-lg text-base-600">Actions</th>
+            )}
           </tr>
         </thead>
         <tbody>
           {contents.map((contentItem) => (
             <TableRow
               key={contentItem.id}
-              image={variant?.image}
-              variant={variant.buttons}
+              image={tableVariant.image}
+              buttonIcons={tableVariant.buttonIcons}
               {...contentItem}
             />
           ))}
@@ -38,9 +53,4 @@ export const TableView = ({ contents, variant }) => {
       </table>
     </div>
   );
-};
-
-TableView.propTypes = {
-  contents: PropTypes.array,
-  variant: PropTypes.object
 };

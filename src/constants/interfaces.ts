@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, SVGProps } from 'react';
 import { RegisterOptions } from 'react-hook-form';
 import { InputVariants } from '@constants';
 import { InputProps } from '@form';
@@ -21,6 +21,12 @@ export interface Field {
 export interface CollectionViewVariant {
   image?: string;
   contents: string[];
+}
+
+export interface TableVariant {
+  image?: string;
+  headings: string[];
+  buttonIcons: FC<SVGProps<SVGSVGElement>>[];
 }
 
 export type FieldData = Omit<Field, 'component'>;
