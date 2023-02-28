@@ -29,4 +29,19 @@ export interface TableVariant {
   buttonIcons: FC<SVGProps<SVGSVGElement>>[];
 }
 
+export interface CellData {
+  [index: string]: string;
+  id: string;
+  email: string;
+  phone: string;
+  role: string;
+}
+
+export interface TableHeader {
+  header: string;
+  field: string;
+  component?(): JSX.Element;
+  defaultValue?: string;
+}
+
 export type FieldData = Omit<Field, 'component'>;

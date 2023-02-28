@@ -1,11 +1,15 @@
-import { ROUTES } from '@constants';
+import { ROUTES, TableHeader } from '@constants';
+import { Button } from '@form';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
+import { ReactComponent as CloseIcon } from '@svg/close.svg';
+import { ReactComponent as EditIcon } from '@svg/edit.svg';
 import { ReactComponent as ReportIcon } from '@svg/reportIcon.svg';
 import { ReactComponent as ShopsIcon } from '@svg/shopsIcon.svg';
 import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
 import { ReactComponent as UsersIcon } from '@svg/usersIcon.svg';
 import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
+import avatarSmall from '@png/avatarSmall.png';
 
 export const MAX_LIST_PAGE_ITEMS = [
   { id: 0, value: 10 },
@@ -47,5 +51,48 @@ export const MODAL_MENU_CONTENT = [
     route: ROUTES.LOGIN,
     icon: ReportIcon,
     name: 'Reports'
+  }
+];
+
+export const TABLE_HEADERS: TableHeader[] = [
+  {
+    header: 'Name',
+    field: 'name',
+    component: () => (
+      <div className="flex items-center gap-6 font-bold">
+        <img src={avatarSmall} alt="avatar" className="w-10 h-10" />
+      </div>
+    ),
+    defaultValue: 'Unspecified'
+  },
+  {
+    header: 'Status',
+    field: 'role'
+  },
+  {
+    header: 'ID',
+    field: 'id'
+  },
+  {
+    header: 'Phone',
+    field: 'phone'
+  },
+  {
+    header: 'E-mail',
+    field: 'email'
+  },
+  {
+    header: 'Actions',
+    field: 'actions',
+    component: () => (
+      <>
+        <Button>
+          <EditIcon />
+        </Button>
+        <Button>
+          <CloseIcon />
+        </Button>
+      </>
+    )
   }
 ];

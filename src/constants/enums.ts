@@ -2,8 +2,7 @@ export enum ButtonVariants {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
-  UTILITY = 'utility',
-  TABLE = 'table'
+  UTILITY = 'utility'
 }
 
 export enum InputVariants {
