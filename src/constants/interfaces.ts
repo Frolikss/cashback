@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC, SVGProps } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { InputVariants } from '@constants';
+import { InputVariants, TableCellType } from '@constants';
 import { InputProps } from '@form';
 
 export interface MenuVariantStyle {
@@ -21,6 +21,25 @@ export interface Field {
 export interface CollectionViewVariant {
   image?: string;
   contents: string[];
+}
+
+export interface TableVariant {
+  image?: string;
+  headings: string[];
+  buttonIcons: FC<SVGProps<SVGSVGElement>>[];
+}
+
+export interface CellData {
+  [index: string]: string | number;
+  id: number;
+}
+
+export interface TableHeader {
+  type: TableCellType;
+  header: string;
+  field: string;
+  component?: () => JSX.Element;
+  defaultValue?: string;
 }
 
 export type FieldData = Omit<Field, 'component'>;

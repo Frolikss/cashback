@@ -5,7 +5,7 @@ import { BUTTON_STYLES, ButtonVariants } from '@constants';
 interface Props {
   variant?: ButtonVariants;
   modalRef?: RefObject<HTMLButtonElement>;
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: VoidFunction;
 }
 
