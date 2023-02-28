@@ -18,7 +18,7 @@ export const CollectionViewCell: FC<Props> = ({ variant, cellData }) => {
       )}
       <div className="flex-1">
         {cells.map((cell, index) => (
-          <p key={cell} className={cellsStyles.contents[index]}>
+          <p key={cell + `${index}`} className={cellsStyles.contents[index]}>
             {cell}
           </p>
         ))}

@@ -1,4 +1,4 @@
-import { CellData, TableHeader } from '@constants';
+import { CellData, TableCellType, TableHeader } from '@constants';
 import { TableRow } from '@components';
 import { Button } from '@form';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
@@ -14,8 +14,8 @@ export const TableView = <T extends CellData>({ contents, headers }: Props<T>) =
       <table className="w-full">
         <thead>
           <tr className="[&>*]:text-right [&>*]:pb-6 border-b border-base-300">
-            {headers.map(({ header }) => {
-              return header !== headers[headers.length - 1].header ? (
+            {headers.map(({ header, type }) => {
+              return type !== TableCellType.ACTION ? (
                 <th key={header} className="text-base-600 font-normal">
                   <Button>
                     <>

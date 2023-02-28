@@ -1,6 +1,6 @@
-import { ComponentType, FC, SVGProps } from 'react';
+import { FC, SVGProps } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { InputVariants } from '@constants';
+import { InputVariants, TableCellType } from '@constants';
 import { InputProps } from '@form';
 
 export interface MenuVariantStyle {
@@ -35,9 +35,10 @@ export interface CellData {
 }
 
 export interface TableHeader {
+  type: TableCellType;
   header: string;
   field: string;
-  component?(props: { [key: string]: any; component: ComponentType }): JSX.Element;
+  component?: () => JSX.Element;
   defaultValue?: string;
 }
 

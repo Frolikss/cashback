@@ -1,7 +1,5 @@
 import { FC } from 'react';
 import { CellData, TableHeader } from '@constants';
-import { Button } from '@form';
-import { ReactComponent as EditIcon } from '@svg/edit.svg';
 
 interface Props {
   cellData: CellData;
@@ -15,11 +13,11 @@ export const TableRow: FC<Props> = ({ cellData, headers }) => {
         <td key={field} className="last:flex last:justify-end">
           {Component ? (
             <div className="flex items-center gap-2">
-              <Component component={Button} children={<EditIcon />} />
+              <Component />
               <span>{cellData[field] ?? defaultValue}</span>
             </div>
           ) : (
-            <span>{cellData[field]}</span>
+            <>{cellData[field]}</>
           )}
         </td>
       ))}
