@@ -22,7 +22,3 @@ export enum MenuVariants {
   ACTIVE = 'active',
   DEFAULT = 'default'
 }
-
-export enum TableVariants {
-  USERS = 'users'
-}

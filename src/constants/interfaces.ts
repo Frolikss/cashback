@@ -30,11 +30,8 @@ export interface TableVariant {
 }
 
 export interface CellData {
-  [index: string]: string;
-  id: string;
-  email: string;
-  phone: string;
-  role: string;
+  [index: string]: string | number;
+  id: number;
 }
 
 export interface TableHeader {

@@ -86,12 +86,8 @@ export const TABLE_HEADERS: TableHeader[] = [
     field: 'actions',
     component: () => (
       <>
-        <Button>
-          <EditIcon />
-        </Button>
-        <Button>
-          <CloseIcon />
-        </Button>
+        <Button children={<EditIcon />} />
+        <Button children={<CloseIcon />} />
       </>
     )
   }

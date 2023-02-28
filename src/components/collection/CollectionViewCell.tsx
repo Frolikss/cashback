@@ -1,16 +1,14 @@
 import { FC } from 'react';
-import { COLLECTION_VIEW_CELL_VARIANTS, CollectionViewCellVariants } from '@constants';
+import { COLLECTION_VIEW_CELL_VARIANTS, CellData, CollectionViewCellVariants } from '@constants';
 import { ReactComponent as MoreIcon } from '@svg/itemMore.svg';
 
 interface Props {
   variant: CollectionViewCellVariants;
-  id: string;
-  role: string;
-  email: string;
+  cellData: CellData;
 }
 
-export const CollectionViewCell: FC<Props> = ({ variant, ...props }) => {
-  const cells: string[] = Object.values(props);
+export const CollectionViewCell: FC<Props> = ({ variant, cellData }) => {
+  const cells: (string | number)[] = Object.values(cellData);
   const cellsStyles = COLLECTION_VIEW_CELL_VARIANTS[variant];
 
   return (
@@ -20,7 +18,7 @@ export const CollectionViewCell: FC<Props> = ({ variant, ...props }) => {
       )}
       <div className="flex-1">
         {cells.map((cell, index) => (
-          <p key={index} className={cellsStyles.contents[index]}>
+          <p key={cell} className={cellsStyles.contents[index]}>
             {cell}
           </p>
         ))}

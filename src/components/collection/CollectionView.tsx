@@ -1,11 +1,5 @@
-import { CollectionViewCellVariants } from '@constants';
+import { CellData, CollectionViewCellVariants } from '@constants';
 import { CollectionViewCell } from '@components';
-
-interface CellData {
-  id: string;
-  role: string;
-  email: string;
-}
 
 interface Props<T> {
   contents: T[];
@@ -16,7 +10,7 @@ export const CollectionView = <T extends CellData>({ contents, variant }: Props<
   return (
     <div className="container content-start gap-4 flex flex-wrap justify-between items-start flex-1 mx-auto">
       {contents.map((contentItem) => (
-        <CollectionViewCell key={contentItem.id} variant={variant} {...contentItem} />
+        <CollectionViewCell key={contentItem.id} variant={variant} cellData={contentItem} />
       ))}
     </div>
   );

@@ -15,7 +15,7 @@ export const TableView = <T extends CellData>({ contents, headers }: Props<T>) =
         <thead>
           <tr className="[&>*]:text-right [&>*]:pb-6 border-b border-base-300">
             {headers.map(({ header }) => {
-              return header !== 'Actions' ? (
+              return header !== headers[headers.length - 1].header ? (
                 <th key={header} className="text-base-600 font-normal">
                   <Button>
                     <>
