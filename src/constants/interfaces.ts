@@ -1,4 +1,4 @@
-import { FC, SVGProps } from 'react';
+import { ComponentType, FC, SVGProps } from 'react';
 import { RegisterOptions } from 'react-hook-form';
 import { InputVariants } from '@constants';
 import { InputProps } from '@form';
@@ -37,7 +37,7 @@ export interface CellData {
 export interface TableHeader {
   header: string;
   field: string;
-  component?(): JSX.Element;
+  component?(props: { [key: string]: any; component: ComponentType }): JSX.Element;
   defaultValue?: string;
 }
 

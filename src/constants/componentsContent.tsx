@@ -1,9 +1,6 @@
 import { ROUTES, TableHeader } from '@constants';
-import { Button } from '@form';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
-import { ReactComponent as CloseIcon } from '@svg/close.svg';
-import { ReactComponent as EditIcon } from '@svg/edit.svg';
 import { ReactComponent as ReportIcon } from '@svg/reportIcon.svg';
 import { ReactComponent as ShopsIcon } from '@svg/shopsIcon.svg';
 import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
@@ -84,11 +81,6 @@ export const TABLE_HEADERS: TableHeader[] = [
   {
     header: 'Actions',
     field: 'actions',
-    component: () => (
-      <>
-        <Button children={<EditIcon />} />
-        <Button children={<CloseIcon />} />
-      </>
-    )
+    component: ({ component: Component, ...props }) => <Component {...props} />
   }
 ];
