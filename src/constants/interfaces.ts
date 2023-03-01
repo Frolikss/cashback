@@ -1,6 +1,6 @@
 import { FC, SVGProps } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { InputVariants, TableCellType } from '@constants';
+import { InputVariants } from '@constants';
 import { InputProps } from '@form';
 
 export interface MenuVariantStyle {
@@ -35,7 +35,7 @@ export interface CellData {
 }
 
 export interface TableHeader {
-  type: TableCellType;
+  isSortable: boolean;
   header: string;
   field: string;
   component?: () => JSX.Element;

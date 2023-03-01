@@ -1,4 +1,4 @@
-import { ButtonVariants, ROUTES, TableCellType, TableHeader } from '@constants';
+import { ButtonVariants, ROUTES, TableHeader } from '@constants';
 import { Button } from '@form';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
@@ -55,7 +55,7 @@ export const MODAL_MENU_CONTENT = [
 
 export const TABLE_HEADERS: TableHeader[] = [
   {
-    type: TableCellType.TEXT,
+    isSortable: true,
     header: 'Name',
     field: 'name',
     component: () => (
@@ -66,27 +66,27 @@ export const TABLE_HEADERS: TableHeader[] = [
     defaultValue: 'Unspecified'
   },
   {
-    type: TableCellType.TEXT,
+    isSortable: true,
     header: 'Status',
     field: 'role'
   },
   {
-    type: TableCellType.TEXT,
+    isSortable: true,
     header: 'ID',
     field: 'id'
   },
   {
-    type: TableCellType.TEXT,
+    isSortable: true,
     header: 'Phone',
     field: 'phone'
   },
   {
-    type: TableCellType.TEXT,
+    isSortable: true,
     header: 'E-mail',
     field: 'email'
   },
   {
-    type: TableCellType.ACTION,
+    isSortable: false,
     header: 'Actions',
     field: 'actions',
     component: () => (
