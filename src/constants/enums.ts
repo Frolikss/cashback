@@ -22,8 +22,3 @@ export enum MenuVariants {
   ACTIVE = 'active',
   DEFAULT = 'default'
 }
-
-export enum TableCellType {
-  TEXT = 'text',
-  ACTION = 'action'
-}
