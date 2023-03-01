@@ -1,11 +1,16 @@
-import PropTypes from 'prop-types';
+import { Dispatch, FC, SetStateAction } from 'react';
+import { ButtonVariants, MAX_LIST_PAGE_ITEMS, PaginationVariants } from '@constants';
 import { ListPagination, Select } from '@components';
-import { ButtonVariants, MAX_LIST_PAGE_ITEMS } from '@constants';
 import { Button } from '@form';
 import { ReactComponent as CollectionViewIcon } from '@svg/collectionView.svg';
 import { ReactComponent as TableViewIcon } from '@svg/tableView.svg';
 
-export const Footer = ({ viewType, setView }) => {
+interface Props {
+  isTableView: boolean;
+  setView: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Footer: FC<Props> = ({ isTableView, setView }) => {
   const changeViewOnClick = () => {
     setView((prev) => !prev);
   };
@@ -15,7 +20,7 @@ export const Footer = ({ viewType, setView }) => {
       <div className="flex gap-2.5">
         <Select options={MAX_LIST_PAGE_ITEMS} />
         <Button onClick={changeViewOnClick} variant={ButtonVariants.PRIMARY}>
-          {viewType ? (
+          {!isTableView ? (
             <CollectionViewIcon className="pointer-events-none w-6 h-6" />
           ) : (
             <TableViewIcon className="pointer-events-none w-6 h-6" />
@@ -23,14 +28,9 @@ export const Footer = ({ viewType, setView }) => {
         </Button>
       </div>
       <div className="flex">
-        <ListPagination style="flex gap-4 items-center [&>*]:flex [&>*]:items-center [&>*]:justify-center [&>*]:w-2.5 [&>*]:h-2.5 [&>*]:cursor-pointer [&>*]:p-5" />
+        <ListPagination variant={PaginationVariants.DEFAULT} />
         <Button variant={ButtonVariants.PRIMARY}>Show All</Button>
       </div>
     </div>
   );
-};
-
-Footer.propTypes = {
-  viewType: PropTypes.bool,
-  setView: PropTypes.func
 };

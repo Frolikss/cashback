@@ -21,7 +21,7 @@ export const ListPage = () => {
       ) : (
         <CollectionView variant={CollectionViewCellVariants.USERS} contents={users} />
       )}
-      <Footer viewType={isTableView} setView={setIsTableView} />
+      <Footer isTableView={isTableView} setView={setIsTableView} />
     </div>
   );
 };
