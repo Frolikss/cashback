@@ -12,7 +12,7 @@ interface Props<T> {
 
 export const TableView = <T extends CellData>({ contents, headers }: Props<T>) => {
   const [order, setOrder] = useState(false);
-  const [, setSearchParams] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
 
   const setCellOrder = (field: string) => {
     setOrder((prev) => !prev);
