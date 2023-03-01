@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { ButtonVariants, ROUTES } from '@constants';
 import { asyncLogin } from '@auth';
@@ -9,7 +9,7 @@ import { useAppDispatch } from '@hooks';
 export const LoginForm = () => {
   const dispatch = useAppDispatch();
 
-  const onSubmit = (data: object) => dispatch(asyncLogin(data));
+  const onSubmit = (data: FieldValues) => dispatch(asyncLogin(data));
 
   const {
     register,

@@ -12,7 +12,7 @@ interface Props {
 export const ListPagination: FC<Props> = ({ variant }) => {
   const [_, setSearchParams] = useSearchParams();
 
-  const setPageQueryParams = (current: number) => setSearchParams({ page: `${current}` });
+  const setPageQueryParams = (current: number) => setSearchParams({ page: String(current) });
 
   const paginationRender = (current: number, type: string, element: ReactNode) => {
     if (type === 'prev' && current !== 0) {
