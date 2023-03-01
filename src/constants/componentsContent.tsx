@@ -11,9 +11,9 @@ import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
 import avatarSmall from '@png/avatarSmall.png';
 
 export const MAX_LIST_PAGE_ITEMS = [
-  { id: 0, value: 10 },
-  { id: 1, value: 20 },
-  { id: 2, value: 50 }
+  { id: 0, value: '10' },
+  { id: 1, value: '20' },
+  { id: 2, value: '50' }
 ];
 export const MODAL_MENU_CONTENT = [
   {

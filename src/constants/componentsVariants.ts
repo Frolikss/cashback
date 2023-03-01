@@ -5,7 +5,8 @@ import {
   InputVariants,
   MenuVariantStyle,
   MenuVariants,
-  ModalVariants
+  ModalVariants,
+  PaginationVariants
 } from '@constants';
 import avatarBig from '@png/avatarBig.png';
 
@@ -56,4 +57,9 @@ export const MENU_STYLES: { [key in MenuVariants]: MenuVariantStyle } = {
 export const INPUT_STYLES: { [key in InputVariants]: string } = {
   [InputVariants.PRIMARY]:
     'bg-base-100 text-lg px-6 py-3.5 rounded-lg leading-5 placeholder:text-base-600 active:placeholder:text-base-600 outline-none hover:outline-3 focus:bg-base-100 focus:outline-3 hover:outline-offset-0 focus:outline-offset-0 hover:outline-accent-primary focus:outline-accent-primary hover:bg-accent-lighter hover:placeholder:text-accent-dark'
+};
+
+export const PAGINATION_STYLES: { [key in PaginationVariants]: string } = {
+  [PaginationVariants.DEFAULT]:
+    'flex gap-4 items-center [&>*]:flex [&>*]:items-center [&>*]:justify-center [&>*]:w-2.5 [&>*]:h-2.5 [&>*]:cursor-pointer [&>*]:p-5'
 };

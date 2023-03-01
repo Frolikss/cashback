@@ -22,3 +22,7 @@ export enum MenuVariants {
   ACTIVE = 'active',
   DEFAULT = 'default'
 }
+
+export enum PaginationVariants {
+  DEFAULT = 'default'
+}
