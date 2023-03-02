@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { CellData, TableHeader } from '@constants';
-import { TableRow } from '@components';
-import { Button } from '@form';
+import { CellData, TableHeader } from '@interfaces';
+import { Button, TableRow } from '@components';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 
 interface Props<T> {

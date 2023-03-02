@@ -1,13 +1,13 @@
-import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
-import { CurrentUserState } from '@constants';
-import { asyncGetCurrentUser, setSelfAction } from '@currentUser';
+import { CurrentUserState, User } from '@interfaces';
+import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
+import { asyncGetCurrentUser, setSelfAction } from '@modules';
 
 export const getCurrentUserReducer = (builder: ActionReducerMapBuilder<CurrentUserState>) => {
   builder
     .addCase(asyncGetCurrentUser.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(asyncGetCurrentUser.fulfilled, (state, { payload }) => {
+    .addCase(asyncGetCurrentUser.fulfilled, (state, { payload }: PayloadAction<User>) => {
       state.isLoading = false;
       state.currentUser = payload;
       state.isAuthorized = true;
@@ -19,7 +19,7 @@ export const getCurrentUserReducer = (builder: ActionReducerMapBuilder<CurrentUs
 };
 
 export const setSelfReducer = (builder: ActionReducerMapBuilder<CurrentUserState>) => {
-  builder.addCase(setSelfAction, (state, { payload }) => {
-    state.isAuthorized = !!payload;
+  builder.addCase(setSelfAction, (state, { payload }: PayloadAction<User>) => {
+    state.isAuthorized = Boolean(payload);
   });
 };

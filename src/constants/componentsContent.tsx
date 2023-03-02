@@ -1,5 +1,6 @@
-import { ButtonVariants, ROUTES, TableHeader } from '@constants';
-import { Button } from '@form';
+import { ButtonVariants, ROUTES } from '@constants';
+import { TableHeader } from '@interfaces';
+import { Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';

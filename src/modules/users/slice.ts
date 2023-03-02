@@ -1,14 +1,14 @@
+import { UsersState } from '@interfaces';
 import { createSlice } from '@reduxjs/toolkit';
-import { UsersState } from '@constants';
-import { getUsersReducer } from '@users';
+import { getUsersReducer } from '@modules';
 
 const initialState: UsersState = {
   isAuthorized: false,
   isLoading: false,
-  users: null
+  list: null
 };
 
-const usersSlice = createSlice({
+const slice = createSlice({
   name: 'users',
   initialState,
   reducers: {},
@@ -17,4 +17,4 @@ const usersSlice = createSlice({
   }
 });
 
-export const usersReducers = usersSlice.reducer;
+export const usersReducers = slice.reducer;

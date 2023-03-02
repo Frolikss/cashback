@@ -1,13 +1,12 @@
 import {
   ButtonVariants,
   CollectionViewCellVariants,
-  CollectionViewVariant,
   InputVariants,
-  MenuVariantStyle,
   MenuVariants,
   ModalVariants,
   PaginationVariants
 } from '@constants';
+import { CollectionViewVariant, MenuVariantStyle } from '@interfaces';
 import avatarBig from '@png/avatarBig.png';
 
 export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {

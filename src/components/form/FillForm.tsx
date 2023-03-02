@@ -1,6 +1,6 @@
 import { FC, ForwardedRef, Fragment, forwardRef } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { Field } from '@constants';
+import { Field } from '@interfaces';
 
 interface Props {
   fields: Field[];

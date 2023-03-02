@@ -17,20 +17,11 @@
       "@apis": [
         "apis"
       ],
-      "@auth": [
-        "modules/auth"
+      "@modules": [
+        "modules"
       ],
-      "@users": [
-        "modules/users"
-      ],
-      "@currentUser": [
-        "modules/currentUser"
-      ],
-      "@fields": [
-        "constants/fields"
-      ],
-      "@form": [
-        "components/form"
+      "@interfaces": [
+        "interfaces"
       ],
       "@store": [
         "store.ts"

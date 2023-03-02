@@ -1,9 +1,10 @@
+import { User } from '@interfaces';
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { UNAUTHORIZED_ERROR_MASSAGE } from '@constants';
 import { userSelfApi } from '@apis';
 import { handleError } from '@utils';
 
-export const setSelfAction = createAction('setSelf');
+export const setSelfAction = createAction<User>('setSelf');
 
 export const asyncGetCurrentUser = createAsyncThunk(
   'getCurrentUser',

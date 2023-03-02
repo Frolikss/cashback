@@ -1,10 +1,7 @@
+import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from '@store';
 
-export const selectUsersState = (state: RootState) => {
-  if (state.users.users) {
-    return state.users.users.map(({ status: _, loginToken: __, ...user }) => user);
-  }
-};
+const selectUsersState = (state: RootState) => state.users;
 
-export const selectAuthState = (state: RootState) => state.users.isAuthorized;
-export const selectUserLoading = (state: RootState) => state.users.isLoading;
+export const selectUsers = createSelector(selectUsersState, (state) => state.list);
+export const selectUserLoading = createSelector(selectUsersState, (state) => state.isLoading);

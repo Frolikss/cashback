@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { FieldValues } from 'react-hook-form';
 import { LOGIN_ERROR_MESSAGE } from '@constants';
-import { setSelfAction } from '@currentUser';
 import { authApi } from '@apis';
+import { setSelfAction } from '@modules';
 import { handleError } from '@utils';
 
 export const asyncLogin = createAsyncThunk(

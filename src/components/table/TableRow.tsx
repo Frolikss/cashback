@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CellData, TableHeader } from '@constants';
+import { CellData, TableHeader } from '@interfaces';
 
 interface Props {
   cellData: CellData;

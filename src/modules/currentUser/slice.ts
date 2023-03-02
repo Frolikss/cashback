@@ -1,6 +1,6 @@
+import { CurrentUserState } from '@interfaces';
 import { createSlice } from '@reduxjs/toolkit';
-import { CurrentUserState } from '@constants';
-import { getCurrentUserReducer, setSelfReducer } from '@currentUser';
+import { getCurrentUserReducer, setSelfReducer } from '@modules';
 
 const initialState: CurrentUserState = {
   isLoading: false,
@@ -8,7 +8,7 @@ const initialState: CurrentUserState = {
   currentUser: null
 };
 
-const currentUserSlice = createSlice({
+const slice = createSlice({
   name: 'currentUser',
   initialState,
   reducers: {},
@@ -18,4 +18,4 @@ const currentUserSlice = createSlice({
   }
 });
 
-export const currentUserReducer = currentUserSlice.reducer;
+export const currentUserReducer = slice.reducer;

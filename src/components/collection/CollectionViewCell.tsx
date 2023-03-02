@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import { COLLECTION_VIEW_CELL_VARIANTS, CellData, CollectionViewCellVariants } from '@constants';
+import { COLLECTION_VIEW_CELL_VARIANTS, CollectionViewCellVariants } from '@constants';
+import { User } from '@interfaces';
 import { ReactComponent as MoreIcon } from '@svg/itemMore.svg';
 
 interface Props {
   variant: CollectionViewCellVariants;
-  cellData: CellData;
+  cellData: User;
 }
 
 export const CollectionViewCell: FC<Props> = ({ variant, cellData }) => {

@@ -1,12 +1,12 @@
+import { AuthState } from '@interfaces';
 import { createSlice } from '@reduxjs/toolkit';
-import { AuthState } from '@constants';
-import { loginUserReducer } from '@auth';
+import { loginUserReducer } from '@modules';
 
 const initialState: AuthState = {
   isLoading: false
 };
 
-const authSlice = createSlice({
+const slice = createSlice({
   name: 'auth',
   initialState,
   reducers: {},
@@ -15,4 +15,4 @@ const authSlice = createSlice({
   }
 });
 
-export const authReducer = authSlice.reducer;
+export const authReducer = slice.reducer;

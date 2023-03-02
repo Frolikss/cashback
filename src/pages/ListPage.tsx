@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
-import { CollectionViewCellVariants, TABLE_HEADERS, User } from '@constants';
+import { CollectionViewCellVariants, TABLE_HEADERS } from '@constants';
+import { User } from '@interfaces';
 import { CollectionView, Footer, Header, TableView } from '@components';
-import { asyncGetUsers, selectUserLoading, selectUsersState } from '@users';
+import { asyncGetUsers, selectUserLoading, selectUsers } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 
 export const ListPage = () => {
   const dispatch = useAppDispatch();
-  const users = useAppSelector(selectUsersState);
+  const users = useAppSelector(selectUsers);
   const isLoading = useAppSelector(selectUserLoading);
+
   const [isTableView, setIsTableView] = useState(true);
 
-  const getCurrentView = (users: Omit<User, 'status' | 'loginToken'>[]) => {
+  const getCurrentView = (users: User[]) => {
     return isTableView ? (
       <TableView contents={users} headers={TABLE_HEADERS} />
     ) : (

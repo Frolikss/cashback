@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { ACCESS_TOKEN, ROUTES } from '@constants';
-import { asyncGetCurrentUser, selectAuthState } from '@currentUser';
+import { asyncGetCurrentUser, selectAuthorizationStatus } from '@modules';
 import { ListPage, LoginPage } from '@pages';
 import { ProtectedRoute } from '@routes';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function App() {
-  const isAuthorized = useSelector(selectAuthState);
+  const isAuthorized = useSelector(selectAuthorizationStatus);
   const dispatch = useDispatch();
   const token = localStorage.getItem(ACCESS_TOKEN);
 

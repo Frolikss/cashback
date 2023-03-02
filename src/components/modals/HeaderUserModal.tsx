@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { ACCESS_TOKEN, ButtonVariants } from '@constants';
-import { asyncGetCurrentUser, selectCurrentUser } from '@currentUser';
-import { Button } from '@form';
+import { Button } from '@components';
+import { asyncGetCurrentUser, selectCurrentUser } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import avatar from '@png/avatarBig.png';
 
@@ -24,7 +24,7 @@ export const HeaderUserModal: FC = () => {
       <span className="font-bold">Mona Lisa</span>
       <div className="flex flex-col gap-1 text-base-600 text-center">
         {!currentUser ? (
-          <div>Error</div>
+          <div>Failed loading user data</div>
         ) : (
           <>
             <span>{currentUser.role}</span>
