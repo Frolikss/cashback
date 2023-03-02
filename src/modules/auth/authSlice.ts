@@ -1,7 +1,8 @@
-import { loginUserReducer } from '@auth';
 import { createSlice } from '@reduxjs/toolkit';
+import { AuthState } from '@constants';
+import { loginUserReducer } from '@auth';
 
-const initialState = {
+const initialState: AuthState = {
   isLoading: false
 };
 

@@ -1,18 +1,19 @@
-import { authApi } from '@apis/CashbackAuthApi';
-import { LOGIN_ERROR_MESSAGE } from '@constants';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setSelfAction } from '@users';
+import { FieldValues } from 'react-hook-form';
+import { LOGIN_ERROR_MESSAGE } from '@constants';
+import { setSelfAction } from '@currentUser';
+import { authApi } from '@apis';
 import { handleError } from '@utils';
 
 export const asyncLogin = createAsyncThunk(
   'login',
-  async (payload, { dispatch, rejectWithValue }) => {
+  async (payload: FieldValues, { dispatch, rejectWithValue }) => {
     try {
       const response = await authApi.signIn(payload);
       dispatch(setSelfAction(response.data));
     } catch (error) {
       handleError(error, LOGIN_ERROR_MESSAGE);
-      return rejectWithValue(error.response);
+      return rejectWithValue(error);
     }
   }
 );

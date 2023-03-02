@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCurrentUserReducer, getUsersReducer, setSelfReducer } from '@users';
+import { UsersState } from '@constants';
+import { getUsersReducer } from '@users';
 
-const initialState = {
+const initialState: UsersState = {
   isAuthorized: false,
-  currentUser: {},
-  users: []
+  isLoading: false,
+  users: null
 };
 
 const usersSlice = createSlice({
   name: 'users',
   initialState,
+  reducers: {},
   extraReducers: (builder) => {
     getUsersReducer(builder);
-    getCurrentUserReducer(builder);
-    setSelfReducer(builder);
   }
 });
 

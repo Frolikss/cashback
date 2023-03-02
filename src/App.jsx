@@ -1,12 +1,12 @@
-import { ROUTES, ACCESS_TOKEN } from '@constants';
-import { ListPage, LoginPage } from '@pages';
-import { ProtectedRoute } from '@routes';
-import { asyncGetCurrentUser, selectAuthState } from '@users';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ACCESS_TOKEN, ROUTES } from '@constants';
+import { asyncGetCurrentUser, selectAuthState } from '@currentUser';
+import { ListPage, LoginPage } from '@pages';
+import { ProtectedRoute } from '@routes';
 
 export function App() {
   const isAuthorized = useSelector(selectAuthState);
@@ -17,7 +17,7 @@ export function App() {
     if (token) {
       dispatch(asyncGetCurrentUser());
     }
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return (
     <>

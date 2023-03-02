@@ -10,6 +10,7 @@ module.exports = {
       '@apis': path.resolve(__dirname, 'src/apis'),
       '@auth': path.resolve(__dirname, 'src/modules/auth'),
       '@users': path.resolve(__dirname, 'src/modules/users'),
+      '@currentUser': path.resolve(__dirname, 'src/modules/currentUser'),
       '@fields': path.resolve(__dirname, 'src/constants/fields'),
       '@form': path.resolve(__dirname, 'src/components/form'),
       '@store': path.resolve(__dirname, 'src/store.ts'),

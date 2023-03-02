@@ -23,6 +23,9 @@
       "@users": [
         "modules/users"
       ],
+      "@currentUser": [
+        "modules/currentUser"
+      ],
       "@fields": [
         "constants/fields"
       ],

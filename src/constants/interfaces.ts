@@ -30,8 +30,7 @@ export interface TableVariant {
 }
 
 export interface CellData {
-  [index: string]: string | number;
-  id: number;
+  [key: string]: string | number;
 }
 
 export interface TableHeader {
@@ -40,6 +39,32 @@ export interface TableHeader {
   field: string;
   component?: () => JSX.Element;
   defaultValue?: string;
+}
+
+export interface AuthState {
+  isLoading: boolean;
+}
+
+export interface User {
+  [key: string]: string;
+  email: string;
+  id: string;
+  phone: string;
+  role: string;
+  status: string;
+  loginToken: string;
+}
+
+export interface UsersState {
+  isLoading: boolean;
+  isAuthorized: boolean;
+  users: User[] | null;
+}
+
+export interface CurrentUserState {
+  isLoading: boolean;
+  isAuthorized: boolean;
+  currentUser: User | null;
 }
 
 export type FieldData = Omit<Field, 'component'>;
