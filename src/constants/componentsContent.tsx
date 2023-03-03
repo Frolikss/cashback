@@ -1,7 +1,9 @@
+import { ColumnGroupType, ColumnType } from 'rc-table/es/interface';
 import { ButtonVariants, ROUTES } from '@constants';
-import { TableHeader } from '@interfaces';
+import { TableHeader, User } from '@interfaces';
 import { Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
+import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
 import { ReactComponent as ReportIcon } from '@svg/reportIcon.svg';
@@ -51,6 +53,64 @@ export const MODAL_MENU_CONTENT = [
     route: ROUTES.LOGIN,
     icon: ReportIcon,
     name: 'Reports'
+  }
+];
+
+export const getColumns = (onClick: (field: string) => void) => [
+  {
+    title: (
+      <Button onClick={() => onClick('name')}>
+        Name <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'name',
+    render: () => (
+      <div className="flex items-center gap-6 font-bold">
+        <img src={avatarSmall} alt="avatar" className="w-10 h-10" />
+        Avery Ross
+      </div>
+    )
+  },
+  {
+    title: (
+      <Button onClick={() => onClick('role')}>
+        Status <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'role'
+  },
+  {
+    title: (
+      <Button onClick={() => onClick('id')}>
+        ID <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'id'
+  },
+  {
+    title: (
+      <Button onClick={() => onClick('phone')}>
+        Phone <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'phone'
+  },
+  {
+    title: (
+      <Button onClick={() => onClick('email')}>
+        E-mail <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'email'
+  },
+  {
+    title: 'Actions',
+    dataIndex: 'actions',
+    render: () => (
+      <Button>
+        <EditIcon />
+      </Button>
+    )
   }
 ];
 

@@ -28,3 +28,24 @@
 .rc-pagination-item-active {
     @apply bg-accent-primary text-base-100 rounded-lg;
 }
+
+table {
+    @apply w-full;
+}
+
+th {
+    @apply text-right text-base-600 font-medium;
+}
+
+th:not(:last-child) {
+    @apply text-left py-6;
+    /*after:content-arrow after:align-top*/
+}
+
+td:last-child {
+    @apply text-right flex items-center justify-end py-6;
+}
+
+tr {
+    @apply border-b-1 border-base-300;
+}

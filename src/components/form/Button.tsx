@@ -17,7 +17,7 @@ export const Button: FC<Props> = ({
 }) => {
   return (
     <button
-      className={cn('self-stretch flex-1 rounded-lg', BUTTON_STYLES[variant])}
+      className={cn('self-stretch rounded-lg', BUTTON_STYLES[variant])}
       ref={modalRef}
       {...props}>
       {children}

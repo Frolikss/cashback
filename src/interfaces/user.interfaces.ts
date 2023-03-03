@@ -1,6 +1,4 @@
 export interface User {
-  //TODO: DELETE [key: string]
-  [key: string]: string;
   email: string;
   id: string;
   phone: string;

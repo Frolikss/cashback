@@ -7,6 +7,7 @@ module.exports = {
         4.5: '4.5rem'
       },
       borderWidth: {
+        1: '1px',
         3: '3px'
       },
       outlineWidth: {
@@ -18,10 +19,14 @@ module.exports = {
       backgroundImage: {
         login:
           "url('/src/assets/png/bgPattern.png'), linear-gradient(to top right, #F9CDA9 0%, #F6B2A5 100%)",
-        corner: "url('/src/assets/svg/selectCorner.svg')"
+        corner: "url('/src/assets/svg/selectCorner.svg')",
+        arrow: "url('/src/assets/svg/arrow.svg')"
       },
       backgroundPosition: {
         'right-center': '90% center'
+      },
+      content: {
+        arrow: "url('/src/assets/svg/arrow.svg')"
       },
       colors: {
         base: {

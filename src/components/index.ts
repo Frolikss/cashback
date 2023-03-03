@@ -11,8 +11,6 @@ export * from './header/Header';
 export * from './LoginForm';
 export * from './modals/ModalWrapper';
 export * from './modals/HeaderUserModal';
-export * from './table/TableRow';
-export * from './table/TableView';
 export * from './form/FillForm';
 export * from './form/Button';
 export * from './form/Input';
