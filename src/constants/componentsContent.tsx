@@ -1,6 +1,5 @@
-import { ColumnGroupType, ColumnType } from 'rc-table/es/interface';
 import { ButtonVariants, ROUTES } from '@constants';
-import { TableHeader, User } from '@interfaces';
+import { TableHeader } from '@interfaces';
 import { Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';

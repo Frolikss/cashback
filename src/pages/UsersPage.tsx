@@ -5,7 +5,7 @@ import { CollectionView, Footer, Header } from '@components';
 import { asyncGetUsers, selectUserLoading, selectUsers } from '@modules';
 import { useAppDispatch, useAppSelector, useCellOrder } from '@hooks';
 
-export const ListPage = () => {
+export const UsersPage = () => {
   const { setCellOrder } = useCellOrder();
   const [isTableView, setIsTableView] = useState(true);
 

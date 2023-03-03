@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { ACCESS_TOKEN, ROUTES } from '@constants';
 import { asyncGetCurrentUser, selectAuthorizationStatus } from '@modules';
-import { ListPage, LoginPage } from '@pages';
+import { LoginPage, UsersPage } from '@pages';
 import { ProtectedRoute } from '@routes';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -26,7 +26,7 @@ export function App() {
           <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         </Route>
         <Route element={<ProtectedRoute isAuth={!isAuthorized} to={ROUTES.LOGIN} />}>
-          <Route element={<ListPage />} path={ROUTES.HOME} />
+          <Route element={<UsersPage />} path={ROUTES.HOME} />
         </Route>
       </Routes>
       <ToastContainer />
