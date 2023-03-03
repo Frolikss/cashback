@@ -39,7 +39,6 @@ th {
 
 th:not(:last-child) {
     @apply text-left py-6;
-    /*after:content-arrow after:align-top*/
 }
 
 td:last-child {
