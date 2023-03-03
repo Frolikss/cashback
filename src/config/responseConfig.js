@@ -1,4 +1,4 @@
-import { AUTH_ERROR_MESSAGE, EXPIRED_TOKEN_MESSAGE, ACCESS_TOKEN } from '@constants';
+import { ACCESS_TOKEN, AUTH_ERROR_MESSAGE, EXPIRED_TOKEN_MESSAGE } from '@constants';
 
 export const responseConfig = (response) => {
   if (response.data?.loginToken) {

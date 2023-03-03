@@ -49,3 +49,7 @@ td:last-child {
 tr {
     @apply border-b-1 border-base-300;
 }
+
+.react-loading-skeleton {
+    @apply h-24 my-2;
+}
