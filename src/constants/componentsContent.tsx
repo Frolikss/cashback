@@ -1,5 +1,4 @@
-import { ButtonVariants, ROUTES } from '@constants';
-import { TableHeader } from '@interfaces';
+import { ROUTES } from '@constants';
 import { Avatar, Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';

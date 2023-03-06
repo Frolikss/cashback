@@ -8,9 +8,9 @@ export const setSelfAction = createAction<User>('SET_SELF');
 
 export const asyncGetCurrentUser = createAsyncThunk(
   'GET_CURRENT_USER',
-  async (payload, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-      const { data } = await userSelfApi.getCurrentUser(payload);
+      const { data } = await userSelfApi.getCurrentUser();
       return data;
     } catch (error) {
       handleError(error, UNAUTHORIZED_ERROR_MASSAGE);
