@@ -1,16 +1,16 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { UNAUTHORIZED_ERROR_MASSAGE } from '@constants';
 import { User } from '@interfaces';
-import { userSelfApi } from '@apis';
+import { usersApi } from '@apis';
 import { handleError } from '@helpers';
 
 export const setSelfAction = createAction<User>('SET_SELF');
 
 export const asyncGetCurrentUser = createAsyncThunk(
   'GET_CURRENT_USER',
-  async (payload, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-      const { data } = await userSelfApi.getCurrentUser(payload);
+      const { data } = await usersApi.getCurrentUser();
       return data;
     } catch (error) {
       handleError(error, UNAUTHORIZED_ERROR_MASSAGE);

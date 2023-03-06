@@ -1,2 +1,2 @@
-export * from './CashbackAuthApi';
-export * from './CashbackUsersApi';
+export * from './cashbackAuthApi';
+export * from './cashbackUsersApi';
