@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@app":[
-        "App.jsx"
+        "App.tsx"
       ],
       "@components": [
         "components"

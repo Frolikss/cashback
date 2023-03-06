@@ -8,7 +8,7 @@ export const setSelfAction = createAction<User>('SET_SELF');
 
 export const asyncGetCurrentUser = createAsyncThunk(
   'GET_CURRENT_USER',
-  async (_, { rejectWithValue }) => {
+  async (_: void, { rejectWithValue }) => {
     try {
       const { data } = await usersApi.getCurrentUser();
       return data;
