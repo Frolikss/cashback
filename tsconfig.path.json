@@ -17,17 +17,11 @@
       "@apis": [
         "apis"
       ],
-      "@auth": [
-        "modules/auth"
+      "@modules": [
+        "modules"
       ],
-      "@users": [
-        "modules/users"
-      ],
-      "@fields": [
-        "constants/fields"
-      ],
-      "@form": [
-        "components/form"
+      "@interfaces": [
+        "interfaces"
       ],
       "@store": [
         "store.ts"
@@ -47,8 +41,8 @@
       "@hooks": [
         "hooks"
       ],
-      "@utils": [
-        "utils"
+      "@helpers": [
+        "helpers"
       ],
       "@styles": [
         "index.css"

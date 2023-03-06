@@ -9,4 +9,3 @@ export * from './styles';
 export * from './toastIds';
 export * from './headerModules';
 export * from './tokensNames';
-export * from './interfaces';

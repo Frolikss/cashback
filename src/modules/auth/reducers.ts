@@ -1,6 +1,8 @@
-import { asyncLogin } from '@auth';
+import { AuthState } from '@interfaces';
+import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
+import { asyncLogin } from '@modules';
 
-export const loginUserReducer = (builder) => {
+export const loginUserReducer = (builder: ActionReducerMapBuilder<AuthState>) => {
   builder
     .addCase(asyncLogin.pending, (state) => {
       state.isLoading = true;

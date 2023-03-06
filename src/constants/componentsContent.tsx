@@ -1,6 +1,8 @@
-import { ButtonVariants, ROUTES, TableHeader } from '@constants';
-import { Button } from '@form';
+import { ButtonVariants, ROUTES } from '@constants';
+import { TableHeader } from '@interfaces';
+import { Avatar, Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
+import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
 import { ReactComponent as ReportIcon } from '@svg/reportIcon.svg';
@@ -8,7 +10,6 @@ import { ReactComponent as ShopsIcon } from '@svg/shopsIcon.svg';
 import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
 import { ReactComponent as UsersIcon } from '@svg/usersIcon.svg';
 import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
-import avatarSmall from '@png/avatarSmall.png';
 
 export const MAX_LIST_PAGE_ITEMS = [
   { id: 0, value: '10' },
@@ -53,44 +54,53 @@ export const MODAL_MENU_CONTENT = [
   }
 ];
 
-export const TABLE_HEADERS: TableHeader[] = [
+export const getColumns = (handleSortButtonClick: (field: string) => void) => [
   {
-    isSortable: true,
-    header: 'Name',
-    field: 'name',
-    component: () => (
-      <div className="flex items-center gap-6 font-bold">
-        <img src={avatarSmall} alt="avatar" className="w-10 h-10" />
-      </div>
+    title: (
+      <Button onClick={() => handleSortButtonClick('name')}>
+        Name <ArrowIcon />
+      </Button>
     ),
-    defaultValue: 'Unspecified'
+    dataIndex: 'name',
+    render: () => <Avatar />
   },
   {
-    isSortable: true,
-    header: 'Status',
-    field: 'role'
+    title: (
+      <Button onClick={() => handleSortButtonClick('role')}>
+        Status <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'role'
   },
   {
-    isSortable: true,
-    header: 'ID',
-    field: 'id'
+    title: (
+      <Button onClick={() => handleSortButtonClick('id')}>
+        ID <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'id'
   },
   {
-    isSortable: true,
-    header: 'Phone',
-    field: 'phone'
+    title: (
+      <Button onClick={() => handleSortButtonClick('phone')}>
+        Phone <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'phone'
   },
   {
-    isSortable: true,
-    header: 'E-mail',
-    field: 'email'
+    title: (
+      <Button onClick={() => handleSortButtonClick('email')}>
+        E-mail <ArrowIcon />
+      </Button>
+    ),
+    dataIndex: 'email'
   },
   {
-    isSortable: false,
-    header: 'Actions',
-    field: 'actions',
-    component: () => (
-      <Button variant={ButtonVariants.UTILITY}>
+    title: 'Actions',
+    dataIndex: 'actions',
+    render: () => (
+      <Button>
         <EditIcon />
       </Button>
     )

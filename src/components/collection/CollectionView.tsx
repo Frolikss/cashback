@@ -1,12 +1,14 @@
-import { CellData, CollectionViewCellVariants } from '@constants';
+import { FC } from 'react';
+import { CollectionViewCellVariants } from '@constants';
+import { User } from '@interfaces';
 import { CollectionViewCell } from '@components';
 
-interface Props<T> {
-  contents: T[];
+interface Props {
+  contents: User[];
   variant: CollectionViewCellVariants;
 }
 
-export const CollectionView = <T extends CellData>({ contents, variant }: Props<T>) => {
+export const CollectionView: FC<Props> = ({ contents, variant }) => {
   return (
     <div className="container content-start gap-4 flex flex-wrap justify-between items-start flex-1 mx-auto">
       {contents.map((contentItem) => (

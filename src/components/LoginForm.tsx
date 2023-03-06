@@ -1,9 +1,8 @@
 import { FieldValues, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { ButtonVariants, ROUTES } from '@constants';
-import { asyncLogin } from '@auth';
-import { LOGIN_FIELDS_DATA } from '@fields';
-import { Button, FillForm } from '@form';
+import { ButtonVariants, LOGIN_FIELDS_DATA, ROUTES } from '@constants';
+import { Button, FillForm } from '@components';
+import { asyncLogin } from '@modules';
 import { useAppDispatch } from '@hooks';
 
 export const LoginForm = () => {

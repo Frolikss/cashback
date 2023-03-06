@@ -1,15 +1,15 @@
-import { ROUTES, ACCESS_TOKEN } from '@constants';
-import { ListPage, LoginPage } from '@pages';
-import { ProtectedRoute } from '@routes';
-import { asyncGetCurrentUser, selectAuthState } from '@users';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
+import { ACCESS_TOKEN, ROUTES } from '@constants';
+import { asyncGetCurrentUser, selectAuthorizationStatus } from '@modules';
+import { LoginPage, UsersPage } from '@pages';
+import { ProtectedRoute } from '@routes';
 import 'react-toastify/dist/ReactToastify.css';
 
 export function App() {
-  const isAuthorized = useSelector(selectAuthState);
+  const isAuthorized = useSelector(selectAuthorizationStatus);
   const dispatch = useDispatch();
   const token = localStorage.getItem(ACCESS_TOKEN);
 
@@ -17,7 +17,7 @@ export function App() {
     if (token) {
       dispatch(asyncGetCurrentUser());
     }
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return (
     <>
@@ -26,7 +26,7 @@ export function App() {
           <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         </Route>
         <Route element={<ProtectedRoute isAuth={!isAuthorized} to={ROUTES.LOGIN} />}>
-          <Route element={<ListPage />} path={ROUTES.HOME} />
+          <Route element={<UsersPage />} path={ROUTES.HOME} />
         </Route>
       </Routes>
       <ToastContainer />

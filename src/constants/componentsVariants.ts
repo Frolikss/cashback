@@ -1,22 +1,21 @@
 import {
   ButtonVariants,
   CollectionViewCellVariants,
-  CollectionViewVariant,
   InputVariants,
-  MenuVariantStyle,
   MenuVariants,
   ModalVariants,
   PaginationVariants
 } from '@constants';
+import { CollectionViewVariant, MenuVariantStyle } from '@interfaces';
 import avatarBig from '@png/avatarBig.png';
 
 export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.PRIMARY]:
-    'text-base-100 bg-accent-primary font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
+    'text-base-100 bg-accent-primary flex-1 font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
   [ButtonVariants.SECONDARY]:
-    'text-accent-primary border-3 border-accent-primary hover:border-accent-dark',
+    'text-accent-primary border-3 flex-1 border-accent-primary hover:border-accent-dark',
   [ButtonVariants.TERTIARY]:
-    'w-full text-red-regular font-medium transition duration-300 hover:text-red-darker',
+    'w-full text-red-regular font-medium flex-1 transition duration-300 hover:text-red-darker',
   [ButtonVariants.UTILITY]:
     'hover:bg-base-200/70 p-0.5 transition-all duration-300 bg-base-100 rounded-full flex items-center justify-center'
 };
