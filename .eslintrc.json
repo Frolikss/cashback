@@ -12,6 +12,7 @@
     "plugins": ["react", "import", "@typescript-eslint"],
     "parser": "@typescript-eslint/parser",
     "rules": {
+        "@typescript-eslint/no-var-requires": "off",
         "react/no-children-prop": "off",
         "react/react-in-jsx-scope": "off",
         "no-console": [1, { "allow": ["warn", "error"] }],

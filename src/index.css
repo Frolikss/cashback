@@ -5,24 +5,24 @@
 @font-face {
     font-family: "e-Ukraine-Bold";
     src: local("eUkraineBold"),
-    url("./fonts/e-Ukraine/e-Ukraine-Bold.otf") format("opentype");
+    url("assets/fonts/e-Ukraine/e-Ukraine-Bold.otf") format("opentype");
 }
 @font-face {
     font-family: "e-Ukraine-Medium";
     src: local("eUkraineMedium"),
-    url("./fonts/e-Ukraine/e-Ukraine-Medium.otf") format("opentype");
+    url("assets/fonts/e-Ukraine/e-Ukraine-Medium.otf") format("opentype");
 }
 
 @font-face {
     font-family: "e-Ukraine-Regular";
     src: local("eUkraineRegular"),
-    url("./fonts/e-Ukraine/e-Ukraine-Regular.otf") format("opentype");
+    url("assets/fonts/e-Ukraine/e-Ukraine-Regular.otf") format("opentype");
 }
 
 @font-face {
     font-family: "e-Ukraine-Light";
     src: local("eUkraineLight"),
-    url("./fonts/e-Ukraine/e-Ukraine-Light.otf") format("opentype");
+    url("assets/fonts/e-Ukraine/e-Ukraine-Light.otf") format("opentype");
 }
 
 .rc-pagination-item-active {
