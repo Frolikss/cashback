@@ -14,3 +14,4 @@ export * from './modals/HeaderUserModal';
 export * from './form/FillForm';
 export * from './form/Button';
 export * from './form/Input';
+export * from './Avatar';

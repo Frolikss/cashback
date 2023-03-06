@@ -31,13 +31,6 @@ export const UsersPage = () => {
       <CollectionView variant={CollectionViewCellVariants.USERS} contents={usersData} />
     );
   }, [isTableView, users, setCellOrder]);
-  const usersComponent = useMemo(() => {
-    return users ? (
-      componentViewType
-    ) : (
-      <div className="flex items-center justify-center text-9xl">No data</div>
-    );
-  }, [users, componentViewType]);
 
   useEffect(() => {
     dispatch(asyncGetUsers());
@@ -50,8 +43,10 @@ export const UsersPage = () => {
         <div className="rounded-xl p-4 container flex-1 bg-base-100">
           <Skeleton className="bg-base-500 h-1/4" count={5} />
         </div>
+      ) : users ? (
+        componentViewType
       ) : (
-        usersComponent
+        <div className="flex items-center justify-center text-9xl">No data</div>
       )}
       <Footer isTableView={isTableView} setView={setIsTableView} />
     </div>

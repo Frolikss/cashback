@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { UNAUTHORIZED_ERROR_MASSAGE } from '@constants';
 import { usersApi } from '@apis';
-import { handleError } from '@utils';
+import { handleError } from '@helpers';
 
-export const asyncGetUsers = createAsyncThunk('getUsers', async (payload, { rejectWithValue }) => {
+export const asyncGetUsers = createAsyncThunk('GET_USERS', async (payload, { rejectWithValue }) => {
   try {
     const { data } = await usersApi.getUsers(payload);
     return data;

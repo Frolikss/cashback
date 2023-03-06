@@ -3,10 +3,10 @@ import { FieldValues } from 'react-hook-form';
 import { LOGIN_ERROR_MESSAGE } from '@constants';
 import { authApi } from '@apis';
 import { setSelfAction } from '@modules';
-import { handleError } from '@utils';
+import { handleError } from '@helpers';
 
 export const asyncLogin = createAsyncThunk(
-  'login',
+  'LOGIN',
   async (payload: FieldValues, { dispatch, rejectWithValue }) => {
     try {
       const response = await authApi.signIn(payload);

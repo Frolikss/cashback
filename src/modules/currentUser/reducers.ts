@@ -1,5 +1,5 @@
-import { CurrentUserState, User } from '@interfaces';
 import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
+import { CurrentUserState, User } from '@interfaces';
 import { asyncGetCurrentUser, setSelfAction } from '@modules';
 
 export const getCurrentUserReducer = (builder: ActionReducerMapBuilder<CurrentUserState>) => {

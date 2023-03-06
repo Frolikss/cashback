@@ -1,6 +1,6 @@
 import { ButtonVariants, ROUTES } from '@constants';
 import { TableHeader } from '@interfaces';
-import { Button } from '@components';
+import { Avatar, Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
@@ -55,24 +55,19 @@ export const MODAL_MENU_CONTENT = [
   }
 ];
 
-export const getColumns = (onClick: (field: string) => void) => [
+export const getColumns = (handleSortButtonClick: (field: string) => void) => [
   {
     title: (
-      <Button onClick={() => onClick('name')}>
+      <Button onClick={() => handleSortButtonClick('name')}>
         Name <ArrowIcon />
       </Button>
     ),
     dataIndex: 'name',
-    render: () => (
-      <div className="flex items-center gap-6 font-bold">
-        <img src={avatarSmall} alt="avatar" className="w-10 h-10" />
-        Avery Ross
-      </div>
-    )
+    render: () => <Avatar />
   },
   {
     title: (
-      <Button onClick={() => onClick('role')}>
+      <Button onClick={() => handleSortButtonClick('role')}>
         Status <ArrowIcon />
       </Button>
     ),
@@ -80,7 +75,7 @@ export const getColumns = (onClick: (field: string) => void) => [
   },
   {
     title: (
-      <Button onClick={() => onClick('id')}>
+      <Button onClick={() => handleSortButtonClick('id')}>
         ID <ArrowIcon />
       </Button>
     ),
@@ -88,7 +83,7 @@ export const getColumns = (onClick: (field: string) => void) => [
   },
   {
     title: (
-      <Button onClick={() => onClick('phone')}>
+      <Button onClick={() => handleSortButtonClick('phone')}>
         Phone <ArrowIcon />
       </Button>
     ),
@@ -96,7 +91,7 @@ export const getColumns = (onClick: (field: string) => void) => [
   },
   {
     title: (
-      <Button onClick={() => onClick('email')}>
+      <Button onClick={() => handleSortButtonClick('email')}>
         E-mail <ArrowIcon />
       </Button>
     ),
@@ -107,50 +102,6 @@ export const getColumns = (onClick: (field: string) => void) => [
     dataIndex: 'actions',
     render: () => (
       <Button>
-        <EditIcon />
-      </Button>
-    )
-  }
-];
-
-export const TABLE_HEADERS: TableHeader[] = [
-  {
-    isSortable: true,
-    header: 'Name',
-    field: 'name',
-    component: () => (
-      <div className="flex items-center gap-6 font-bold">
-        <img src={avatarSmall} alt="avatar" className="w-10 h-10" />
-      </div>
-    ),
-    defaultValue: 'Unspecified'
-  },
-  {
-    isSortable: true,
-    header: 'Status',
-    field: 'role'
-  },
-  {
-    isSortable: true,
-    header: 'ID',
-    field: 'id'
-  },
-  {
-    isSortable: true,
-    header: 'Phone',
-    field: 'phone'
-  },
-  {
-    isSortable: true,
-    header: 'E-mail',
-    field: 'email'
-  },
-  {
-    isSortable: false,
-    header: 'Actions',
-    field: 'actions',
-    component: () => (
-      <Button variant={ButtonVariants.UTILITY}>
         <EditIcon />
       </Button>
     )
