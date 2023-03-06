@@ -33,7 +33,7 @@ export const UsersPage = () => {
   }, [isTableView, users, setCellOrder]);
 
   useEffect(() => {
-    dispatch(asyncGetUsers({ page: 1, per_page: 10 }));
+    dispatch(asyncGetUsers());
   }, [dispatch]);
 
   return (

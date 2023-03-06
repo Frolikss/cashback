@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
-import { UsersPayload } from '@interfaces';
+import { DefaultQueryParams } from '@interfaces';
 import { cashbackApiClient } from '@config';
 
 class CashbackUsersApi {
@@ -7,14 +7,13 @@ class CashbackUsersApi {
     this.url = url;
   }
 
-  getUsers(payload: UsersPayload, config?: AxiosRequestConfig) {
-    return cashbackApiClient.get(`${this.url}/?${{ ...payload }}`, config);
+  getUsers({ page = 1, per_page = 10, ...rest }: DefaultQueryParams, config?: AxiosRequestConfig) {
+    return cashbackApiClient.get(`${this.url}/?${{ page, per_page, ...rest }}`, config);
   }
 
   getCurrentUser(config?: AxiosRequestConfig) {
-    return cashbackApiClient.get(this.url, config);
+    return cashbackApiClient.get(`${this.url}/self`, config);
   }
 }
 
 export const usersApi = new CashbackUsersApi('/users');
-export const userSelfApi = new CashbackUsersApi('/users/self');

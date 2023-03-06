@@ -10,10 +10,12 @@ export const responseConfig = (response: AxiosResponse) => {
   return response;
 };
 
-export const responseErrorHandling = (error: ResponseError) => {
-  if (error?.response?.data.statusCode === 401) {
+export const responseErrorHandling = (error: unknown) => {
+  const err = error as ResponseError;
+
+  if (err?.response?.data.statusCode === 401) {
     const authToken = localStorage.getItem(ACCESS_TOKEN);
     return Promise.reject(authToken ? EXPIRED_TOKEN_MESSAGE : AUTH_ERROR_MESSAGE);
   }
-  return Promise.reject(error.response.data.description);
+  return Promise.reject(err.response.data.description);
 };
