@@ -1,5 +1,5 @@
-import { AuthState } from '@interfaces';
 import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
+import { AuthState } from '@interfaces';
 import { asyncLogin } from '@modules';
 
 export const loginUserReducer = (builder: ActionReducerMapBuilder<AuthState>) => {

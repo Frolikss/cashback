@@ -1,5 +1,5 @@
-import { UsersState } from '@interfaces';
 import { createSlice } from '@reduxjs/toolkit';
+import { UsersState } from '@interfaces';
 import { getUsersReducer } from '@modules';
 
 const initialState: UsersState = {

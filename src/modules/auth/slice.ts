@@ -1,5 +1,5 @@
-import { AuthState } from '@interfaces';
 import { createSlice } from '@reduxjs/toolkit';
+import { AuthState } from '@interfaces';
 import { loginUserReducer } from '@modules';
 
 const initialState: AuthState = {

@@ -1,5 +1,5 @@
-import { CurrentUserState } from '@interfaces';
 import { createSlice } from '@reduxjs/toolkit';
+import { CurrentUserState } from '@interfaces';
 import { getCurrentUserReducer, setSelfReducer } from '@modules';
 
 const initialState: CurrentUserState = {

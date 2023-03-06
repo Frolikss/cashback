@@ -1,5 +1,5 @@
-import { Field } from '@interfaces';
 import { EMAIL_PATTERN, INVALID_EMAIL, InputVariants, MIN_PASS_LENGTH } from '@constants';
+import { Field } from '@interfaces';
 import { Input } from '@components';
 
 export const LOGIN_FIELDS_DATA: Field[] = [

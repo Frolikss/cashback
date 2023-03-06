@@ -1,5 +1,5 @@
-import { User, UsersState } from '@interfaces';
 import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
+import { User, UsersState } from '@interfaces';
 import { asyncGetUsers } from '@modules';
 
 export const getUsersReducer = (builder: ActionReducerMapBuilder<UsersState>) => {
