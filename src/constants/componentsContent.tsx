@@ -10,7 +10,6 @@ import { ReactComponent as ShopsIcon } from '@svg/shopsIcon.svg';
 import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
 import { ReactComponent as UsersIcon } from '@svg/usersIcon.svg';
 import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
-import avatarSmall from '@png/avatarSmall.png';
 
 export const MAX_LIST_PAGE_ITEMS = [
   { id: 0, value: '10' },
