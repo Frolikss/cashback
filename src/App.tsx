@@ -3,11 +3,10 @@ import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { ACCESS_TOKEN, ROUTES } from '@constants';
 import { asyncGetCurrentUser, selectAuthorizationStatus } from '@modules';
-import { LoginPage, UsersPage } from '@pages';
+import { LoginPage, RegisterPage, UsersPage } from '@pages';
 import { ProtectedRoute } from '@routes';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import 'react-toastify/dist/ReactToastify.css';
-import { RegisterPage } from './pages/RegisterPage';
 
 export function App() {
   const isAuthorized = useAppSelector(selectAuthorizationStatus);
