@@ -1,11 +1,11 @@
 import { FC, ForwardedRef } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import { UseFormRegister } from 'react-hook-form';
 import { INPUT_STYLES, InputVariants } from '@constants';
-import { FieldData } from '@interfaces';
+import { Field, FieldData } from '@interfaces';
 
 export interface InputProps {
   field: FieldData;
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<Field>;
   variant: InputVariants;
   ref: ForwardedRef<HTMLInputElement>;
 }

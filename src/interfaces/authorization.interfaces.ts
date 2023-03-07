@@ -5,4 +5,7 @@ export interface AuthState {
 export interface AuthTypeContent {
   header: string;
   subheader: string;
+  primaryBtnText: string;
+  secondaryBtnText: string;
+  secondaryBtnLink: string;
 }

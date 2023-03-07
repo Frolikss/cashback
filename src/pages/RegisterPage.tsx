@@ -1,23 +1,29 @@
-import { FieldValues, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, REGISTER_FIELDS_DATA } from '@constants';
-import { AuthForm, AuthPageWrapper } from '@components';
+import { Field } from '@interfaces';
+import { AuthForm, AuthPageLayout } from '@components';
 
 export const RegisterPage = () => {
   //TODO: toolkit
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const onSubmit: SubmitHandler<Field> = (data) => console.log(data);
 
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm();
+  } = useForm<Field>();
 
   return (
-    <AuthPageWrapper
+    <AuthPageLayout
       textContent={AUTH_PAGE_CONTENT.REGISTER}
       form={
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
-          <AuthForm fields={REGISTER_FIELDS_DATA} register={register} errors={errors} />
+          <AuthForm
+            fields={REGISTER_FIELDS_DATA}
+            register={register}
+            errors={errors}
+            btnsTxtContent={AUTH_PAGE_CONTENT.REGISTER}
+          />
         </form>
       }
     />

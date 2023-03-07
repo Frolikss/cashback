@@ -1,29 +1,27 @@
 import { FC } from 'react';
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { Link, useLocation } from 'react-router-dom';
-import { BUTTON_STYLES, ButtonVariants, ROUTES } from '@constants';
-import { Field } from '@interfaces';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import { BUTTON_STYLES, ButtonVariants } from '@constants';
+import { AuthTypeContent, Field } from '@interfaces';
 import { Button, FillForm } from '@components';
 
 interface Props {
   fields: Field[];
+  btnsTxtContent: AuthTypeContent;
   errors: FieldErrors;
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<Field>;
 }
 
-export const AuthForm: FC<Props> = ({ fields, errors, register }) => {
-  const location = useLocation();
-  const isLoginPage = location.pathname === ROUTES.LOGIN;
-
+export const AuthForm: FC<Props> = ({ fields, errors, register, btnsTxtContent }) => {
   return (
     <>
       <FillForm errors={errors} fields={fields} register={register} />
       <div className="flex gap-4">
-        <Button variant={ButtonVariants.PRIMARY}>{isLoginPage ? 'Log In' : 'Sign Up'}</Button>
+        <Button variant={ButtonVariants.PRIMARY}>{btnsTxtContent.primaryBtnText}</Button>
         <Link
-          to={ROUTES[isLoginPage ? 'REGISTER' : 'LOGIN']}
+          to={btnsTxtContent.secondaryBtnLink}
           className={BUTTON_STYLES[ButtonVariants.SECONDARY]}>
-          {isLoginPage ? 'Sign Up' : 'Log In'}
+          {btnsTxtContent.secondaryBtnText}
         </Link>
       </div>
     </>

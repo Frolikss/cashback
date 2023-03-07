@@ -26,3 +26,10 @@ export enum MenuVariants {
 export enum PaginationVariants {
   DEFAULT = 'default'
 }
+
+export enum FieldNames {
+  EMAIL = 'email',
+  PASSWORD = 'password',
+  PHONE = 'phone',
+  CONFIRM_PASSWORD = 'confirmPassword'
+}

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { InputVariants } from '@constants';
+import { FieldNames, InputVariants } from '@constants';
 import { InputProps } from '@components';
 
 export interface Field {
-  name: string;
+  name: FieldNames;
   component: FC<InputProps>;
   placeholder: string;
   variant: InputVariants;

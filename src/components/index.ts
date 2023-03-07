@@ -9,7 +9,7 @@ export * from './collection/CollectionViewCell';
 export * from './collection/CollectionView';
 export * from './header/Header';
 export * from './auth/AuthForm';
-export * from './auth/AuthPageWrapper';
+export * from './auth/AuthPageLayout';
 export * from './modals/ModalWrapper';
 export * from './modals/HeaderUserModal';
 export * from './form/FillForm';
