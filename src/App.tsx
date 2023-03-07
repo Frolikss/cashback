@@ -7,6 +7,7 @@ import { LoginPage, UsersPage } from '@pages';
 import { ProtectedRoute } from '@routes';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import 'react-toastify/dist/ReactToastify.css';
+import { RegisterPage } from './pages/RegisterPage';
 
 export function App() {
   const isAuthorized = useAppSelector(selectAuthorizationStatus);
@@ -24,6 +25,7 @@ export function App() {
       <Routes>
         <Route element={<ProtectedRoute isAuth={isAuthorized} to={ROUTES.HOME} />}>
           <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+          <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
         </Route>
         <Route element={<ProtectedRoute isAuth={!isAuthorized} to={ROUTES.LOGIN} />}>
           <Route element={<UsersPage />} path={ROUTES.HOME} />

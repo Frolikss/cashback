@@ -105,3 +105,14 @@ export const getColumns = (handleSortButtonClick: (field: string) => void) => [
     )
   }
 ];
+
+export const AUTH_PAGE_CONTENT = {
+  LOGIN: {
+    header: 'Login',
+    subheader: 'Login to your account'
+  },
+  REGISTER: {
+    header: 'Register',
+    subheader: 'Register new account'
+  }
+};
