@@ -31,10 +31,10 @@ export const asyncRegister = createAsyncThunk(
             'accessToken',
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0ZXN0bWFpbDE5OTBAZ21haWwuY29tIiwiaWQiOiJBVVNETXVGa01Lc3YiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTY3ODM2ODc4Nn0.dQoLGm1B_UHCKBCqg-f6yUg-SOXtZq3v_oiz6Nd9H1I'
           );
-          return resolve({ id: '1', email: 'asd@as.com', role: 'USER', phone: '123' });
+          resolve({ id: '1', email: 'asd@as.com', role: 'USER', phone: '123' });
         }
 
-        reject({ message: 'Error' });
+        reject({ message: 'Unexpected server error', statusCode: 404 });
       });
 
       dispatch(setSelfAction(data));
