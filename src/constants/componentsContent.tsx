@@ -1,4 +1,5 @@
 import { ROUTES } from '@constants';
+import { AuthTypeContent } from '@interfaces';
 import { Avatar, Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
@@ -105,3 +106,20 @@ export const getColumns = (handleSortButtonClick: (field: string) => void) => [
     )
   }
 ];
+
+export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
+  LOGIN: {
+    header: 'Login',
+    subheader: 'Login to your account',
+    primaryBtnText: 'Log In',
+    secondaryBtnText: 'Sign Up',
+    secondaryBtnLink: ROUTES.REGISTER
+  },
+  REGISTER: {
+    header: 'Register',
+    subheader: 'Register new account',
+    primaryBtnText: 'Register',
+    secondaryBtnText: 'Log In',
+    secondaryBtnLink: ROUTES.LOGIN
+  }
+};
