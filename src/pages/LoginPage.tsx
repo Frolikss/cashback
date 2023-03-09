@@ -1,6 +1,5 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, LOGIN_FIELDS_DATA } from '@constants';
-import { Field } from '@interfaces';
 import { AuthForm, AuthPageLayout } from '@components';
 import { asyncLogin } from '@modules';
 import { useAppDispatch } from '@hooks';
@@ -8,13 +7,13 @@ import { useAppDispatch } from '@hooks';
 export const LoginPage = () => {
   const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<Field> = (data) => dispatch(asyncLogin(data));
+  const onSubmit: SubmitHandler<FieldValues> = (data) => dispatch(asyncLogin(data));
 
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm<Field>();
+  } = useForm<FieldValues>();
 
   return (
     <AuthPageLayout
@@ -25,7 +24,7 @@ export const LoginPage = () => {
             fields={LOGIN_FIELDS_DATA}
             register={register}
             errors={errors}
-            btnsTxtContent={AUTH_PAGE_CONTENT.LOGIN}
+            buttonsTextContent={AUTH_PAGE_CONTENT.LOGIN}
           />
         </form>
       }

@@ -4,7 +4,7 @@ import { Field } from '@interfaces';
 
 interface Props {
   fields: Field[];
-  register: UseFormRegister<Field>;
+  register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
 }
 

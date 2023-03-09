@@ -1,17 +1,22 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, REGISTER_FIELDS_DATA } from '@constants';
-import { Field } from '@interfaces';
 import { AuthForm, AuthPageLayout } from '@components';
+import { asyncRegister } from '@modules';
+import { useAppDispatch } from '@hooks';
 
 export const RegisterPage = () => {
-  //TODO: toolkit
-  const onSubmit: SubmitHandler<Field> = (data) => console.log(data);
+  const dispatch = useAppDispatch();
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    data['confirmPassword'] && delete data['confirmPassword'];
+    dispatch(asyncRegister(data));
+  };
 
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm<Field>();
+  } = useForm<FieldValues>();
 
   return (
     <AuthPageLayout
@@ -22,7 +27,7 @@ export const RegisterPage = () => {
             fields={REGISTER_FIELDS_DATA}
             register={register}
             errors={errors}
-            btnsTxtContent={AUTH_PAGE_CONTENT.REGISTER}
+            buttonsTextContent={AUTH_PAGE_CONTENT.REGISTER}
           />
         </form>
       }

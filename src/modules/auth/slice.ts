@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthState } from '@interfaces';
-import { loginUserReducer } from '@modules';
+import { loginUserReducer, registerUserReducer } from '@modules';
 
 const initialState: AuthState = {
   isLoading: false
@@ -12,6 +12,7 @@ const slice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     loginUserReducer(builder);
+    registerUserReducer(builder);
   }
 });
 
