@@ -17,10 +17,7 @@ export const LOGIN_FIELDS_DATA: Field[] = [
     placeholder: 'Email',
     variant: InputVariants.PRIMARY,
     options: {
-      required: {
-        value: true,
-        message: REQUIRED_FIELD
-      },
+      required: REQUIRED_FIELD,
       pattern: {
         value: EMAIL_PATTERN,
         message: INVALID_EMAIL
@@ -34,10 +31,7 @@ export const LOGIN_FIELDS_DATA: Field[] = [
     placeholder: 'Password',
     variant: InputVariants.PRIMARY,
     options: {
-      required: {
-        value: true,
-        message: REQUIRED_FIELD
-      },
+      required: REQUIRED_FIELD,
       minLength: {
         value: 6,
         message: MIN_PASS_LENGTH

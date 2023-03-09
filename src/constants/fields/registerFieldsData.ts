@@ -22,10 +22,7 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     placeholder: 'Email',
     variant: InputVariants.PRIMARY,
     options: {
-      required: {
-        value: true,
-        message: REQUIRED_FIELD
-      },
+      required: REQUIRED_FIELD,
       pattern: {
         value: EMAIL_PATTERN,
         message: INVALID_EMAIL
@@ -39,10 +36,7 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     placeholder: 'Phone',
     variant: InputVariants.PRIMARY,
     options: {
-      required: {
-        value: true,
-        message: REQUIRED_FIELD
-      },
+      required: REQUIRED_FIELD,
       minLength: {
         value: 6,
         message: PHONE_LENGTH_MESSAGE

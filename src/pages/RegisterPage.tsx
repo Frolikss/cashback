@@ -8,7 +8,7 @@ export const RegisterPage = () => {
   const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    data['confirmPassword'] && delete data['confirmPassword'];
+    delete data.confirmPassword;
     dispatch(asyncRegister(data));
   };
 
