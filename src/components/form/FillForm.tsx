@@ -2,7 +2,7 @@ import { FC, ForwardedRef, forwardRef } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import { LabelVariants, ROLES_LABEL_CONTENT } from '@constants';
 import { Field } from '@interfaces';
-import { Label } from './Label';
+import { Label } from '@components';
 
 interface Props {
   fields: Field[];

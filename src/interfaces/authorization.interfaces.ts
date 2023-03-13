@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
-import { RegisterUser } from '@interfaces';
+import { RegisteredUser } from '@interfaces';
 
 export interface AuthState {
   isLoading: boolean;
-  registerUser: RegisterUser | null;
+  registerUser: RegisteredUser | null;
 }
 
 export interface AuthTypeContent {

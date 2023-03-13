@@ -16,3 +16,4 @@ export * from './form/Button';
 export * from './form/Input';
 export * from './Avatar';
 export * from './RoleItem';
+export * from './form/Label';

@@ -1,14 +1,13 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, ButtonVariants, ROLES_FIELDS_DATA } from '@constants';
-import { RegisterUser } from '@interfaces';
 import { Button, FillForm } from '@components';
-import { selectRegisterUser, setPartialRegisterUser } from '@modules';
+import { asyncRegister, selectRegisteredUser } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import { history } from '@helpers';
 
 export const RolesPage = () => {
   const dispatch = useAppDispatch();
-  const user = useAppSelector(selectRegisterUser);
+  const user = useAppSelector(selectRegisteredUser);
 
   const {
     register,
@@ -17,7 +16,7 @@ export const RolesPage = () => {
   } = useForm<FieldValues>();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    dispatch(setPartialRegisterUser({ ...(data as RegisterUser), ...user }));
+    dispatch(asyncRegister({ ...data, ...user }));
     //TODO: history.push('/last-step')
   };
 

@@ -17,9 +17,8 @@ export interface CurrentUserState {
   currentUser: User | null;
 }
 
-export interface RegisterUser {
+export interface RegisteredUser {
   email: string;
   password: string;
   phone: string;
-  role?: string;
 }
