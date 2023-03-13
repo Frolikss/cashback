@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+// imports for redux-persist
 // import { persistReducer, persistStore } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 // import storageSession from 'redux-persist/lib/storage/session';
 import { authReducer, currentUserReducer, usersReducers } from '@modules';
 
+// config parameters for redux-persist
 // const rootPersistConfig = {
 //   key: 'root',
 //   storage
@@ -20,6 +22,7 @@ const rootReducer = combineReducers({
   currentUser: currentUserReducer
 });
 
+// created persist reducer to make store work
 // const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
 
 export const store = configureStore({
@@ -30,6 +33,7 @@ export const store = configureStore({
     })
 });
 
+// required by redux-persist in order to persist data
 // export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,16 +1,15 @@
-import { FieldNames, InputVariants, REQUIRED_FIELD } from '@constants';
+import { FieldNames, REQUIRED_FIELD, Roles } from '@constants';
 import { Field } from '@interfaces';
-import { Input } from '@components';
+import { Radio } from '../../components/form/Radio';
 
 export const ROLES_FIELDS_DATA: Field[] = [
   {
     withLabel: true,
     name: FieldNames.ROLE,
-    component: Input,
+    component: Radio,
     type: 'radio',
-    id: 'user',
+    id: Roles.USER,
     value: 'user',
-    variant: InputVariants.RADIO,
     options: {
       required: REQUIRED_FIELD
     }
@@ -18,11 +17,10 @@ export const ROLES_FIELDS_DATA: Field[] = [
   {
     withLabel: true,
     name: FieldNames.ROLE,
-    component: Input,
+    component: Radio,
     type: 'radio',
-    id: 'admin',
+    id: Roles.ADMIN,
     value: 'admin',
-    variant: InputVariants.RADIO,
     options: {
       required: REQUIRED_FIELD
     }

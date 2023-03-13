@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-import { BUTTON_STYLES, ButtonVariants, ROUTES } from '@constants';
+import { ROUTES, Roles } from '@constants';
 import { AuthTypeContent, LabelContent } from '@interfaces';
 import { Avatar, Button, RoleItem } from '@components';
-import { history } from '@helpers';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
@@ -124,11 +122,11 @@ export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
   }
 };
 
-export const ROLES_LABEL_CONTENT: { [key: string]: LabelContent } = {
-  ADMIN: {
+export const ROLES_LABEL_CONTENT: { [key in Roles]: LabelContent } = {
+  [Roles.ADMIN]: {
     component: <RoleItem role="Admin" />
   },
-  USER: {
+  [Roles.USER]: {
     component: <RoleItem role="User" />
   }
 };

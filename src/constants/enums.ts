@@ -10,6 +10,10 @@ export enum InputVariants {
   RADIO = 'radio'
 }
 
+export enum RadioVariants {
+  PRIMARY = 'primary'
+}
+
 export enum CollectionViewCellVariants {
   USERS = 'users'
 }
@@ -38,4 +42,9 @@ export enum FieldNames {
 
 export enum LabelVariants {
   ROLES = 'roles'
+}
+
+export enum Roles {
+  ADMIN = 'admin',
+  USER = 'user'
 }

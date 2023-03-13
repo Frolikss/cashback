@@ -3,7 +3,7 @@ import { RegisteredUser } from '@interfaces';
 
 export interface AuthState {
   isLoading: boolean;
-  registerUser: RegisteredUser | null;
+  registeredUser: RegisteredUser | null;
 }
 
 export interface AuthTypeContent {

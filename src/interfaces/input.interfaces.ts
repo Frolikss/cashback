@@ -1,18 +1,16 @@
 import { FC, ReactNode } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { FieldNames, InputVariants } from '@constants';
-import { InputProps } from '@components';
+import { FieldNames, Roles } from '@constants';
 
 export interface Field {
   name: FieldNames;
-  component: FC<InputProps>;
-  variant: InputVariants;
   type: string;
-  options: RegisterOptions;
   placeholder?: string;
   value?: string;
-  id?: string;
+  options: RegisterOptions;
+  component: FC<any>;
   withLabel?: boolean;
+  id?: Roles;
 }
 
 export interface LabelContent {
@@ -20,3 +18,4 @@ export interface LabelContent {
 }
 
 export type FieldData = Omit<Field, 'component'>;
+export type RadioData = Omit<FieldData, 'type'>;

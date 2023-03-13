@@ -3,7 +3,7 @@ import { LABEL_STYLES, LabelVariants } from '@constants';
 
 interface Props {
   id: string;
-  variant: LabelVariants;
+  variant?: LabelVariants;
   children?: ReactNode;
 }
 

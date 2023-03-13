@@ -9,17 +9,16 @@ import {
 } from '@constants';
 import { RegisteredUser } from '@interfaces';
 import { AuthPageLayout, Button, FillForm } from '@components';
-import { setRegisteredUser } from '@modules';
+import { setRegisteredUserAction } from '@modules';
 import { useAppDispatch } from '@hooks';
 import { history } from '@helpers';
 
 export const RegisterPage = () => {
   const dispatch = useAppDispatch();
-  // const registeredUser = useAppSelector(selectRegisteredUser);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     delete data.confirmPassword;
-    dispatch(setRegisteredUser(data as RegisteredUser));
+    dispatch(setRegisteredUserAction(data as RegisteredUser));
     history.push(ROUTES.ROLES);
   };
 

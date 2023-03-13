@@ -19,7 +19,7 @@ export const FillForm: FC<Props> = forwardRef(
           const error = (errors as Record<string, FieldError>)[field.name]?.message;
           return (
             <div key={index}>
-              <Component field={field} register={register} ref={ref} variant={field.variant} />
+              <Component field={field} register={register} ref={ref} />
 
               {errors[field.name] && (
                 <p className="text-right text-red-regular font-medium">{error}</p>
@@ -27,7 +27,7 @@ export const FillForm: FC<Props> = forwardRef(
 
               {withLabel && field.id && (
                 <Label id={field.id} variant={labelVariant ?? LabelVariants.ROLES}>
-                  {ROLES_LABEL_CONTENT[field.id.toUpperCase()].component}
+                  {ROLES_LABEL_CONTENT[field.id].component}
                 </Label>
               )}
             </div>

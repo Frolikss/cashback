@@ -11,10 +11,10 @@ import {
   PHONE_PATTERN_MESSAGE,
   REQUIRED_FIELD
 } from '@constants';
-import { Field } from '@interfaces';
+import { TextInput } from '@interfaces';
 import { Input } from '@components';
 
-export const REGISTER_FIELDS_DATA: Field[] = [
+export const REGISTER_FIELDS_DATA: TextInput[] = [
   {
     name: FieldNames.EMAIL,
     component: Input,

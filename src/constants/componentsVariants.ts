@@ -5,7 +5,8 @@ import {
   LabelVariants,
   MenuVariants,
   ModalVariants,
-  PaginationVariants
+  PaginationVariants,
+  RadioVariants
 } from '@constants';
 import { CollectionViewVariant, MenuVariantStyle } from '@interfaces';
 import avatarBig from '@png/avatarBig.png';
@@ -57,7 +58,7 @@ export const MENU_STYLES: { [key in MenuVariants]: MenuVariantStyle } = {
 export const INPUT_STYLES: { [key in InputVariants]: string } = {
   [InputVariants.PRIMARY]:
     'bg-base-100 text-lg px-6 py-3.5 rounded-lg leading-5 placeholder:text-base-600 active:placeholder:text-base-600 outline-none hover:outline-3 focus:bg-base-100 focus:outline-3 hover:outline-offset-0 focus:outline-offset-0 hover:outline-accent-primary focus:outline-accent-primary hover:bg-accent-lighter hover:placeholder:text-accent-dark',
-  [InputVariants.RADIO]: 'checked:bg-base-1000 peer appearance-none'
+  [InputVariants.RADIO]: 'peer checked:bg-base-1000 appearance-none'
 };
 
 export const PAGINATION_STYLES: { [key in PaginationVariants]: string } = {
@@ -68,4 +69,8 @@ export const PAGINATION_STYLES: { [key in PaginationVariants]: string } = {
 export const LABEL_STYLES: { [key in LabelVariants]: string } = {
   [LabelVariants.ROLES]:
     'peer-checked:border-accent-primary rounded-lg w-full border-3 border-base-600 flex p-4'
+};
+
+export const RADIO_STYLES: { [key in RadioVariants]: string } = {
+  [RadioVariants.PRIMARY]: 'peer checked:bg-base-1000 appearance-none'
 };

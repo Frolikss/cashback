@@ -7,7 +7,7 @@ import { FieldData } from '@interfaces';
 export interface InputProps {
   field: FieldData;
   register: UseFormRegister<FieldValues>;
-  variant: InputVariants;
+  variant?: InputVariants;
   ref: ForwardedRef<HTMLInputElement>;
 }
 

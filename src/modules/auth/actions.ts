@@ -45,4 +45,4 @@ export const asyncRegister = createAsyncThunk(
   }
 );
 
-export const setRegisteredUser = createAction<RegisteredUser>('REGISTER_USER');
+export const setRegisteredUserAction = createAction<RegisteredUser>('SET_REGISTER_USER');

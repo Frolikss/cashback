@@ -32,7 +32,7 @@ export const RolesPage = () => {
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <FillForm fields={ROLES_FIELDS_DATA} errors={errors} register={register} />
           <div className="flex self-end gap-4">
-            <Button variant={ButtonVariants.SECONDARY} onClick={() => history.back()}>
+            <Button variant={ButtonVariants.SECONDARY} onClick={history.back}>
               Back
             </Button>
             <Button variant={ButtonVariants.PRIMARY}>Next</Button>
