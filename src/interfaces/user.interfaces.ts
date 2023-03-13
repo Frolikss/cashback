@@ -16,3 +16,10 @@ export interface CurrentUserState {
   isAuthorized: boolean;
   currentUser: User | null;
 }
+
+export interface RegisterUser {
+  email: string;
+  password: string;
+  phone: string;
+  role?: string;
+}

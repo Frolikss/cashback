@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import { FC, ForwardedRef } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 import { INPUT_STYLES, InputVariants } from '@constants';
@@ -12,6 +13,10 @@ export interface InputProps {
 
 export const Input: FC<InputProps> = ({ field, register, variant = InputVariants.PRIMARY }) => {
   return (
-    <input {...register(field.name, field.options)} {...field} className={INPUT_STYLES[variant]} />
+    <input
+      {...register(field.name, field.options)}
+      {...field}
+      className={cn(INPUT_STYLES[variant], 'w-full')}
+    />
   );
 };

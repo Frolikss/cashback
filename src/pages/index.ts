@@ -1,3 +1,4 @@
-export { UsersPage } from './UsersPage';
-export { LoginPage } from './LoginPage';
-export { RegisterPage } from './RegisterPage';
+export * from './UsersPage';
+export * from './LoginPage';
+export * from './RegisterPage';
+export * from './RolesPage';

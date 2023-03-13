@@ -1,7 +1,7 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { FieldValues } from 'react-hook-form';
 import { LOGIN_ERROR_MESSAGE, REGISTRATION_UNKNOWN_ERROR } from '@constants';
-import { User } from '@interfaces';
+import { RegisterUser, User } from '@interfaces';
 import { authApi } from '@apis';
 import { setSelfAction } from '@modules';
 import { handleError } from '@helpers';
@@ -44,3 +44,5 @@ export const asyncRegister = createAsyncThunk(
     }
   }
 );
+
+export const setPartialRegisterUser = createAction<RegisterUser>('REGISTER_USER');

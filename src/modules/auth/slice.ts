@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthState } from '@interfaces';
-import { loginUserReducer, registerUserReducer } from '@modules';
+import { loginUserReducer, partialRegisterUser, registerUserReducer } from '@modules';
 
 const initialState: AuthState = {
-  isLoading: false
+  isLoading: false,
+  registerUser: null
 };
 
 const slice = createSlice({
@@ -13,6 +14,7 @@ const slice = createSlice({
   extraReducers: (builder) => {
     loginUserReducer(builder);
     registerUserReducer(builder);
+    partialRegisterUser(builder);
   }
 });
 

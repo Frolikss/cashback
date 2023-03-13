@@ -1,15 +1,16 @@
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import { App } from '@app';
 import { store } from '@store';
+import { history } from '@helpers';
 import '@styles';
 
 const root = createRoot(document.getElementById('root') as Element);
 root.render(
-  <BrowserRouter>
+  <HistoryRouter history={history}>
     <Provider store={store}>
       <App />
     </Provider>
-  </BrowserRouter>
+  </HistoryRouter>
 );

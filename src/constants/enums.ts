@@ -6,7 +6,8 @@ export enum ButtonVariants {
 }
 
 export enum InputVariants {
-  PRIMARY = 'primary'
+  PRIMARY = 'primary',
+  RADIO = 'radio'
 }
 
 export enum CollectionViewCellVariants {
@@ -31,5 +32,10 @@ export enum FieldNames {
   EMAIL = 'email',
   PASSWORD = 'password',
   PHONE = 'phone',
-  CONFIRM_PASSWORD = 'confirmPassword'
+  CONFIRM_PASSWORD = 'confirmPassword',
+  ROLE = 'role'
+}
+
+export enum LabelVariants {
+  ROLES = 'roles'
 }

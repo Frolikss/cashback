@@ -1,6 +1,8 @@
-import { ROUTES } from '@constants';
-import { AuthTypeContent } from '@interfaces';
-import { Avatar, Button } from '@components';
+import { Link } from 'react-router-dom';
+import { BUTTON_STYLES, ButtonVariants, ROUTES } from '@constants';
+import { AuthTypeContent, LabelContent } from '@interfaces';
+import { Avatar, Button, RoleItem } from '@components';
+import { history } from '@helpers';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
@@ -110,16 +112,23 @@ export const getColumns = (handleSortButtonClick: (field: string) => void) => [
 export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
   LOGIN: {
     header: 'Login',
-    subheader: 'Login to your account',
-    primaryBtnText: 'Log In',
-    secondaryBtnText: 'Sign Up',
-    secondaryBtnLink: ROUTES.REGISTER
+    subheader: 'Login to your account'
   },
   REGISTER: {
     header: 'Register',
-    subheader: 'Register new account',
-    primaryBtnText: 'Register',
-    secondaryBtnText: 'Log In',
-    secondaryBtnLink: ROUTES.LOGIN
+    subheader: 'Register new account'
+  },
+  ROLES: {
+    header: 'Roles',
+    subheader: 'Choose your role'
+  }
+};
+
+export const ROLES_LABEL_CONTENT: { [key: string]: LabelContent } = {
+  ADMIN: {
+    component: <RoleItem role="Admin" />
+  },
+  USER: {
+    component: <RoleItem role="User" />
   }
 };
