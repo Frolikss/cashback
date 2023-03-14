@@ -6,6 +6,11 @@ export enum ButtonVariants {
 }
 
 export enum InputVariants {
+  PRIMARY = 'primary',
+  RADIO = 'radio'
+}
+
+export enum RadioVariants {
   PRIMARY = 'primary'
 }
 
@@ -31,5 +36,15 @@ export enum FieldNames {
   EMAIL = 'email',
   PASSWORD = 'password',
   PHONE = 'phone',
-  CONFIRM_PASSWORD = 'confirmPassword'
+  CONFIRM_PASSWORD = 'confirmPassword',
+  ROLE = 'role'
+}
+
+export enum LabelVariants {
+  ROLES = 'roles'
+}
+
+export enum Roles {
+  ADMIN = 'admin',
+  USER = 'user'
 }

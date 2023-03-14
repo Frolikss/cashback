@@ -1,6 +1,7 @@
 export * from './auth/actions';
 export * from './auth/reducers';
 export * from './auth/slice';
+export * from './auth/selectors';
 export * from './currentUser/slice';
 export * from './currentUser/reducers';
 export * from './currentUser/actions';

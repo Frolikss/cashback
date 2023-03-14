@@ -1,6 +1,13 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { AUTH_PAGE_CONTENT, LOGIN_FIELDS_DATA } from '@constants';
-import { AuthForm, AuthPageLayout } from '@components';
+import { Link } from 'react-router-dom';
+import {
+  AUTH_PAGE_CONTENT,
+  BUTTON_STYLES,
+  ButtonVariants,
+  LOGIN_FIELDS_DATA,
+  ROUTES
+} from '@constants';
+import { AuthPageLayout, Button, FillForm } from '@components';
 import { asyncLogin } from '@modules';
 import { useAppDispatch } from '@hooks';
 
@@ -20,12 +27,13 @@ export const LoginPage = () => {
       textContent={AUTH_PAGE_CONTENT.LOGIN}
       form={
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
-          <AuthForm
-            fields={LOGIN_FIELDS_DATA}
-            register={register}
-            errors={errors}
-            buttonsTextContent={AUTH_PAGE_CONTENT.LOGIN}
-          />
+          <FillForm fields={LOGIN_FIELDS_DATA} register={register} errors={errors} />
+          <div className="flex gap-4">
+            <Button variant={ButtonVariants.PRIMARY}>Log In</Button>
+            <Link className={BUTTON_STYLES[ButtonVariants.SECONDARY]} to={ROUTES.REGISTER}>
+              Sign Up
+            </Link>
+          </div>
         </form>
       }
     />

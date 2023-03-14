@@ -3,7 +3,6 @@ import {
   EMAIL_PATTERN,
   FieldNames,
   INVALID_EMAIL,
-  InputVariants,
   MIN_PASS_LENGTH,
   PASSWORDS_NOT_MATCHING,
   PHONE_LENGTH_MESSAGE,
@@ -20,7 +19,6 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     component: Input,
     type: 'email',
     placeholder: 'Email',
-    variant: InputVariants.PRIMARY,
     options: {
       required: REQUIRED_FIELD,
       pattern: {
@@ -34,7 +32,6 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     component: Input,
     type: 'tel',
     placeholder: 'Phone',
-    variant: InputVariants.PRIMARY,
     options: {
       required: REQUIRED_FIELD,
       minLength: {
@@ -56,7 +53,6 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     component: Input,
     type: 'password',
     placeholder: 'Password',
-    variant: InputVariants.PRIMARY,
     options: {
       required: {
         value: true,
@@ -73,7 +69,6 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     component: Input,
     type: 'password',
     placeholder: 'Confirm Password',
-    variant: InputVariants.PRIMARY,
     options: {
       required: {
         value: true,

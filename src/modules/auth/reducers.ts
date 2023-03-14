@@ -1,6 +1,6 @@
-import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
-import { AuthState } from '@interfaces';
-import { asyncLogin, asyncRegister } from '@modules';
+import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
+import { AuthState, RegisteredUser } from '@interfaces';
+import { asyncLogin, asyncRegister, setRegisteredUserAction } from '@modules';
 
 export const loginUserReducer = (builder: ActionReducerMapBuilder<AuthState>) => {
   builder
@@ -26,4 +26,10 @@ export const registerUserReducer = (builder: ActionReducerMapBuilder<AuthState>)
     .addCase(asyncRegister.rejected, (state) => {
       state.isLoading = false;
     });
+};
+
+export const setRegisteredUserReducer = (builder: ActionReducerMapBuilder<AuthState>) => {
+  builder.addCase(setRegisteredUserAction, (state, { payload }: PayloadAction<RegisteredUser>) => {
+    state.registeredUser = payload;
+  });
 };

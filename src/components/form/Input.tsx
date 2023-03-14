@@ -1,17 +1,15 @@
-import { FC, ForwardedRef } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import cn from 'classnames';
+import { FC, ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 import { INPUT_STYLES, InputVariants } from '@constants';
-import { FieldData } from '@interfaces';
 
-export interface InputProps {
-  field: FieldData;
-  register: UseFormRegister<FieldValues>;
-  variant: InputVariants;
-  ref: ForwardedRef<HTMLInputElement>;
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  variant?: InputVariants;
 }
 
-export const Input: FC<InputProps> = ({ field, register, variant = InputVariants.PRIMARY }) => {
-  return (
-    <input {...register(field.name, field.options)} {...field} className={INPUT_STYLES[variant]} />
-  );
-};
+export const Input: FC<InputProps> = forwardRef(
+  ({ variant = InputVariants.PRIMARY, ...props }, ref: ForwardedRef<HTMLInputElement>) => {
+    return <input className={cn(INPUT_STYLES[variant], 'w-full')} {...props} ref={ref} />;
+  }
+);
+
+Input.displayName = 'Input';
