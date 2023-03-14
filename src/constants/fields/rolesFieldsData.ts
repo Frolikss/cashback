@@ -9,7 +9,7 @@ export const ROLES_FIELDS_DATA: Field[] = [
     component: Radio,
     type: 'radio',
     id: Roles.USER,
-    value: 'user',
+    value: Roles.USER,
     options: {
       required: REQUIRED_FIELD
     }
@@ -20,7 +20,7 @@ export const ROLES_FIELDS_DATA: Field[] = [
     component: Radio,
     type: 'radio',
     id: Roles.ADMIN,
-    value: 'admin',
+    value: Roles.ADMIN,
     options: {
       required: REQUIRED_FIELD
     }

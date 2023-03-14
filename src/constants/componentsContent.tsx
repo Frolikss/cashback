@@ -123,10 +123,10 @@ export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
 };
 
 export const ROLES_LABEL_CONTENT: { [key in Roles]: LabelContent } = {
-  [Roles.ADMIN]: {
-    component: <RoleItem role="Admin" />
-  },
   [Roles.USER]: {
-    component: <RoleItem role="User" />
+    component: <RoleItem role={Roles.USER} />
+  },
+  [Roles.ADMIN]: {
+    component: <RoleItem role={Roles.ADMIN} />
   }
 };
