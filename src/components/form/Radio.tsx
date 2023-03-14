@@ -1,22 +1,17 @@
 import cn from 'classnames';
-import { FC } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import { FC, ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 import { RADIO_STYLES, RadioVariants } from '@constants';
-import { RadioData } from '@interfaces';
 
-export interface RadioProps {
-  field: RadioData;
-  register: UseFormRegister<FieldValues>;
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   variant?: RadioVariants;
 }
 
-export const Radio: FC<RadioProps> = ({ field, register, variant = RadioVariants.PRIMARY }) => {
-  return (
-    <input
-      type="radio"
-      {...register(field.name, field.options)}
-      {...field}
-      className={cn(RADIO_STYLES[variant], 'w-full')}
-    />
-  );
-};
+export const Radio: FC<RadioProps> = forwardRef(
+  ({ variant = RadioVariants.PRIMARY, ...props }, ref: ForwardedRef<HTMLInputElement>) => {
+    return (
+      <input type="radio" className={cn(RADIO_STYLES[variant], 'w-full')} {...props} ref={ref} />
+    );
+  }
+);
+
+Radio.displayName = 'Radio';
