@@ -1,6 +1,6 @@
 import { FieldNames, REQUIRED_FIELD, Roles } from '@constants';
 import { Field } from '@interfaces';
-import { Radio } from '../../components/form/Radio';
+import { Radio } from '@components';
 
 export const ROLES_FIELDS_DATA: Field[] = [
   {

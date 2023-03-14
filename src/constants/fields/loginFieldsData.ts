@@ -6,7 +6,7 @@ import {
   REQUIRED_FIELD
 } from '@constants';
 import { Field } from '@interfaces';
-import { Input, InputProps } from '@components';
+import { Input } from '@components';
 
 export const LOGIN_FIELDS_DATA: Field[] = [
   {
