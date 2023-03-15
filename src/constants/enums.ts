@@ -37,14 +37,21 @@ export enum FieldNames {
   PASSWORD = 'password',
   PHONE = 'phone',
   CONFIRM_PASSWORD = 'confirmPassword',
-  ROLE = 'role'
+  ROLE = 'role',
+  INVITE_EMAIL = 'invite email',
+  CONFIRM_INVITE_RULES = 'confirm invite rules'
 }
 
 export enum LabelVariants {
-  ROLES = 'roles'
+  ROLES = 'roles',
+  CHECKBOX = 'checkbox'
 }
 
 export enum Roles {
   ADMIN = 'admin',
   USER = 'user'
+}
+
+export enum CheckboxVariants {
+  PRIMARY = 'primary'
 }

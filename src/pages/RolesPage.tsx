@@ -1,7 +1,14 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { AUTH_PAGE_CONTENT, ButtonVariants, ROLES_FIELDS_DATA } from '@constants';
+import {
+  AUTH_PAGE_CONTENT,
+  ButtonVariants,
+  ROLES_FIELDS_DATA,
+  ROLES_LABEL_CONTENT,
+  ROUTES
+} from '@constants';
+import { RegisteredUser } from '@interfaces';
 import { Button, FillForm } from '@components';
-import { asyncRegister, selectRegisteredUser } from '@modules';
+import { selectRegisteredUser, setRegisteredUserAction } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import { history } from '@helpers';
 
@@ -16,8 +23,8 @@ export const RolesPage = () => {
   } = useForm<FieldValues>();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    dispatch(asyncRegister({ ...data, ...user }));
-    //TODO: history.push('/last-step')
+    dispatch(setRegisteredUserAction({ ...(data as RegisteredUser), ...user }));
+    history.push(ROUTES.INVITE);
   };
 
   return (
@@ -30,7 +37,12 @@ export const RolesPage = () => {
           <p className="text-base-500 text-lg">{AUTH_PAGE_CONTENT.ROLES.subheader}</p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-          <FillForm fields={ROLES_FIELDS_DATA} errors={errors} register={register} />
+          <FillForm
+            fields={ROLES_FIELDS_DATA}
+            errors={errors}
+            register={register}
+            labelContent={ROLES_LABEL_CONTENT}
+          />
           <div className="flex self-end gap-4">
             <Button variant={ButtonVariants.SECONDARY} onClick={history.back}>
               Back

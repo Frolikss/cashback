@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { FieldNames, Roles } from '@constants';
+import { FieldNames } from '@constants';
 
 export interface Field {
   name: FieldNames;
@@ -10,12 +10,9 @@ export interface Field {
   options: RegisterOptions;
   component: FC<any>;
   withLabel?: boolean;
-  id?: Roles;
+  id?: string;
 }
 
 export interface LabelContent {
   component: ReactNode;
 }
-
-export type FieldData = Omit<Field, 'component'>;
-export type RadioData = Omit<FieldData, 'type'>;

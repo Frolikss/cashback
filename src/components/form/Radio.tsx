@@ -8,9 +8,7 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Radio: FC<RadioProps> = forwardRef(
   ({ variant = RadioVariants.PRIMARY, ...props }, ref: ForwardedRef<HTMLInputElement>) => {
-    return (
-      <input type="radio" className={cn(RADIO_STYLES[variant], 'w-full')} {...props} ref={ref} />
-    );
+    return <input type="radio" className={cn(RADIO_STYLES[variant])} {...props} ref={ref} />;
   }
 );
 

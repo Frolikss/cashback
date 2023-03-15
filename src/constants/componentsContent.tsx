@@ -1,4 +1,5 @@
-import { ROUTES, Roles } from '@constants';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '@constants';
 import { AuthTypeContent, LabelContent } from '@interfaces';
 import { Avatar, Button, RoleItem } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
@@ -119,14 +120,29 @@ export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
   ROLES: {
     header: 'Roles',
     subheader: 'Choose your role'
+  },
+  INVITE: {
+    header: 'Invite',
+    subheader:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolores dolorum esse facilis hic laborum nostrum qui tempora unde voluptatibus?'
   }
 };
 
-export const ROLES_LABEL_CONTENT: { [key in Roles]: LabelContent } = {
-  [Roles.USER]: {
+export const ROLES_LABEL_CONTENT: { [key: string]: LabelContent } = {
+  USER: {
     component: <RoleItem role="User" />
   },
-  [Roles.ADMIN]: {
+  ADMIN: {
     component: <RoleItem role="Admin" />
+  }
+};
+
+export const INVITE_LABEL_CONTENT: { [key: string]: LabelContent } = {
+  CHECKBOX: {
+    component: (
+      <Link to="/" className="underline text-accent-darker">
+        Lorem ipsum?
+      </Link>
+    )
   }
 };

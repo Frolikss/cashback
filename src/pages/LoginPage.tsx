@@ -28,7 +28,7 @@ export const LoginPage = () => {
       form={
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
           <FillForm fields={LOGIN_FIELDS_DATA} register={register} errors={errors} />
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-between">
             <Button variant={ButtonVariants.PRIMARY}>Log In</Button>
             <Link className={BUTTON_STYLES[ButtonVariants.SECONDARY]} to={ROUTES.REGISTER}>
               Sign Up

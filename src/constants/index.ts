@@ -6,6 +6,7 @@ export * from './componentsVariants';
 export * from './fields/loginFieldsData';
 export * from './fields/registerFieldsData';
 export * from './fields/rolesFieldsData';
+export * from './fields/inviteFieldsData';
 export * from './componentsContent';
 export * from './styles';
 export * from './toastIds';

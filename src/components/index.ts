@@ -18,3 +18,4 @@ export * from './Avatar';
 export * from './RoleItem';
 export * from './form/Label';
 export * from './form/Radio';
+export * from './form/Checkbox';
