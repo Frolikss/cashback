@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@constants';
+import { LabelVariants, ROUTES } from '@constants';
 import { AuthTypeContent, LabelContent } from '@interfaces';
 import { Avatar, Button, RoleItem } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
@@ -130,10 +130,12 @@ export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
 
 export const ROLES_LABEL_CONTENT: { [key: string]: LabelContent } = {
   USER: {
-    component: <RoleItem role="User" />
+    component: <RoleItem role="User" />,
+    labelVariant: LabelVariants.ROLES
   },
   ADMIN: {
-    component: <RoleItem role="Admin" />
+    component: <RoleItem role="Admin" />,
+    labelVariant: LabelVariants.ROLES
   }
 };
 
@@ -143,6 +145,7 @@ export const INVITE_LABEL_CONTENT: { [key: string]: LabelContent } = {
       <Link to="/" className="underline text-accent-darker">
         Lorem ipsum?
       </Link>
-    )
+    ),
+    labelVariant: LabelVariants.CHECKBOX
   }
 };

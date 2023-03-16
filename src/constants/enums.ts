@@ -38,7 +38,7 @@ export enum FieldNames {
   PHONE = 'phone',
   CONFIRM_PASSWORD = 'confirmPassword',
   ROLE = 'role',
-  INVITE_EMAIL = 'invite email',
+  INVITE_EMAIL = 'inviteEmail',
   CONFIRM_INVITE_RULES = 'confirm invite rules'
 }
 

@@ -1,6 +1,7 @@
 import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
-import { AuthState, RegisteredUser } from '@interfaces';
-import { asyncLogin, asyncRegister, setRegisteredUserAction } from '@modules';
+import { INVITE_WRONG_EMAIL } from '@constants';
+import { AuthState, InviteResponse, RegisteredUser } from '@interfaces';
+import { asyncInviteNewUser, asyncLogin, asyncRegister, setRegisteredUserAction } from '@modules';
 
 export const loginUserReducer = (builder: ActionReducerMapBuilder<AuthState>) => {
   builder
@@ -25,6 +26,23 @@ export const registerUserReducer = (builder: ActionReducerMapBuilder<AuthState>)
     })
     .addCase(asyncRegister.rejected, (state) => {
       state.isLoading = false;
+    });
+};
+
+export const inviteNewUserReducer = (builder: ActionReducerMapBuilder<AuthState>) => {
+  builder
+    .addCase(asyncInviteNewUser.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(asyncInviteNewUser.fulfilled, (state, { payload }: PayloadAction<InviteResponse>) => {
+      state.isLoading = false;
+      state.inviteSend.isSuccessful = true;
+      state.inviteSend.message = payload.message;
+    })
+    .addCase(asyncInviteNewUser.rejected, (state) => {
+      state.isLoading = false;
+      state.inviteSend.isSuccessful = false;
+      state.inviteSend.message = INVITE_WRONG_EMAIL;
     });
 };
 

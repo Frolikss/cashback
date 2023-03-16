@@ -1,9 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthState } from '@interfaces';
-import { loginUserReducer, registerUserReducer, setRegisteredUserReducer } from '@modules';
+import {
+  inviteNewUserReducer,
+  loginUserReducer,
+  registerUserReducer,
+  setRegisteredUserReducer
+} from '@modules';
 
 const initialState: AuthState = {
   isLoading: false,
+  inviteSend: {
+    isSuccessful: false,
+    message: ''
+  },
   registeredUser: null
 };
 
@@ -14,6 +23,7 @@ const slice = createSlice({
   extraReducers: (builder) => {
     loginUserReducer(builder);
     registerUserReducer(builder);
+    inviteNewUserReducer(builder);
     setRegisteredUserReducer(builder);
   }
 });

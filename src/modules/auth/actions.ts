@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { FieldValues } from 'react-hook-form';
 import { LOGIN_ERROR_MESSAGE, REGISTRATION_UNKNOWN_ERROR } from '@constants';
-import { RegisteredUser, User } from '@interfaces';
+import { InviteResponse, RegisteredUser, User } from '@interfaces';
 import { authApi } from '@apis';
 import { setSelfAction } from '@modules';
 import { handleError } from '@helpers';
@@ -34,6 +34,28 @@ export const asyncRegister = createAsyncThunk(
       dispatch(setSelfAction(data));
     } catch (error) {
       handleError(error, REGISTRATION_UNKNOWN_ERROR);
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const asyncInviteNewUser = createAsyncThunk(
+  'INVITE_USER',
+  async (payload: FieldValues, { rejectWithValue }) => {
+    try {
+      const inviteResponse: InviteResponse = await new Promise((resolve, reject) => {
+        const isResolved = new Date().getSeconds() % 2 === 0;
+
+        setTimeout(
+          () =>
+            isResolved
+              ? resolve({ message: 'Invite send', isSuccessful: true })
+              : reject({ message: 'Email does not exist', isSuccessful: false }),
+          2000
+        );
+      });
+      return inviteResponse;
+    } catch (error) {
       return rejectWithValue(error);
     }
   }

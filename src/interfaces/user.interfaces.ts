@@ -22,3 +22,8 @@ export interface RegisteredUser {
   password: string;
   phone: string;
 }
+
+export interface InviteResponse {
+  isSuccessful: boolean;
+  message: string;
+}

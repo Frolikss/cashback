@@ -9,10 +9,9 @@ interface Props {
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
   labelContent?: { [key: string]: LabelContent };
-  labelVariant?: LabelVariants;
 }
 
-export const FillForm: FC<Props> = ({ fields, register, errors, labelContent, labelVariant }) => {
+export const FillForm: FC<Props> = ({ fields, register, errors, labelContent }) => {
   return (
     <>
       {fields.map(({ component: Component, withLabel, name, options, ...field }, index) => {
@@ -24,7 +23,7 @@ export const FillForm: FC<Props> = ({ fields, register, errors, labelContent, la
             {errors[name] && <p className="text-right text-red-regular font-medium">{error}</p>}
 
             {withLabel && field.id && labelContent && (
-              <Label id={field.id} variant={labelVariant}>
+              <Label id={field.id} variant={labelContent[field.id.toUpperCase()].labelVariant}>
                 {labelContent[field.id.toUpperCase()].component}
               </Label>
             )}
