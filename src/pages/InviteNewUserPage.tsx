@@ -12,9 +12,11 @@ import { InviteResponse } from '@interfaces';
 import { Button, FillForm, Loader } from '@components';
 import {
   asyncInviteNewUser,
+  asyncRegister,
   selectAuthIsLoading,
   selectInviteSendMessage,
-  selectInviteSendStatus
+  selectInviteSendStatus,
+  selectRegisteredUser
 } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import { history } from '@helpers';
@@ -25,6 +27,7 @@ export const InviteNewUserPage = () => {
   const inviteSend = useAppSelector(selectInviteSendStatus);
   const inviteMessage = useAppSelector(selectInviteSendMessage);
   const isLoading = useAppSelector(selectAuthIsLoading);
+  const registeredUser = useAppSelector(selectRegisteredUser);
 
   const {
     register,
@@ -59,6 +62,8 @@ export const InviteNewUserPage = () => {
 
   const onCloseModal = () => setIsModalShow(false);
 
+  const onSkipButtonClick = () => dispatch(asyncRegister(registeredUser));
+
   return (
     <div className="parent w-full flex md:items-center justify-center bg-login flex-col-reverse md:flex-row">
       <div className="basis-3/4 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">
@@ -82,7 +87,9 @@ export const InviteNewUserPage = () => {
               </Button>
             </div>
             <div className="flex gap-4">
-              <Button variant={ButtonVariants.SECONDARY}>Skip</Button>
+              <Button type="button" variant={ButtonVariants.SECONDARY} onClick={onSkipButtonClick}>
+                Skip
+              </Button>
               <div className={cn({ 'pointer-events-none opacity-50': !isAgreedToConditions })}>
                 <Button variant={ButtonVariants.PRIMARY}>Submit</Button>
               </div>

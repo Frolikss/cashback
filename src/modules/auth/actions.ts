@@ -21,14 +21,19 @@ export const asyncLogin = createAsyncThunk(
 
 export const asyncRegister = createAsyncThunk(
   'REGISTER',
-  async (payload: FieldValues, { dispatch, rejectWithValue }) => {
+  async (payload: RegisteredUser | null, { dispatch, rejectWithValue }) => {
     try {
       const data: User = await new Promise((resolve, reject) => {
         const isResolved = new Date().getSeconds() % 2 === 0;
 
-        isResolved
-          ? resolve({ id: '1', email: 'asd@as.com', role: 'USER', phone: '123' })
-          : reject({ message: 'Unexpected server error', statusCode: 404 });
+        if (isResolved) {
+          localStorage.setItem(
+            'accessToken',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0ZXN0bWFpbDE5OTBAZ21haWwuY29tIiwiaWQiOiJBVVNETXVGa01Lc3YiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTY3ODk2NDA1M30.EtI8VujoUnyQQTV94QDWXev7HBtewU6KeSsYvwRcJQE'
+          );
+          resolve({ id: '1', email: 'asd@as.com', role: 'USER', phone: '123' });
+        }
+        reject({ message: 'Unexpected server error', statusCode: 404 });
       });
 
       dispatch(setSelfAction(data));

@@ -1,8 +1,8 @@
 import cn from 'classnames';
-import { FC, ReactNode, RefObject } from 'react';
+import { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react';
 import { BUTTON_STYLES, ButtonVariants } from '@constants';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;
   modalRef?: RefObject<HTMLButtonElement>;
   children?: ReactNode;
