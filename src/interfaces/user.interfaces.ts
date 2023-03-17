@@ -24,6 +24,6 @@ export interface RegisteredUser {
 }
 
 export interface InviteResponse {
-  isSuccessful: boolean;
+  statusCode: number;
   message: string;
 }

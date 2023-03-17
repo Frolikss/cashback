@@ -9,10 +9,6 @@ import {
 
 const initialState: AuthState = {
   isLoading: false,
-  inviteSend: {
-    isSuccessful: false,
-    message: ''
-  },
   registeredUser: null
 };
 

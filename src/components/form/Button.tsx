@@ -7,17 +7,19 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   modalRef?: RefObject<HTMLButtonElement>;
   children?: ReactNode;
   onClick?: VoidFunction;
+  customStyle?: string;
 }
 
 export const Button: FC<Props> = ({
   variant = ButtonVariants.UTILITY,
   modalRef,
   children,
+  customStyle,
   ...props
 }) => {
   return (
     <button
-      className={cn('self-stretch rounded-lg', BUTTON_STYLES[variant])}
+      className={cn('self-stretch rounded-lg', BUTTON_STYLES[variant], customStyle)}
       ref={modalRef}
       {...props}>
       {children}

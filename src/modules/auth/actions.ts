@@ -54,8 +54,8 @@ export const asyncInviteNewUser = createAsyncThunk(
         setTimeout(
           () =>
             isResolved
-              ? resolve({ message: 'Invite send', isSuccessful: true })
-              : reject({ message: 'Email does not exist', isSuccessful: false }),
+              ? resolve({ message: 'Invite send', statusCode: 200 })
+              : reject({ message: 'Email does not exist', statusCode: 400 }),
           2000
         );
       });

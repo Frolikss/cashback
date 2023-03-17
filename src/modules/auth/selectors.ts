@@ -8,14 +8,9 @@ export const selectRegisteredUser = createSelector(
   (state) => state.registeredUser
 );
 
-export const selectInviteSendStatus = createSelector(
-  selectAuthState,
-  (state) => state.inviteSend.isSuccessful
-);
-
-export const selectInviteSendMessage = createSelector(
-  selectAuthState,
-  (state) => state.inviteSend.message
-);
-
 export const selectAuthIsLoading = createSelector(selectAuthState, (state) => state.isLoading);
+
+export const selectAuth = createSelector(selectAuthState, ({ isLoading, registeredUser }) => ({
+  isLoading,
+  registeredUser
+}));

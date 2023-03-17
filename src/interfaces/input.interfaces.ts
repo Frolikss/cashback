@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { RegisterOptions } from 'react-hook-form';
-import { FieldNames, LabelVariants } from '@constants';
+import { FieldNames } from '@constants';
 
 export interface Field {
   name: FieldNames;
@@ -9,11 +9,6 @@ export interface Field {
   value?: string;
   options: RegisterOptions;
   component: FC<any>;
-  withLabel?: boolean;
+  label?: ReactNode;
   id?: string;
-}
-
-export interface LabelContent {
-  component: ReactNode;
-  labelVariant: LabelVariants;
 }

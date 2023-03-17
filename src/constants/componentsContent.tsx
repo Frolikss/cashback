@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { LabelVariants, ROUTES } from '@constants';
-import { AuthTypeContent, LabelContent } from '@interfaces';
-import { Avatar, Button, RoleItem } from '@components';
+import React from 'react';
+import { ButtonVariants, ROUTES } from '@constants';
+import { AuthTypeContent, FormButton } from '@interfaces';
+import { Avatar, Button } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
@@ -128,24 +128,22 @@ export const AUTH_PAGE_CONTENT: { [key: string]: AuthTypeContent } = {
   }
 };
 
-export const ROLES_LABEL_CONTENT: { [key: string]: LabelContent } = {
-  USER: {
-    component: <RoleItem role="User" />,
-    labelVariant: LabelVariants.ROLES
+export const INVITE_PAGE_BUTTONS: FormButton[] = [
+  {
+    id: 1,
+    type: 'button',
+    variant: ButtonVariants.SECONDARY,
+    children: 'Back'
   },
-  ADMIN: {
-    component: <RoleItem role="Admin" />,
-    labelVariant: LabelVariants.ROLES
+  {
+    id: 2,
+    type: 'button',
+    variant: ButtonVariants.SECONDARY,
+    children: 'Skip'
+  },
+  {
+    id: 3,
+    variant: ButtonVariants.PRIMARY,
+    children: 'Submit'
   }
-};
-
-export const INVITE_LABEL_CONTENT: { [key: string]: LabelContent } = {
-  CHECKBOX: {
-    component: (
-      <Link to="/" className="underline text-accent-darker">
-        Lorem ipsum?
-      </Link>
-    ),
-    labelVariant: LabelVariants.CHECKBOX
-  }
-};
+];

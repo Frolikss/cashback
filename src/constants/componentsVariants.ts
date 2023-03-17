@@ -4,6 +4,7 @@ import {
   CollectionViewCellVariants,
   InputVariants,
   LabelVariants,
+  ListVariants,
   MenuVariants,
   ModalVariants,
   PaginationVariants,
@@ -14,9 +15,9 @@ import avatarBig from '@png/avatarBig.png';
 
 export const BUTTON_STYLES: { [key in ButtonVariants]: string } = {
   [ButtonVariants.PRIMARY]:
-    'text-base-100 bg-accent-primary text-center rounded-xl flex-1 font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
+    'text-base-100 bg-accent-primary text-center rounded-xl flex-1 w-1/4 font-eUkraine font-medium text-lg p-3 leading-5 transition duration-300 hover:bg-accent-dark',
   [ButtonVariants.SECONDARY]:
-    'font-eUkraine px-3 font-medium rounded-xl flex items-center flex-1 justify-center text-accent-primary border-3 border-accent-primary hover:border-accent-dark',
+    'font-eUkraine px-3 font-medium rounded-xl flex items-center flex-1 w-1/4 justify-center text-accent-primary border-3 border-accent-primary hover:border-accent-dark',
   [ButtonVariants.TERTIARY]:
     'w-full text-red-regular font-medium flex-1 transition duration-300 hover:text-red-darker',
   [ButtonVariants.UTILITY]:
@@ -79,4 +80,8 @@ export const RADIO_STYLES: { [key in RadioVariants]: string } = {
 
 export const CHECKBOX_STYLES: { [key in CheckboxVariants]: string } = {
   [CheckboxVariants.PRIMARY]: 'accent-accent-primary'
+};
+
+export const LIST_STYLES: { [key in ListVariants]: string } = {
+  [ListVariants.PRIMARY]: 'border-b-1 border-b-base-700 p-2'
 };

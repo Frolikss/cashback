@@ -1,32 +1,24 @@
 import { FC } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { LabelVariants } from '@constants';
-import { Field, LabelContent } from '@interfaces';
-import { Label } from '@components';
+import { Field } from '@interfaces';
 
 interface Props {
   fields: Field[];
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
-  labelContent?: { [key: string]: LabelContent };
 }
 
-export const FillForm: FC<Props> = ({ fields, register, errors, labelContent }) => {
+export const FillForm: FC<Props> = ({ fields, register, errors }) => {
   return (
     <>
-      {fields.map(({ component: Component, withLabel, name, options, ...field }, index) => {
+      {fields.map(({ component: Component, label: Label, name, options, ...field }) => {
         const error = (errors as Record<string, FieldError>)[name]?.message;
         return (
-          <div key={index}>
+          <div key={name}>
             <Component {...field} {...register(name, options)} />
 
             {errors[name] && <p className="text-right text-red-regular font-medium">{error}</p>}
-
-            {withLabel && field.id && labelContent && (
-              <Label id={field.id} variant={labelContent[field.id.toUpperCase()].labelVariant}>
-                {labelContent[field.id.toUpperCase()].component}
-              </Label>
-            )}
+            {Label}
           </div>
         );
       })}

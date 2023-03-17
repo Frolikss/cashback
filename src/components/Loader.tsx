@@ -4,14 +4,22 @@ import { ReactComponent as LoadingIcon } from '@svg/loading.svg';
 import { ReactComponent as SuccessIcon } from '@svg/success.svg';
 
 interface Props {
-  isSuccessView: boolean;
+  isSuccessView?: boolean;
   isLoading: boolean;
   isShow: boolean;
   onClose: VoidFunction;
-  message: string;
+  loadingMessage?: string;
+  message?: string;
 }
 
-export const Loader: FC<Props> = ({ message, isSuccessView, isLoading, onClose, isShow }) => {
+export const Loader: FC<Props> = ({
+  message = 'Success',
+  loadingMessage = 'Loading',
+  isSuccessView,
+  isLoading,
+  onClose,
+  isShow
+}) => {
   const Icon = isSuccessView ? SuccessIcon : ErrorIcon;
 
   useEffect(() => {
@@ -20,9 +28,7 @@ export const Loader: FC<Props> = ({ message, isSuccessView, isLoading, onClose, 
     }
   }, [onClose, isLoading, isShow]);
 
-  if (!isShow) {
-    return null;
-  }
+  if (!isShow) return null;
 
   return (
     <div className="fixed flex items-center justify-center left-0 top-0 w-screen h-screen bg-base-100/50">
@@ -30,7 +36,7 @@ export const Loader: FC<Props> = ({ message, isSuccessView, isLoading, onClose, 
         {isLoading ? (
           <>
             <LoadingIcon />
-            <p>Loading</p>
+            <p>{loadingMessage}</p>
           </>
         ) : (
           <div className="flex flex-col items-center gap-4">

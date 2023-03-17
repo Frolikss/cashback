@@ -1,11 +1,5 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import {
-  AUTH_PAGE_CONTENT,
-  ButtonVariants,
-  ROLES_FIELDS_DATA,
-  ROLES_LABEL_CONTENT,
-  ROUTES
-} from '@constants';
+import { AUTH_PAGE_CONTENT, ButtonVariants, ROLES_FIELDS_DATA, ROUTES } from '@constants';
 import { RegisteredUser } from '@interfaces';
 import { Button, FillForm } from '@components';
 import { selectRegisteredUser, setRegisteredUserAction } from '@modules';
@@ -37,12 +31,7 @@ export const RolesPage = () => {
           <p className="text-base-500 text-lg">{AUTH_PAGE_CONTENT.ROLES.subheader}</p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-          <FillForm
-            fields={ROLES_FIELDS_DATA}
-            errors={errors}
-            register={register}
-            labelContent={ROLES_LABEL_CONTENT}
-          />
+          <FillForm fields={ROLES_FIELDS_DATA} errors={errors} register={register} />
           <div className="flex self-end gap-4">
             <Button variant={ButtonVariants.SECONDARY} onClick={history.back}>
               Back

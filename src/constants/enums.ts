@@ -55,3 +55,7 @@ export enum Roles {
 export enum CheckboxVariants {
   PRIMARY = 'primary'
 }
+
+export enum ListVariants {
+  PRIMARY = 'primary'
+}

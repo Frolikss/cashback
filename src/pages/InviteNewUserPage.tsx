@@ -3,31 +3,21 @@ import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import {
   AUTH_PAGE_CONTENT,
-  ButtonVariants,
   FieldNames,
   INVITE_FIELDS_DATA,
-  INVITE_LABEL_CONTENT
+  INVITE_PAGE_BUTTONS,
+  ListVariants
 } from '@constants';
-import { InviteResponse } from '@interfaces';
-import { Button, FillForm, Loader } from '@components';
-import {
-  asyncInviteNewUser,
-  asyncRegister,
-  selectAuthIsLoading,
-  selectInviteSendMessage,
-  selectInviteSendStatus,
-  selectRegisteredUser
-} from '@modules';
+import { FormButtonAction, InviteResponse } from '@interfaces';
+import { FillForm, FormButtons, Loader, UnorderedList } from '@components';
+import { asyncInviteNewUser, asyncRegister, selectAuth } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import { history } from '@helpers';
 
 export const InviteNewUserPage = () => {
   const dispatch = useAppDispatch();
 
-  const inviteSend = useAppSelector(selectInviteSendStatus);
-  const inviteMessage = useAppSelector(selectInviteSendMessage);
-  const isLoading = useAppSelector(selectAuthIsLoading);
-  const registeredUser = useAppSelector(selectRegisteredUser);
+  const { isLoading, registeredUser } = useAppSelector(selectAuth);
 
   const {
     register,
@@ -36,33 +26,43 @@ export const InviteNewUserPage = () => {
     formState: { errors }
   } = useForm<FieldValues>();
 
+  const [inviteResponse, setInviteResponse] = useState<InviteResponse>();
   const [isModalShow, setIsModalShow] = useState(false);
-  const [invitedList, setInvitedList] = useState<{ isSuccessful: boolean; email: string }[]>([]);
+  const [invitedList, setInvitedList] = useState<string[]>([]);
 
   const isAgreedToConditions: boolean = watch(FieldNames.CONFIRM_INVITE_RULES);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const inviteListNewItem = data.inviteEmail;
 
-    if (invitedList.filter((listItem) => listItem.email === inviteListNewItem).length === 0) {
-      dispatch(asyncInviteNewUser(data)).then((response) => {
-        const inviteResponse = response.payload as InviteResponse;
-
-        setInvitedList((prevState) => [
-          ...prevState,
-          {
-            isSuccessful: inviteResponse.isSuccessful,
-            email: inviteListNewItem
-          }
-        ]);
+    dispatch(asyncInviteNewUser(data))
+      .unwrap()
+      .then((response) => {
+        setInviteResponse(response);
+        setInvitedList((prevList) => [...prevList, inviteListNewItem]);
+      })
+      .catch((error) => {
+        setInviteResponse(error);
       });
-      setIsModalShow(true);
-    }
+    setIsModalShow(true);
   };
 
   const onCloseModal = () => setIsModalShow(false);
 
-  const onSkipButtonClick = () => dispatch(asyncRegister(registeredUser));
+  const buttonActions: FormButtonAction[] = [
+    {
+      id: 1,
+      action: () => history.back()
+    },
+    {
+      id: 2,
+      action: () => dispatch(asyncRegister(registeredUser))
+    },
+    {
+      id: 3,
+      customStyle: cn({ 'pointer-events-none opacity-50': !isAgreedToConditions })
+    }
+  ];
 
   return (
     <div className="parent w-full flex md:items-center justify-center bg-login flex-col-reverse md:flex-row">
@@ -74,46 +74,19 @@ export const InviteNewUserPage = () => {
           <p className="text-base-500 text-lg">{AUTH_PAGE_CONTENT.INVITE.subheader}</p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-          <FillForm
-            fields={INVITE_FIELDS_DATA}
-            errors={errors}
-            register={register}
-            labelContent={INVITE_LABEL_CONTENT}
-          />
-          <div className="flex gap-4 justify-between">
-            <div className="basis-1/3 [&>*]:h-full [&>*]:w-1/2">
-              <Button variant={ButtonVariants.SECONDARY} onClick={history.back}>
-                Back
-              </Button>
-            </div>
-            <div className="flex gap-4">
-              <Button type="button" variant={ButtonVariants.SECONDARY} onClick={onSkipButtonClick}>
-                Skip
-              </Button>
-              <div className={cn({ 'pointer-events-none opacity-50': !isAgreedToConditions })}>
-                <Button variant={ButtonVariants.PRIMARY}>Submit</Button>
-              </div>
-            </div>
-          </div>
+          <FillForm fields={INVITE_FIELDS_DATA} errors={errors} register={register} />
+          <FormButtons pageButtons={INVITE_PAGE_BUTTONS} buttonsProperties={buttonActions} />
         </form>
-        <ul>
-          {invitedList?.map((listItem) => (
-            <li
-              key={listItem.email}
-              className={cn('text-green-dark border-b-1 border-b-base-700 p-2', {
-                'text-red-dark': !listItem.isSuccessful
-              })}>
-              {listItem.email}
-            </li>
-          ))}
-        </ul>
+        <UnorderedList listItems={invitedList} variant={ListVariants.PRIMARY} />
       </div>
       <Loader
-        isSuccessView={inviteSend}
+        isSuccessView={
+          inviteResponse && inviteResponse.statusCode >= 200 && inviteResponse.statusCode <= 299
+        }
         isShow={isModalShow}
         onClose={onCloseModal}
         isLoading={isLoading}
-        message={inviteMessage}
+        message={inviteResponse && inviteResponse.message}
       />
     </div>
   );
