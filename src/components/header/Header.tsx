@@ -5,7 +5,7 @@ import { useModal } from '@hooks';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 
 export const Header = () => {
-  const { modalOpened, btnRef, openModal, closeModal } = useModal();
+  const { modalOpened, btnRef, openModal, closeModal } = useModal(true);
 
   const handleModalButtonClick = modalOpened ? closeModal : openModal;
 

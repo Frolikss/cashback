@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
 import { ButtonVariants } from '@constants';
 
 export interface FormButton {
@@ -11,5 +11,6 @@ export interface FormButton {
 export interface FormButtonAction {
   id: number;
   customStyle?: string;
-  action?: (event?: MouseEvent) => void;
+  props?: ButtonHTMLAttributes<HTMLButtonElement>;
+  action?: MouseEventHandler<HTMLButtonElement>;
 }

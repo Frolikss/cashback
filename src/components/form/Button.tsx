@@ -6,7 +6,6 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;
   modalRef?: RefObject<HTMLButtonElement>;
   children?: ReactNode;
-  onClick?: VoidFunction;
   customStyle?: string;
 }
 

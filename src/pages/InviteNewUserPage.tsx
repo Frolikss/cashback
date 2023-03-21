@@ -1,17 +1,16 @@
-import cn from 'classnames';
 import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import {
   AUTH_PAGE_CONTENT,
-  FieldNames,
   INVITE_FIELDS_DATA,
   INVITE_PAGE_BUTTONS,
+  InviteFieldNames,
   ListVariants
 } from '@constants';
 import { FormButtonAction, InviteResponse } from '@interfaces';
 import { FillForm, FormButtons, Loader, UnorderedList } from '@components';
 import { asyncInviteNewUser, asyncRegister, selectAuth } from '@modules';
-import { useAppDispatch, useAppSelector } from '@hooks';
+import { useAppDispatch, useAppSelector, useModal } from '@hooks';
 import { history } from '@helpers';
 
 export const InviteNewUserPage = () => {
@@ -26,33 +25,33 @@ export const InviteNewUserPage = () => {
     formState: { errors }
   } = useForm<FieldValues>();
 
+  const { modalOpened, closeModal, openModal } = useModal();
+
   const [inviteResponse, setInviteResponse] = useState<InviteResponse>();
-  const [isModalShow, setIsModalShow] = useState(false);
   const [invitedList, setInvitedList] = useState<string[]>([]);
 
-  const isAgreedToConditions: boolean = watch(FieldNames.CONFIRM_INVITE_RULES);
+  const isAgreedToConditions: boolean = watch(InviteFieldNames.CONFIRM_INVITE_RULES);
+
+  const isSuccessfulInvite =
+    inviteResponse && inviteResponse?.statusCode >= 200 && inviteResponse?.statusCode <= 299;
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const inviteListNewItem = data.inviteEmail;
-
     dispatch(asyncInviteNewUser(data))
       .unwrap()
       .then((response) => {
         setInviteResponse(response);
-        setInvitedList((prevList) => [...prevList, inviteListNewItem]);
+        setInvitedList((prevList) => [...prevList, data.inviteEmail]);
       })
       .catch((error) => {
         setInviteResponse(error);
       });
-    setIsModalShow(true);
+    openModal();
   };
-
-  const onCloseModal = () => setIsModalShow(false);
 
   const buttonActions: FormButtonAction[] = [
     {
       id: 1,
-      action: () => history.back()
+      action: history.back
     },
     {
       id: 2,
@@ -60,7 +59,10 @@ export const InviteNewUserPage = () => {
     },
     {
       id: 3,
-      customStyle: cn({ 'pointer-events-none opacity-50': !isAgreedToConditions })
+      props: {
+        disabled: !isAgreedToConditions
+      },
+      customStyle: 'disabled:opacity-50 disabled:pointer-events-none'
     }
   ];
 
@@ -80,11 +82,9 @@ export const InviteNewUserPage = () => {
         <UnorderedList listItems={invitedList} variant={ListVariants.PRIMARY} />
       </div>
       <Loader
-        isSuccessView={
-          inviteResponse && inviteResponse.statusCode >= 200 && inviteResponse.statusCode <= 299
-        }
-        isShow={isModalShow}
-        onClose={onCloseModal}
+        isSuccessView={isSuccessfulInvite}
+        isShown={modalOpened}
+        onClose={closeModal}
         isLoading={isLoading}
         message={inviteResponse && inviteResponse.message}
       />

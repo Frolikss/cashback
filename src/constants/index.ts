@@ -3,6 +3,7 @@ export * from './enums';
 export * from './errorMessages';
 export * from './inputPatterns';
 export * from './componentsVariants';
+export * from './fieldOptions';
 export * from './fields/loginFieldsData';
 export * from './fields/registerFieldsData';
 export * from './fields/rolesFieldsData';

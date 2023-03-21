@@ -1,4 +1,4 @@
-import { FieldNames, LabelVariants, REQUIRED_FIELD, Roles } from '@constants';
+import { LabelVariants, REQUIRED_FIELD, RoleFieldNames, Roles } from '@constants';
 import { Field } from '@interfaces';
 import { Label, Radio, RoleItem } from '@components';
 
@@ -9,7 +9,7 @@ export const ROLES_FIELDS_DATA: Field[] = [
         <RoleItem role="User" />
       </Label>
     ),
-    name: FieldNames.ROLE,
+    name: RoleFieldNames.ROLE,
     component: Radio,
     type: 'radio',
     id: Roles.USER,
@@ -24,7 +24,7 @@ export const ROLES_FIELDS_DATA: Field[] = [
         <RoleItem role="Admin" />
       </Label>
     ),
-    name: FieldNames.ROLE,
+    name: RoleFieldNames.ROLE,
     component: Radio,
     type: 'radio',
     id: Roles.ADMIN,

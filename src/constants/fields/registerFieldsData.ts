@@ -1,34 +1,27 @@
 import { FieldValues } from 'react-hook-form';
 import {
-  EMAIL_PATTERN,
-  FieldNames,
-  INVALID_EMAIL,
+  EMAIL_OPTIONS,
   MIN_PASS_LENGTH,
   PASSWORDS_NOT_MATCHING,
   PHONE_LENGTH_MESSAGE,
   PHONE_NUMBER_PATTERN,
   PHONE_PATTERN_MESSAGE,
-  REQUIRED_FIELD
+  REQUIRED_FIELD,
+  RegistrationFieldNames
 } from '@constants';
 import { Field } from '@interfaces';
 import { Input } from '@components';
 
 export const REGISTER_FIELDS_DATA: Field[] = [
   {
-    name: FieldNames.EMAIL,
+    name: RegistrationFieldNames.EMAIL,
     component: Input,
     type: 'email',
     placeholder: 'Email',
-    options: {
-      required: REQUIRED_FIELD,
-      pattern: {
-        value: EMAIL_PATTERN,
-        message: INVALID_EMAIL
-      }
-    }
+    options: EMAIL_OPTIONS
   },
   {
-    name: FieldNames.PHONE,
+    name: RegistrationFieldNames.PHONE,
     component: Input,
     type: 'tel',
     placeholder: 'Phone',
@@ -49,7 +42,7 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     }
   },
   {
-    name: FieldNames.PASSWORD,
+    name: RegistrationFieldNames.PASSWORD,
     component: Input,
     type: 'password',
     placeholder: 'Password',
@@ -65,7 +58,7 @@ export const REGISTER_FIELDS_DATA: Field[] = [
     }
   },
   {
-    name: FieldNames.CONFIRM_PASSWORD,
+    name: RegistrationFieldNames.CONFIRM_PASSWORD,
     component: Input,
     type: 'password',
     placeholder: 'Confirm Password',

@@ -1,6 +1,8 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 
-export const useModal = (): {
+export const useModal = (
+  isOutsideClickable?: boolean
+): {
   modalOpened: boolean;
   openModal: () => void;
   closeModal: () => void;
@@ -12,16 +14,19 @@ export const useModal = (): {
   const openModal = () => setModalOpened(true);
   const closeModal = () => setModalOpened(false);
 
-  const closeModalOnOutsideClick = (event: Event) => {
-    if (event.target !== btnRef.current) {
-      setModalOpened(false);
-    }
-  };
+  const closeModalOnOutsideClick = useCallback(
+    (event: Event) => {
+      if (event.target !== btnRef.current && isOutsideClickable) {
+        setModalOpened(false);
+      }
+    },
+    [isOutsideClickable]
+  );
 
   useEffect(() => {
     document.body.addEventListener('click', closeModalOnOutsideClick);
     return () => document.body.removeEventListener('click', closeModalOnOutsideClick);
-  }, [modalOpened]);
+  }, [modalOpened, closeModalOnOutsideClick]);
 
   return { modalOpened, openModal, closeModal, btnRef };
 };

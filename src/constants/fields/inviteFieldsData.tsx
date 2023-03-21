@@ -1,31 +1,19 @@
 import { Link } from 'react-router-dom';
-import {
-  EMAIL_PATTERN,
-  FieldNames,
-  INVALID_EMAIL,
-  LabelVariants,
-  REQUIRED_FIELD
-} from '@constants';
+import { EMAIL_OPTIONS, InviteFieldNames, LabelVariants } from '@constants';
 import { Field } from '@interfaces';
 import { Checkbox, Input, Label } from '@components';
 
 export const INVITE_FIELDS_DATA: Field[] = [
   {
-    name: FieldNames.INVITE_EMAIL,
+    name: InviteFieldNames.INVITE_EMAIL,
     component: Input,
     type: 'email',
     placeholder: 'Email',
-    options: {
-      required: REQUIRED_FIELD,
-      pattern: {
-        value: EMAIL_PATTERN,
-        message: INVALID_EMAIL
-      }
-    }
+    options: EMAIL_OPTIONS
   },
   {
     id: 'checkbox',
-    name: FieldNames.CONFIRM_INVITE_RULES,
+    name: InviteFieldNames.CONFIRM_INVITE_RULES,
     component: Checkbox,
     type: 'checkbox',
     label: (
@@ -34,12 +22,6 @@ export const INVITE_FIELDS_DATA: Field[] = [
           Lorem ipsum?
         </Link>
       </Label>
-    ),
-    options: {
-      pattern: {
-        value: EMAIL_PATTERN,
-        message: INVALID_EMAIL
-      }
-    }
+    )
   }
 ];

@@ -20,7 +20,8 @@ export const FormButtons: FC<Props> = ({ pageButtons, buttonsProperties }) => {
             type={button.type}
             variant={button.variant}
             customStyle={buttonProperties?.customStyle}
-            onClick={buttonProperties?.action}>
+            onClick={buttonProperties?.action}
+            {...buttonProperties?.props}>
             {button.children}
           </Button>
         );

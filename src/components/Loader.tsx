@@ -6,7 +6,7 @@ import { ReactComponent as SuccessIcon } from '@svg/success.svg';
 interface Props {
   isSuccessView?: boolean;
   isLoading: boolean;
-  isShow: boolean;
+  isShown: boolean;
   onClose: VoidFunction;
   loadingMessage?: string;
   message?: string;
@@ -18,17 +18,17 @@ export const Loader: FC<Props> = ({
   isSuccessView,
   isLoading,
   onClose,
-  isShow
+  isShown
 }) => {
   const Icon = isSuccessView ? SuccessIcon : ErrorIcon;
 
   useEffect(() => {
-    if (!isLoading && isShow) {
+    if (!isLoading && isShown) {
       setTimeout(() => onClose(), 1000);
     }
-  }, [onClose, isLoading, isShow]);
+  }, [onClose, isLoading, isShown]);
 
-  if (!isShow) return null;
+  if (!isShown) return null;
 
   return (
     <div className="fixed flex items-center justify-center left-0 top-0 w-screen h-screen bg-base-100/50">

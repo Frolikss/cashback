@@ -18,7 +18,7 @@ export const HeaderModal: FC<Props> = ({
   iconStyle,
   isHoverable
 }) => {
-  const { modalOpened, btnRef, openModal, closeModal } = useModal();
+  const { modalOpened, btnRef, openModal, closeModal } = useModal(true);
 
   const handleModalButtonClick = modalOpened ? closeModal : openModal;
 

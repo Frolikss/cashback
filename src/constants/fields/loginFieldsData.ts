@@ -1,29 +1,17 @@
-import {
-  EMAIL_PATTERN,
-  FieldNames,
-  INVALID_EMAIL,
-  MIN_PASS_LENGTH,
-  REQUIRED_FIELD
-} from '@constants';
+import { EMAIL_OPTIONS, LoginFieldNames, MIN_PASS_LENGTH, REQUIRED_FIELD } from '@constants';
 import { Field } from '@interfaces';
 import { Input } from '@components';
 
 export const LOGIN_FIELDS_DATA: Field[] = [
   {
-    name: FieldNames.EMAIL,
+    name: LoginFieldNames.EMAIL,
     component: Input,
     type: 'email',
     placeholder: 'Email',
-    options: {
-      required: REQUIRED_FIELD,
-      pattern: {
-        value: EMAIL_PATTERN,
-        message: INVALID_EMAIL
-      }
-    }
+    options: EMAIL_OPTIONS
   },
   {
-    name: FieldNames.PASSWORD,
+    name: LoginFieldNames.PASSWORD,
     component: Input,
     type: 'password',
     placeholder: 'Password',
