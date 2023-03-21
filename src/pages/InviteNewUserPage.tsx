@@ -86,7 +86,7 @@ export const InviteNewUserPage = () => {
         isShown={modalOpened}
         onClose={closeModal}
         isLoading={isLoading}
-        message={inviteResponse && inviteResponse.message}
+        message={inviteResponse?.message}
       />
     </div>
   );
