@@ -48,7 +48,7 @@ export const InviteNewUserPage = () => {
     openModal();
   };
 
-  const buttonActions: FormButtonAction[] = [
+  const buttonsProperties: FormButtonAction[] = [
     {
       id: 1,
       action: history.back
@@ -77,7 +77,7 @@ export const InviteNewUserPage = () => {
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <FillForm fields={INVITE_FIELDS_DATA} errors={errors} register={register} />
-          <FormButtons pageButtons={INVITE_PAGE_BUTTONS} buttonsProperties={buttonActions} />
+          <FormButtons pageButtons={INVITE_PAGE_BUTTONS} buttonsProperties={buttonsProperties} />
         </form>
         <UnorderedList listItems={invitedList} variant={ListVariants.PRIMARY} />
       </div>
