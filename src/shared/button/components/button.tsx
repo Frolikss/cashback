@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react';
-import { BUTTON_STYLES, ButtonVariants } from '@constants';
+import { BUTTON_STYLES, ButtonVariants } from '../constants/button-style-variants';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariants;

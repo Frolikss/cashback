@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { FC, ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
-import { INPUT_STYLES, InputVariants } from '@constants';
+import { INPUT_STYLES, InputVariants } from '../constants/input-style-variants';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   variant?: InputVariants;

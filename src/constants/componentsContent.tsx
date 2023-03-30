@@ -1,7 +1,9 @@
 import React from 'react';
-import { ButtonVariants, ROUTES } from '@constants';
-import { AuthTypeContent, FormButton } from '@interfaces';
-import { Avatar, Button } from '@components';
+import { ROUTES } from '@constants';
+import { Button, ButtonVariants } from '@shared/button';
+import { FormButton } from '@shared/form-setters';
+import { AuthTypeContent } from '@interfaces';
+import { Avatar } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';

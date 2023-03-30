@@ -1,15 +1,3 @@
-export enum ButtonVariants {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TERTIARY = 'tertiary',
-  UTILITY = 'utility'
-}
-
-export enum InputVariants {
-  PRIMARY = 'primary',
-  RADIO = 'radio'
-}
-
 export enum RadioVariants {
   PRIMARY = 'primary'
 }
@@ -51,11 +39,6 @@ export enum RegistrationFieldNames {
   PASSWORD = 'password',
   PHONE = 'phone',
   CONFIRM_PASSWORD = 'confirmPassword'
-}
-
-export enum LabelVariants {
-  ROLES = 'roles',
-  CHECKBOX = 'checkbox'
 }
 
 export enum Roles {

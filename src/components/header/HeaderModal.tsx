@@ -1,6 +1,7 @@
 import { ComponentType, FC, SVGProps } from 'react';
-import { ButtonVariants, ModalVariants } from '@constants';
-import { Button, ModalWrapper } from '@components';
+import { ModalVariants } from '@constants';
+import { Button, ButtonVariants } from '@shared/button';
+import { ModalWrapper } from '@components';
 import { useModal } from '@hooks';
 
 interface Props {

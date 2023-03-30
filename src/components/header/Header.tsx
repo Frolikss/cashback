@@ -1,6 +1,7 @@
 import cn from 'classnames';
-import { ButtonVariants, HEADER_MODALS, ModalVariants, OVERLAY_STYLE } from '@constants';
-import { Button, HeaderMenuModal, HeaderModal, ModalWrapper } from '@components';
+import { HEADER_MODALS, ModalVariants, OVERLAY_STYLE } from '@constants';
+import { Button, ButtonVariants } from '@shared/button';
+import { HeaderMenuModal, HeaderModal, ModalWrapper } from '@components';
 import { useModal } from '@hooks';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 

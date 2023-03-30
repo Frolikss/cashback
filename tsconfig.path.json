@@ -3,7 +3,10 @@
     "baseUrl": "./src",
     "paths": {
       "@app":[
-        "App.tsx"
+        "app"
+      ],
+      "@shared/*":[
+        "shared/*"
       ],
       "@components": [
         "components"

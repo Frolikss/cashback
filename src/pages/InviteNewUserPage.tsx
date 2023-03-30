@@ -7,8 +7,9 @@ import {
   InviteFieldNames,
   ListVariants
 } from '@constants';
-import { FormButtonAction, InviteResponse } from '@interfaces';
-import { FillForm, FormButtons, Loader, UnorderedList } from '@components';
+import { FormButtonAction, FormButtons, FormFields } from '@shared/form-setters';
+import { InviteResponse } from '@interfaces';
+import { Loader, UnorderedList } from '@components';
 import { asyncInviteNewUser, asyncRegister, selectAuth } from '@modules';
 import { useAppDispatch, useAppSelector, useModal } from '@hooks';
 import { history } from '@helpers';
@@ -76,7 +77,7 @@ export const InviteNewUserPage = () => {
           <p className="text-base-500 text-lg">{AUTH_PAGE_CONTENT.INVITE.subheader}</p>
         </div>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-          <FillForm fields={INVITE_FIELDS_DATA} errors={errors} register={register} />
+          <FormFields fields={INVITE_FIELDS_DATA} errors={errors} register={register} />
           <FormButtons pageButtons={INVITE_PAGE_BUTTONS} buttonsProperties={buttonsProperties} />
         </form>
         <UnorderedList listItems={invitedList} variant={ListVariants.PRIMARY} />

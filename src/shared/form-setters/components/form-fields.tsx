@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { Field } from '@interfaces';
+import { Field } from '@shared/form-setters';
 
 interface Props {
   fields: Field[];
@@ -8,7 +8,7 @@ interface Props {
   errors: FieldErrors;
 }
 
-export const FillForm: FC<Props> = ({ fields, register, errors }) => {
+export const FormFields: FC<Props> = ({ fields, register, errors }) => {
   return (
     <>
       {fields.map(({ component: Component, label: Label, name, options, ...field }) => {

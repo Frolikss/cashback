@@ -1,6 +1,8 @@
 import { Dispatch, FC, SetStateAction } from 'react';
-import { ButtonVariants, MAX_LIST_PAGE_ITEMS, PaginationVariants } from '@constants';
-import { Button, ListPagination, Select } from '@components';
+import { MAX_LIST_PAGE_ITEMS, PaginationVariants } from '@constants';
+import { Button, ButtonVariants } from '@shared/button';
+import { Select } from '@shared/select';
+import { ListPagination } from '@components';
 import { ReactComponent as CollectionViewIcon } from '@svg/collectionView.svg';
 import { ReactComponent as TableViewIcon } from '@svg/tableView.svg';
 
