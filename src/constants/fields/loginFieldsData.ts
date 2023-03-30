@@ -1,6 +1,6 @@
 import { EMAIL_OPTIONS, LoginFieldNames, MIN_PASS_LENGTH, REQUIRED_FIELD } from '@constants';
-import { Field } from '@shared/form-setters';
-import { Input } from '@shared/input';
+import { Input } from '@shared/components';
+import { Field } from '@shared/types';
 
 export const LOGIN_FIELDS_DATA: Field[] = [
   {

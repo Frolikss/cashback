@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Button } from '@shared/button';
-import { FormButton, FormButtonAction } from '@shared/form-setters';
+import { Button } from '@shared/components';
+import { FormButton, FormButtonAction } from '@shared/types';
 
 interface Props {
   pageButtons: FormButton[];

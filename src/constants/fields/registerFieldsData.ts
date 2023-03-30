@@ -9,8 +9,8 @@ import {
   REQUIRED_FIELD,
   RegistrationFieldNames
 } from '@constants';
-import { Field } from '@shared/form-setters';
-import { Input } from '@shared/input';
+import { Input } from '@shared/components';
+import { Field } from '@shared/types';
 
 export const REGISTER_FIELDS_DATA: Field[] = [
   {

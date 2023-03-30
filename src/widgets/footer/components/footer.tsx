@@ -1,10 +1,11 @@
 import { Dispatch, FC, SetStateAction } from 'react';
-import { MAX_LIST_PAGE_ITEMS, PaginationVariants } from '@constants';
-import { Button, ButtonVariants } from '@shared/button';
-import { Select } from '@shared/select';
+import { PaginationVariants } from '@constants';
+import { Button, Select } from '@shared/components';
+import { ButtonVariants } from '@shared/constants';
 import { ListPagination } from '@components';
 import { ReactComponent as CollectionViewIcon } from '@svg/collectionView.svg';
 import { ReactComponent as TableViewIcon } from '@svg/tableView.svg';
+import { MAX_LIST_PAGE_ITEMS } from '../constants/footer-content';
 
 interface Props {
   isTableView: boolean;

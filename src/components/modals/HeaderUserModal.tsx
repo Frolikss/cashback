@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react';
 import { ACCESS_TOKEN } from '@constants';
-import { Button, ButtonVariants } from '@shared/button';
+import { Button } from '@shared/components';
+import { ButtonVariants } from '@shared/constants';
 import { asyncGetCurrentUser, selectCurrentUser } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import avatar from '@png/avatarBig.png';

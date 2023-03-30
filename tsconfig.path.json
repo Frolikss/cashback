@@ -2,54 +2,23 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@app":[
-        "app"
-      ],
-      "@shared/*":[
-        "shared/*"
-      ],
-      "@components": [
-        "components"
-      ],
-      "@constants": [
-        "constants"
-      ],
-      "@config": [
-        "config"
-      ],
-      "@apis": [
-        "apis"
-      ],
-      "@modules": [
-        "modules"
-      ],
-      "@interfaces": [
-        "interfaces"
-      ],
-      "@store": [
-        "store.ts"
-      ],
-      "@svg/*": [
-        "assets/svg/*"
-      ],
-      "@png/*": [
-        "assets/png/*"
-      ],
-      "@pages": [
-        "pages"
-      ],
-      "@routes": [
-        "routes"
-      ],
-      "@hooks": [
-        "hooks"
-      ],
-      "@helpers": [
-        "helpers"
-      ],
-      "@styles": [
-        "index.css"
-      ]
+      "@app": ["app"],
+      "@widgets/*": ["widgets/*"],
+      "@shared/*": ["shared/*"],
+      "@components": ["components"],
+      "@constants": ["constants"],
+      "@config": ["config"],
+      "@apis": ["apis"],
+      "@modules": ["modules"],
+      "@interfaces": ["interfaces"],
+      "@store": ["store.ts"],
+      "@svg/*": ["assets/svg/*"],
+      "@png/*": ["assets/png/*"],
+      "@pages": ["pages"],
+      "@routes": ["routes"],
+      "@hooks": ["hooks"],
+      "@helpers": ["helpers"],
+      "@styles": ["index.css"]
     }
   }
 }

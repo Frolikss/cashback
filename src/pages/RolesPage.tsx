@@ -1,7 +1,7 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, ROLES_FIELDS_DATA, ROUTES } from '@constants';
-import { Button, ButtonVariants } from '@shared/button';
-import { FormFields } from '@shared/form-setters';
+import { Button, FormFields } from '@shared/components';
+import { ButtonVariants } from '@shared/constants';
 import { RegisteredUser } from '@interfaces';
 import { selectRegisteredUser, setRegisteredUserAction } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';

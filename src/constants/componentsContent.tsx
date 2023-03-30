@@ -1,7 +1,8 @@
 import React from 'react';
 import { ROUTES } from '@constants';
-import { Button, ButtonVariants } from '@shared/button';
-import { FormButton } from '@shared/form-setters';
+import { Button } from '@shared/components';
+import { ButtonVariants } from '@shared/constants';
+import { FormButton } from '@shared/types';
 import { AuthTypeContent } from '@interfaces';
 import { Avatar } from '@components';
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
@@ -14,11 +15,6 @@ import { ReactComponent as TransactionIcon } from '@svg/transactionIcon.svg';
 import { ReactComponent as UsersIcon } from '@svg/usersIcon.svg';
 import { ReactComponent as WithdrawalIcon } from '@svg/withdrawalIcon.svg';
 
-export const MAX_LIST_PAGE_ITEMS = [
-  { id: 0, value: '10' },
-  { id: 1, value: '20' },
-  { id: 2, value: '50' }
-];
 export const MODAL_MENU_CONTENT = [
   {
     route: ROUTES.HOME,

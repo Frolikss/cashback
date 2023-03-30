@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
-import { ButtonVariants } from '@shared/button';
+import { ButtonVariants } from '@shared/constants';
 
 export interface FormButton {
   id: number;

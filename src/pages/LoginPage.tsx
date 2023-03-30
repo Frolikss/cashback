@@ -1,8 +1,8 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { AUTH_PAGE_CONTENT, LOGIN_FIELDS_DATA, ROUTES } from '@constants';
-import { BUTTON_STYLES, Button, ButtonVariants } from '@shared/button';
-import { FormFields } from '@shared/form-setters';
+import { Button, FormFields } from '@shared/components';
+import { BUTTON_STYLES, ButtonVariants } from '@shared/constants';
 import { AuthPageLayout } from '@components';
 import { asyncLogin } from '@modules';
 import { useAppDispatch } from '@hooks';

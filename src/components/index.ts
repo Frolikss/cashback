@@ -2,7 +2,6 @@ export * from './modals/HeaderNotificationModal';
 export * from './modals/HeaderMenuModal';
 export * from './MenuListItem';
 export * from './header/HeaderModal';
-export * from './Footer';
 export * from './ListPagination';
 export * from './collection/CollectionViewCell';
 export * from './collection/CollectionView';

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-import { Field } from '@shared/form-setters';
+import { Field } from '@shared/types';
 
 interface Props {
   fields: Field[];

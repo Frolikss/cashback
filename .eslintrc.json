@@ -1,43 +1,46 @@
 {
-    "extends": [
-        "plugin:prettier/recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:import/typescript"
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["react", "import", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "react/no-children-prop": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-console": [1, { "allow": ["warn", "error"] }],
+    "prettier/prettier": "error",
+    "@next/next/no-img-element": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
     ],
-    "plugins": ["react", "import", "@typescript-eslint"],
-    "parser": "@typescript-eslint/parser",
-    "rules": {
-        "@typescript-eslint/no-var-requires": "off",
-        "react/no-children-prop": "off",
-        "react/react-in-jsx-scope": "off",
-        "no-console": [1, { "allow": ["warn", "error"] }],
-        "prettier/prettier": "error",
-        "@next/next/no-img-element": "off",
-        "react/prop-types": "off",
-        "@typescript-eslint/no-unused-vars": ["warn", {
-            "argsIgnorePattern": "^_",
-            "varsIgnorePattern": "^_"
-        }],
-        "react/jsx-curly-newline": "off",
-        "react/jsx-props-no-spreading": "off"
+    "react/jsx-curly-newline": "off",
+    "react/jsx-props-no-spreading": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-        "import/resolver": {
-            "typescript": {
-                "project": "./tsconfig.json"
-            },
-            "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
-                "moduleDirectory": ["node_modules", "src/"]
-            }
-        }
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
     }
+  }
 }

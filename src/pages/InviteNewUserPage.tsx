@@ -7,7 +7,8 @@ import {
   InviteFieldNames,
   ListVariants
 } from '@constants';
-import { FormButtonAction, FormButtons, FormFields } from '@shared/form-setters';
+import { FormButtons, FormFields } from '@shared/components';
+import { FormButtonAction } from '@shared/types';
 import { InviteResponse } from '@interfaces';
 import { Loader, UnorderedList } from '@components';
 import { asyncInviteNewUser, asyncRegister, selectAuth } from '@modules';
