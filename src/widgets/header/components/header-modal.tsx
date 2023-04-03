@@ -1,7 +1,7 @@
 import { ComponentType, FC, SVGProps } from 'react';
 import { Button, ModalWrapper } from '@shared/components';
 import { ButtonVariants, ModalVariants } from '@shared/constants';
-import { useModal } from '@hooks';
+import { useModal } from '@shared/lib';
 
 interface Props {
   icon: FC<SVGProps<SVGSVGElement>>;

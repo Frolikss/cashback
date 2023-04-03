@@ -2,7 +2,7 @@ import { REQUIRED_FIELD, RoleFieldNames, Roles } from '@constants';
 import { Label, Radio } from '@shared/components';
 import { LabelVariants } from '@shared/constants';
 import { Field } from '@shared/types';
-import { RoleItem } from '@components';
+import { RoleItem } from '@entities/role';
 
 export const ROLES_FIELDS_DATA: Field[] = [
   {

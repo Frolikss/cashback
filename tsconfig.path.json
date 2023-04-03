@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@app": ["app"],
+      "@features/*": ["features/*"],
       "@widgets/*": ["widgets/*"],
       "@entities/*": ["entities/*"],
       "@shared/*": ["shared/*"],

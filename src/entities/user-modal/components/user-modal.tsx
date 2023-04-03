@@ -1,8 +1,8 @@
 import { FC, useEffect } from 'react';
 import { Button } from '@shared/components';
 import { AuthTokenNames, ButtonVariants } from '@shared/constants';
+import { useAppDispatch, useAppSelector } from '@shared/lib';
 import { asyncGetCurrentUser, selectCurrentUser } from '@modules';
-import { useAppDispatch, useAppSelector } from '@hooks';
 import avatar from '@png/avatarBig.png';
 
 export const UserModal: FC = () => {

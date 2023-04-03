@@ -1,7 +1,6 @@
 import { FC } from 'react';
-import { CollectionViewCellVariants } from '@constants';
+import { CollectionViewCell, CollectionViewCellVariants } from '@entities/collection-cell';
 import { User } from '@interfaces';
-import { CollectionViewCell } from '@components';
 
 interface Props {
   contents: User[];

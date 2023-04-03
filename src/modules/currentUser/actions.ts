@@ -1,8 +1,8 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { UNAUTHORIZED_ERROR_MASSAGE } from '@constants';
+import { handleError } from '@shared/lib';
 import { User } from '@interfaces';
 import { usersApi } from '@apis';
-import { handleError } from '@helpers';
 
 export const setSelfAction = createAction<User>('SET_SELF');
 

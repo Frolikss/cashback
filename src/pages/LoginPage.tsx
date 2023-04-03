@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { AUTH_PAGE_CONTENT, LOGIN_FIELDS_DATA } from '@constants';
 import { Button, FormFields } from '@shared/components';
 import { AppRoutes, BUTTON_STYLES, ButtonVariants } from '@shared/constants';
-import { AuthPageLayout } from '@components';
+import { useAppDispatch } from '@shared/lib';
+import { AuthPageLayout } from '@widgets/auth-page-layout';
 import { asyncLogin } from '@modules';
-import { useAppDispatch } from '@hooks';
 
 export const LoginPage = () => {
   const dispatch = useAppDispatch();

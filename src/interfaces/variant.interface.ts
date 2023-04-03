@@ -10,9 +10,3 @@ export interface TableVariant {
   headings: string[];
   buttonIcons: FC<SVGProps<SVGSVGElement>>[];
 }
-
-export interface MenuVariantStyle {
-  listType: string;
-  wrapperStyle: string;
-  iconStyle: string;
-}

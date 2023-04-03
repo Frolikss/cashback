@@ -1,4 +1,4 @@
-import { FC, ReactElement, ReactNode } from 'react';
+import { FC } from 'react';
 
 export interface RouteItem {
   path: string;

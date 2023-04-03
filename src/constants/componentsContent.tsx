@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@shared/components';
 import { ButtonVariants } from '@shared/constants';
 import { FormButton } from '@shared/types';
+import { Avatar } from '@entities/avatar';
 import { AuthTypeContent } from '@interfaces';
-import { Avatar } from '@components';
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
 

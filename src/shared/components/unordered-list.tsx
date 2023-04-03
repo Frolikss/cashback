@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LIST_STYLES, ListVariants } from '@constants';
+import { LIST_STYLES, ListVariants } from '../constants/list-style-variants';
 
 interface Props {
   listItems: string[];

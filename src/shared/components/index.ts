@@ -8,3 +8,5 @@ export { Radio } from './radio';
 export { Select } from './select';
 export { ListPagination } from './list-pagination';
 export { ModalWrapper } from './modal-wrapper';
+export { Loader } from './loader';
+export { UnorderedList } from './unordered-list';

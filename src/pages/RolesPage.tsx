@@ -2,10 +2,9 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, ROLES_FIELDS_DATA } from '@constants';
 import { Button, FormFields } from '@shared/components';
 import { AppRoutes, ButtonVariants } from '@shared/constants';
+import { history, useAppDispatch, useAppSelector } from '@shared/lib';
 import { RegisteredUser } from '@interfaces';
 import { selectRegisteredUser, setRegisteredUserAction } from '@modules';
-import { useAppDispatch, useAppSelector } from '@hooks';
-import { history } from '@helpers';
 
 export const RolesPage = () => {
   const dispatch = useAppDispatch();

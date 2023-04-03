@@ -1,12 +1,11 @@
 import cn from 'classnames';
-import { OVERLAY_STYLE } from '@constants';
 import { Button, ModalWrapper } from '@shared/components';
 import { ButtonVariants, ModalVariants } from '@shared/constants';
+import { useModal } from '@shared/lib';
 import { MenuModal } from '@entities/menu-modal';
-import { HeaderModal } from '@components';
-import { useModal } from '@hooks';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
 import { HEADER_MODALS } from '../constants/header-content';
+import { HeaderModal } from './header-modal';
 
 export const Header = () => {
   const { modalOpened, btnRef, openModal, closeModal } = useModal(true);
@@ -35,7 +34,7 @@ export const Header = () => {
         </div>
       </header>
       <span
-        className={cn(OVERLAY_STYLE, {
+        className={cn('block fixed w-screen h-screen bg-base-1000 opacity-50 top-0 right-0', {
           hidden: !modalOpened
         })}
       />

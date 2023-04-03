@@ -1,16 +1,3 @@
-export enum RadioVariants {
-  PRIMARY = 'primary'
-}
-
-export enum CollectionViewCellVariants {
-  USERS = 'users'
-}
-
-export enum MenuVariants {
-  ACTIVE = 'active',
-  DEFAULT = 'default'
-}
-
 export enum LoginFieldNames {
   EMAIL = 'email',
   PASSWORD = 'password'
@@ -35,12 +22,4 @@ export enum RegistrationFieldNames {
 export enum Roles {
   ADMIN = 'admin',
   USER = 'user'
-}
-
-export enum CheckboxVariants {
-  PRIMARY = 'primary'
-}
-
-export enum ListVariants {
-  PRIMARY = 'primary'
 }

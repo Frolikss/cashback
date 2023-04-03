@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-export const HeaderNotificationModal: FC = () => {
+export const NotificationModal: FC = () => {
   return (
     <>
       <h2 className="font-bold text-2xl self-start">Notifications</h2>

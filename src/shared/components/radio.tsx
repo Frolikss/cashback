@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { FC, ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
-import { RADIO_STYLES, RadioVariants } from '@constants';
+import { RADIO_STYLES, RadioVariants } from '../constants';
 
 export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   variant?: RadioVariants;

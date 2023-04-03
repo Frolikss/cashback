@@ -1,12 +1,13 @@
 import Table from 'rc-table';
 import { useEffect, useMemo, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import { CollectionViewCellVariants, getColumns } from '@constants';
+import { getColumns } from '@constants';
+import { useAppDispatch, useAppSelector, useCellOrder } from '@shared/lib';
+import { CollectionViewCellVariants } from '@entities/collection-cell';
+import { CollectionView } from '@widgets/collection-view';
 import { Footer } from '@widgets/footer';
 import { Header } from '@widgets/header';
-import { CollectionView } from '@components';
 import { asyncGetUsers, selectUserLoading, selectUsers } from '@modules';
-import { useAppDispatch, useAppSelector, useCellOrder } from '@hooks';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 export const UsersPage = () => {

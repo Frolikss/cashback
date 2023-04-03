@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import { AUTH_PAGE_CONTENT, REGISTER_FIELDS_DATA } from '@constants';
 import { Button, FormFields } from '@shared/components';
 import { AppRoutes, BUTTON_STYLES, ButtonVariants } from '@shared/constants';
+import { history, useAppDispatch } from '@shared/lib';
+import { AuthPageLayout } from '@widgets/auth-page-layout';
 import { RegisteredUser } from '@interfaces';
-import { AuthPageLayout } from '@components';
 import { setRegisteredUserAction } from '@modules';
-import { useAppDispatch } from '@hooks';
-import { history } from '@helpers';
 
 export const RegisterPage = () => {
   const dispatch = useAppDispatch();
