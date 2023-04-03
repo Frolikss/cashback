@@ -1,7 +1,7 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AUTH_PAGE_CONTENT, ROLES_FIELDS_DATA } from '@constants';
 import { Button, FormFields } from '@shared/components';
-import { ButtonVariants, ROUTES } from '@shared/constants';
+import { AppRoutes, ButtonVariants } from '@shared/constants';
 import { RegisteredUser } from '@interfaces';
 import { selectRegisteredUser, setRegisteredUserAction } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
@@ -19,7 +19,7 @@ export const RolesPage = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     dispatch(setRegisteredUserAction({ ...(data as RegisteredUser), ...user }));
-    history.push(ROUTES.INVITE);
+    history.push(AppRoutes.INVITE);
   };
 
   return (

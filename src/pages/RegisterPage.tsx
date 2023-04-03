@@ -2,7 +2,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { AUTH_PAGE_CONTENT, REGISTER_FIELDS_DATA } from '@constants';
 import { Button, FormFields } from '@shared/components';
-import { BUTTON_STYLES, ButtonVariants, ROUTES } from '@shared/constants';
+import { AppRoutes, BUTTON_STYLES, ButtonVariants } from '@shared/constants';
 import { RegisteredUser } from '@interfaces';
 import { AuthPageLayout } from '@components';
 import { setRegisteredUserAction } from '@modules';
@@ -15,7 +15,7 @@ export const RegisterPage = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     delete data.confirmPassword;
     dispatch(setRegisteredUserAction(data as RegisteredUser));
-    history.push(ROUTES.ROLES);
+    history.push(AppRoutes.ROLES);
   };
 
   const {
@@ -31,7 +31,7 @@ export const RegisterPage = () => {
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
           <FormFields fields={REGISTER_FIELDS_DATA} register={register} errors={errors} />
           <div className="flex gap-4">
-            <Link to={ROUTES.LOGIN} className={BUTTON_STYLES[ButtonVariants.SECONDARY]}>
+            <Link to={AppRoutes.LOGIN} className={BUTTON_STYLES[ButtonVariants.SECONDARY]}>
               Log In
             </Link>
             <Button variant={ButtonVariants.PRIMARY}>Next</Button>

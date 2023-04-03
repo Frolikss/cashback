@@ -1,4 +1,3 @@
-export * from './routes';
 export * from './enums';
 export * from './errorMessages';
 export * from './inputPatterns';
