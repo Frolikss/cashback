@@ -1,8 +1,6 @@
 import { Dispatch, FC, SetStateAction } from 'react';
-import { PaginationVariants } from '@constants';
-import { Button, Select } from '@shared/components';
-import { ButtonVariants } from '@shared/constants';
-import { ListPagination } from '@components';
+import { Button, ListPagination, Select } from '@shared/components';
+import { ButtonVariants, PaginationVariants } from '@shared/constants';
 import { ReactComponent as CollectionViewIcon } from '@svg/collectionView.svg';
 import { ReactComponent as TableViewIcon } from '@svg/tableView.svg';
 import { MAX_LIST_PAGE_ITEMS } from '../constants/footer-content';

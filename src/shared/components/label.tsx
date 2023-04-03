@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { LABEL_STYLES, LabelVariants } from '../constants/label-style-wariants';
+import { LABEL_STYLES, LabelVariants } from '../constants/label-style-variants';
 
 interface Props {
   id: string;

@@ -1,18 +1,17 @@
 import { FC, useEffect } from 'react';
-import { ACCESS_TOKEN } from '@constants';
 import { Button } from '@shared/components';
-import { ButtonVariants } from '@shared/constants';
+import { AuthTokenNames, ButtonVariants } from '@shared/constants';
 import { asyncGetCurrentUser, selectCurrentUser } from '@modules';
 import { useAppDispatch, useAppSelector } from '@hooks';
 import avatar from '@png/avatarBig.png';
 
-export const HeaderUserModal: FC = () => {
+export const UserModal: FC = () => {
   const dispatch = useAppDispatch();
 
   const currentUser = useAppSelector(selectCurrentUser);
 
   const logOutOnClick = () => {
-    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(AuthTokenNames.ACCESS);
   };
 
   useEffect(() => {

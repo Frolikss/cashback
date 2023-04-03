@@ -1,9 +1,9 @@
 import Pagination from 'rc-pagination';
 import { FC, ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { PAGINATION_STYLES, PaginationVariants } from '@constants';
-import { Button } from '@shared/components';
+import { Button } from '@shared/components/index';
 import { ReactComponent as ArrowIcon } from '@svg/paginationArrow.svg';
+import { PAGINATION_STYLES, PaginationVariants } from '../constants';
 
 interface Props {
   variant: PaginationVariants;

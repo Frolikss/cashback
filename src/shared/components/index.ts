@@ -6,3 +6,5 @@ export { FormButtons } from './form-buttons';
 export { Label } from './label';
 export { Radio } from './radio';
 export { Select } from './select';
+export { ListPagination } from './list-pagination';
+export { ModalWrapper } from './modal-wrapper';

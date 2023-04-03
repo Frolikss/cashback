@@ -11,5 +11,3 @@ export * from './fields/inviteFieldsData';
 export * from './componentsContent';
 export * from './styles';
 export * from './toastIds';
-export * from './headerModules';
-export * from './tokensNames';

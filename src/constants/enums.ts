@@ -6,17 +6,8 @@ export enum CollectionViewCellVariants {
   USERS = 'users'
 }
 
-export enum ModalVariants {
-  RIGHT_SIDE = 'right',
-  LEFT_SIDE = 'left'
-}
-
 export enum MenuVariants {
   ACTIVE = 'active',
-  DEFAULT = 'default'
-}
-
-export enum PaginationVariants {
   DEFAULT = 'default'
 }
 

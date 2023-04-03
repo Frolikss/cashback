@@ -1,10 +1,12 @@
 import cn from 'classnames';
-import { HEADER_MODALS, ModalVariants, OVERLAY_STYLE } from '@constants';
-import { Button } from '@shared/components';
-import { ButtonVariants } from '@shared/constants';
-import { HeaderMenuModal, HeaderModal, ModalWrapper } from '@components';
+import { OVERLAY_STYLE } from '@constants';
+import { Button, ModalWrapper } from '@shared/components';
+import { ButtonVariants, ModalVariants } from '@shared/constants';
+import { MenuModal } from '@entities/menu-modal';
+import { HeaderModal } from '@components';
 import { useModal } from '@hooks';
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
+import { HEADER_MODALS } from '../constants/header-content';
 
 export const Header = () => {
   const { modalOpened, btnRef, openModal, closeModal } = useModal(true);
@@ -23,7 +25,7 @@ export const Header = () => {
           </Button>
           <span className="text-base-1000 text-2xl font-bold">Admin Users</span>
           <ModalWrapper isOpened={modalOpened} variant={ModalVariants.LEFT_SIDE}>
-            <HeaderMenuModal />
+            <MenuModal />
           </ModalWrapper>
         </div>
         <div className="flex gap-4">

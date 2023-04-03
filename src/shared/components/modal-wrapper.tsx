@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React, { FC, ReactNode } from 'react';
-import { MODAL_STYLES, ModalVariants } from '@constants';
+import { MODAL_STYLES, ModalVariants } from '../constants';
 
 interface Props {
   children: ReactNode;

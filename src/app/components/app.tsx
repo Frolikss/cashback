@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
-import { ACCESS_TOKEN, PROTECTED_ROUTES, ROUTES, UNPROTECTED_ROUTES } from '@constants';
+import { PROTECTED_ROUTES, UNPROTECTED_ROUTES } from '@constants';
+import { AuthTokenNames, ROUTES } from '@shared/constants';
 import { asyncGetCurrentUser, selectAuthorizationStatus } from '@modules';
 import { ProtectedRoute } from '@routes';
 import { useAppDispatch, useAppSelector } from '@hooks';
@@ -10,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export function App() {
   const isAuthorized = useAppSelector(selectAuthorizationStatus);
   const dispatch = useAppDispatch();
-  const token = localStorage.getItem(ACCESS_TOKEN);
+  const token = localStorage.getItem(AuthTokenNames.ACCESS);
 
   useEffect(() => {
     if (token) {

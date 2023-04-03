@@ -3,8 +3,6 @@ import {
   CollectionViewCellVariants,
   ListVariants,
   MenuVariants,
-  ModalVariants,
-  PaginationVariants,
   RadioVariants
 } from '@constants';
 import { CollectionViewVariant, MenuVariantStyle } from '@interfaces';
@@ -24,11 +22,6 @@ export const COLLECTION_VIEW_CELL_VARIANTS: {
   }
 };
 
-export const MODAL_STYLES: { [key in ModalVariants]: string } = {
-  [ModalVariants.RIGHT_SIDE]: 'absolute right-0 items-center',
-  [ModalVariants.LEFT_SIDE]: 'absolute left-0'
-};
-
 export const MENU_STYLES: { [key in MenuVariants]: MenuVariantStyle } = {
   [MenuVariants.ACTIVE]: {
     listType: 'bg-accent-dark',
@@ -41,11 +34,6 @@ export const MENU_STYLES: { [key in MenuVariants]: MenuVariantStyle } = {
       'bg-transparent p-0 font-normal text-base-1000 relative left-0 group-hover:translate-x-1 transition duration-300',
     iconStyle: 'fill-base-1000'
   }
-};
-
-export const PAGINATION_STYLES: { [key in PaginationVariants]: string } = {
-  [PaginationVariants.DEFAULT]:
-    'flex gap-4 items-center [&>*]:flex [&>*]:items-center [&>*]:justify-center [&>*]:w-2.5 [&>*]:h-2.5 [&>*]:cursor-pointer [&>*]:p-5'
 };
 
 export const RADIO_STYLES: { [key in RadioVariants]: string } = {

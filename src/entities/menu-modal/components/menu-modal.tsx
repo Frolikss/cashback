@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MODAL_MENU_CONTENT } from '@constants';
 import { MenuListItem } from '@components';
 import { ReactComponent as Logo } from '@svg/logoColored.svg';
+import { MODAL_MENU_CONTENT } from '../constants/menu-content';
 
-export const HeaderMenuModal: FC = () => {
+export const MenuModal: FC = () => {
   const { pathname } = useLocation();
 
   return (
