@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
-import { AUTH_PAGE_CONTENT } from '@constants';
 import { Loader, UnorderedList } from '@shared/components';
 import { ListVariants } from '@shared/constants';
 import { useAppDispatch, useAppSelector, useModal } from '@shared/lib';
-import { InviteForm } from '@features/invite-form/components/invite-form';
-import { InviteResponse } from '@interfaces';
-import { asyncInviteNewUser, selectAuthIsLoading } from '@modules';
+import { asyncInviteNewUser, selectAuthIsLoading } from '@shared/model/auth';
+import { InviteResponse } from '@shared/types';
+import { InviteForm } from '@features/invite-form';
+import { INVITE_LAYOUT_CONTENT } from '../constants/layout-content';
 
 export const InviteUser = () => {
   const dispatch = useAppDispatch();
@@ -39,9 +39,9 @@ export const InviteUser = () => {
       <div className="basis-3/4 bg-base-100 h-screen bg-opacity-70 flex flex-col justify-center gap-10 px-8">
         <div className="text-center">
           <h2 className="text-base-1000 text-32 font-eUkraine font-bold">
-            {AUTH_PAGE_CONTENT.INVITE.header}
+            {INVITE_LAYOUT_CONTENT.header}
           </h2>
-          <p className="text-base-500 text-lg">{AUTH_PAGE_CONTENT.INVITE.subheader}</p>
+          <p className="text-base-500 text-lg">{INVITE_LAYOUT_CONTENT.subheader}</p>
         </div>
         <InviteForm onSubmit={onSubmit} />
         <UnorderedList listItems={invitedList} variant={ListVariants.PRIMARY} />

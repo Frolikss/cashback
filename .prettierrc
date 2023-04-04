@@ -5,6 +5,6 @@
   "singleQuote": true,
   "trailingComma": "none",
   "jsxBracketSameLine": true,
-  "importOrder": ["^@constants$", "^@shared/(.*)$", "^@entities/(.*)$", "^@features/(.*)$", "^@widgets/(.*)$", "^@app$", "^@interfaces$", "^@components$", "^@config$", "^@apis$", "^@modules", "^@store$", "^@pages$", "^@routes$", "^@hooks$", "^@helpers", "^@styles$", "^@svg/(.*)$", "^@png/(.*)$", "^(.*\\.css$)", "^[./]"],
+  "importOrder": ["^@shared/(.*)$", "^@entities/(.*)$", "^@features/(.*)$", "^@widgets/(.*)$", "^@app$", "^@pages$", "^@styles$", "^@svg/(.*)$", "^@png/(.*)$", "^(.*\\.css$)", "^[./]"],
   "importOrderSortSpecifiers": true
 }

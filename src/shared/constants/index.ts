@@ -8,3 +8,7 @@ export { AppRoutes } from './app-routes';
 export { ListVariants } from './list-style-variants';
 export { RadioVariants, RADIO_STYLES } from './radio-style-variants';
 export { CheckboxVariants, CHECKBOX_STYLES } from './checkbox-style-variants';
+export { EMAIL_OPTIONS } from './email-field-options';
+export { PHONE_NUMBER_PATTERN } from './field-patterns';
+export * from './field-error-messages';
+export * from './auth-error-messages';
