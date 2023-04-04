@@ -1,9 +1,13 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { FieldValues } from 'react-hook-form';
+
 import { LOGIN_ERROR_MESSAGE, REGISTRATION_UNKNOWN_ERROR } from '@shared/constants';
+
+import { InviteResponse, RegisteredUser, User } from '@shared/types';
+
 import { handleError } from '@shared/lib';
 import { setSelfAction } from '@shared/model/currentUser';
-import { InviteResponse, RegisteredUser, User } from '@shared/types';
+
 import { authApi } from '../../apis/cashbackAuthApi';
 
 export const asyncLogin = createAsyncThunk(

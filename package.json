@@ -1,5 +1,5 @@
 {
-  "cracoConfig": "craco.config.js",
+  "cracoConfig": "craco.config.ts",
   "name": "cashback",
   "version": "0.1.0",
   "private": true,

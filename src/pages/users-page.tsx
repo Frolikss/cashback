@@ -1,7 +1,9 @@
 import { useState } from 'react';
+
 import { Footer } from '@widgets/footer';
 import { Header } from '@widgets/header';
 import { ViewType } from '@widgets/users-view-type';
+
 import 'react-loading-skeleton/dist/skeleton.css';
 
 export const UsersPage = () => {

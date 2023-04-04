@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Checkbox, Input, Label } from '@shared/components';
-import { EMAIL_OPTIONS, LabelVariants } from '@shared/constants';
-import { Field } from '@shared/types';
+
+import { Checkbox } from '@shared/components/checkbox';
+import { Input } from '@shared/components/input';
+import { Label, LabelVariants } from '@shared/components/label';
+
+import { EMAIL_OPTIONS, Field } from '@entities/form-fields';
+
 import { InviteFieldNames } from '../constants/field-names';
 
 export const INVITE_FIELDS_DATA: Field[] = [

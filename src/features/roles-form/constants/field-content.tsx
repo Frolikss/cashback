@@ -1,7 +1,9 @@
-import { Label, Radio } from '@shared/components';
-import { LabelVariants, REQUIRED_FIELD } from '@shared/constants';
-import { Field } from '@shared/types';
+import { Label, LabelVariants } from '@shared/components/label';
+import { Radio } from '@shared/components/radio';
+
+import { Field, REQUIRED_FIELD } from '@entities/form-fields';
 import { RoleItem } from '@entities/role';
+
 import { RoleFieldNames } from './field-names';
 
 export enum Roles {

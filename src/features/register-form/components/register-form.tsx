@@ -1,11 +1,18 @@
 import React from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { AuthPageLayout, Button, FormFields } from '@shared/components';
-import { AppRoutes, BUTTON_STYLES, ButtonVariants } from '@shared/constants';
+
+import { AppRoutes } from '@shared/constants';
+
+import { RegisteredUser } from '@shared/types';
+
+import { AuthPageLayout } from '@shared/components/auth-page-layout';
+import { BUTTON_STYLES, Button, ButtonVariants } from '@shared/components/button';
 import { history, useAppDispatch } from '@shared/lib';
 import { setRegisteredUserAction } from '@shared/model/auth';
-import { RegisteredUser } from '@shared/types';
+
+import { FormFields } from '@entities/form-fields';
+
 import { REGISTER_FIELDS_DATA } from '../constants/field-content';
 import { REGISTER_LAYOUT_CONTENT } from '../constants/layout-content';
 

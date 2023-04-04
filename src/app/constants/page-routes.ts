@@ -1,5 +1,7 @@
 import { AppRoutes } from '@shared/constants';
+
 import { InviteNewUserPage, LoginPage, RegisterPage, RolesPage, UsersPage } from '@pages';
+
 import { RouteItem } from '../types/routes.interfaces';
 
 export const UNPROTECTED_ROUTES: RouteItem[] = [

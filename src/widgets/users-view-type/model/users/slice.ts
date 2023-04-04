@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { UsersState } from '../../types/users.state.interfaces';
 import { getUsersReducer } from './reducers';
 

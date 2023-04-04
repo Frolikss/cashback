@@ -1,9 +1,15 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { AuthPageLayout, Button, FormFields } from '@shared/components';
-import { AppRoutes, BUTTON_STYLES, ButtonVariants } from '@shared/constants';
+
+import { AppRoutes } from '@shared/constants';
+
+import { AuthPageLayout } from '@shared/components/auth-page-layout';
+import { BUTTON_STYLES, Button, ButtonVariants } from '@shared/components/button';
 import { useAppDispatch } from '@shared/lib';
 import { asyncLogin } from '@shared/model/auth';
+
+import { FormFields } from '@entities/form-fields';
+
 import { LOGIN_FIELDS_DATA } from '../constants/field-content';
 import { LOGIN_LAYOUT_CONTENT } from '../constants/layout-content';
 

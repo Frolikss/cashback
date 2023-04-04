@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { ReactComponent as Logo } from '@svg/logoColored.svg';
+
 import { MODAL_MENU_CONTENT } from '../constants/menu-content';
 import { MenuListItem } from './menu-list-item';
 

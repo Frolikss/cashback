@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
+
 import { AuthTokenNames } from '@shared/constants';
 
 export const requestConfig = (config: AxiosRequestConfig) => {

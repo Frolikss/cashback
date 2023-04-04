@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { FC, SVGProps } from 'react';
 import { Link } from 'react-router-dom';
+
 import { MENU_STYLES, MenuVariants } from '../constants/menu-style-variants';
 
 interface Props {

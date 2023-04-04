@@ -1,5 +1,7 @@
-import { Button } from '@shared/components';
+import { Button } from '@shared/components/button';
+
 import { Avatar } from '@entities/avatar';
+
 import { ReactComponent as ArrowIcon } from '@svg/arrow.svg';
 import { ReactComponent as EditIcon } from '@svg/edit.svg';
 

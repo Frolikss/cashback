@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
-import { Loader, UnorderedList } from '@shared/components';
-import { ListVariants } from '@shared/constants';
+
+import { InviteResponse } from '@shared/types';
+
+import { Loader } from '@shared/components/loader';
+import { ListVariants, UnorderedList } from '@shared/components/unordered-list';
 import { useAppDispatch, useAppSelector, useModal } from '@shared/lib';
 import { asyncInviteNewUser, selectAuthIsLoading } from '@shared/model/auth';
-import { InviteResponse } from '@shared/types';
+
 import { InviteForm } from '@features/invite-form';
+
 import { INVITE_LAYOUT_CONTENT } from '../constants/layout-content';
 
 export const InviteUser = () => {

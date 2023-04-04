@@ -1,5 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
+
 import { cashbackApiClient } from '@shared/config';
+
 import { DefaultQueryParams } from '@widgets/users-view-type/types/default-query-params';
 
 class CashbackUsersApi {

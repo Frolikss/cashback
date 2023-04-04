@@ -1,12 +1,15 @@
 import { FieldValues } from 'react-hook-form';
-import { Input } from '@shared/components';
+
+import { Input } from '@shared/components/input';
+
 import {
   EMAIL_OPTIONS,
+  Field,
   MIN_PASS_LENGTH,
   PHONE_NUMBER_PATTERN,
   REQUIRED_FIELD
-} from '@shared/constants';
-import { Field } from '@shared/types';
+} from '@entities/form-fields';
+
 import {
   PASSWORDS_NOT_MATCHING,
   PHONE_LENGTH_MESSAGE,

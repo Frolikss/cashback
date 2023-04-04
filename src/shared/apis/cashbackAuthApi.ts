@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import { FieldValues } from 'react-hook-form';
+
 import { cashbackApiClient } from '@shared/config';
 
 class CashbackAuthApi {

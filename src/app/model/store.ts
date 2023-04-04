@@ -1,6 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
 import { authReducer } from '@shared/model/auth';
 import { currentUserReducer } from '@shared/model/currentUser';
+
 import { usersReducers } from '@widgets/users-view-type/model/users';
 
 const rootReducer = combineReducers({

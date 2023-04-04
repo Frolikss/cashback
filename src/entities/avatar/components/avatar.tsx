@@ -1,4 +1,5 @@
 import React from 'react';
+
 import avatarSmall from '@png/avatarSmall.png';
 
 export const Avatar = () => {

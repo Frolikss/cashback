@@ -1,4 +1,5 @@
 import avatarBig from '@png/avatarBig.png';
+
 import { CollectionViewVariant } from '../types/cell-variants';
 
 export enum CollectionViewCellVariants {

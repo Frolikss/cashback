@@ -1,6 +1,7 @@
 import { ComponentType, FC, SVGProps } from 'react';
-import { Button, ModalWrapper } from '@shared/components';
-import { ButtonVariants, ModalVariants } from '@shared/constants';
+
+import { Button, ButtonVariants } from '@shared/components/button';
+import { ModalVariants, ModalWrapper } from '@shared/components/modal-wrapper';
 import { useModal } from '@shared/lib';
 
 interface Props {
@@ -27,7 +28,8 @@ export const HeaderModal: FC<Props> = ({
       <Button
         variant={isHoverable ? ButtonVariants.UTILITY : undefined}
         modalRef={btnRef}
-        onClick={handleModalButtonClick}>
+        onClick={handleModalButtonClick}
+      >
         {Icon ? <Icon className={iconStyle} /> : <span>?</span>}
       </Button>
       <ModalWrapper isOpened={modalOpened} variant={variant}>

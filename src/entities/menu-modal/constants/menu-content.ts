@@ -1,4 +1,5 @@
 import { AppRoutes } from '@shared/constants';
+
 import { ReactComponent as AdminIcon } from '@svg/adminUsers.svg';
 import { ReactComponent as BlacklistIcon } from '@svg/blacklistIcon.svg';
 import { ReactComponent as ReportIcon } from '@svg/reportIcon.svg';

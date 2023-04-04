@@ -1,10 +1,16 @@
 import React from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { Button, FormFields } from '@shared/components';
-import { AppRoutes, ButtonVariants } from '@shared/constants';
+
+import { AppRoutes } from '@shared/constants';
+
+import { RegisteredUser } from '@shared/types';
+
+import { Button, ButtonVariants } from '@shared/components/button';
 import { history, useAppDispatch, useAppSelector } from '@shared/lib';
 import { selectRegisteredUser, setRegisteredUserAction } from '@shared/model/auth';
-import { RegisteredUser } from '@shared/types';
+
+import { FormFields } from '@entities/form-fields';
+
 import { ROLES_FIELDS_DATA } from '../constants/field-content';
 
 export const RolesForm = () => {

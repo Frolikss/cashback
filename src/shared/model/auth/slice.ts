@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { AuthState } from '../../types/auth.state.interfaces';
 import {
   inviteNewUserReducer,

@@ -1,5 +1,6 @@
 import { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
+
 import { ToastIds } from '@shared/constants';
 
 export function handleError(error: unknown, defaultMassage: string) {

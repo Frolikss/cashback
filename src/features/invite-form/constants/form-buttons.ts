@@ -1,5 +1,6 @@
-import { ButtonVariants } from '@shared/constants';
-import { FormButton } from '@shared/types';
+import { ButtonVariants } from '@shared/components/button';
+
+import { FormButton } from '@entities/form-buttons';
 
 export const INVITE_PAGE_BUTTONS: FormButton[] = [
   {

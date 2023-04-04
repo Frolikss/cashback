@@ -1,5 +1,7 @@
 import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
+
 import { User } from '@shared/types';
+
 import { UsersState } from '../../types/users.state.interfaces';
 import { asyncGetUsers } from './actions';
 

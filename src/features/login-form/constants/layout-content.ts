@@ -1,4 +1,4 @@
-import { AuthLayoutContent } from '@shared/types';
+import { AuthLayoutContent } from '@shared/components/auth-page-layout';
 
 export const LOGIN_LAYOUT_CONTENT: AuthLayoutContent = {
   header: 'Login',

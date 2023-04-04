@@ -1,5 +1,7 @@
 import { FC } from 'react';
+
 import { User } from '@shared/types';
+
 import { CollectionViewCell, CollectionViewCellVariants } from '@entities/collection-view';
 
 interface Props {

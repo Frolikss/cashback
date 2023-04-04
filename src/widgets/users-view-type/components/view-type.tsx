@@ -1,9 +1,13 @@
 import Table from 'rc-table';
 import { FC, useEffect, useMemo } from 'react';
+
 import { useAppDispatch, useAppSelector } from '@shared/lib';
+
 import { CollectionView, CollectionViewCellVariants } from '@entities/collection-view';
 import { DataViewType } from '@entities/data-view-type';
+
 import { useCellOrder } from '@widgets/users-view-type/lib/hooks/use-cell-order';
+
 import { getColumns } from '../constants/columns-content';
 import { asyncGetUsers, selectUserLoading, selectUsers } from '../model/users';
 

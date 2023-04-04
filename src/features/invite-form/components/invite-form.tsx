@@ -1,9 +1,12 @@
 import { FC } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { FormButtons, FormFields } from '@shared/components';
+
 import { history, useAppDispatch, useAppSelector } from '@shared/lib';
 import { asyncRegister, selectRegisteredUser } from '@shared/model/auth';
-import { FormButtonAction } from '@shared/types';
+
+import { FormButtonAction, FormButtons } from '@entities/form-buttons';
+import { FormFields } from '@entities/form-fields';
+
 import { INVITE_FIELDS_DATA, INVITE_PAGE_BUTTONS, InviteFieldNames } from '../constants';
 
 interface Props {

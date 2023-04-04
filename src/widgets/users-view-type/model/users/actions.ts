@@ -1,6 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { UNAUTHORIZED_ERROR_MASSAGE } from '@shared/constants';
+
 import { handleError } from '@shared/lib';
+
 import { usersApi } from '../../apis';
 import { DefaultQueryParams } from '../../types/default-query-params';
 

@@ -1,6 +1,8 @@
-import { ModalVariants } from '@shared/constants';
+import { ModalVariants } from '@shared/components/modal-wrapper';
+
 import { NotificationModal } from '@entities/notification-modal';
 import { UserModal } from '@entities/user-modal';
+
 import { ReactComponent as NotificationIcon } from '@svg/notification.svg';
 import { ReactComponent as UserIcon } from '@svg/userLogo.svg';
 

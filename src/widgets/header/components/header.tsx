@@ -1,9 +1,13 @@
 import cn from 'classnames';
-import { Button, ModalWrapper } from '@shared/components';
-import { ButtonVariants, ModalVariants } from '@shared/constants';
+
+import { Button, ButtonVariants } from '@shared/components/button';
+import { ModalVariants, ModalWrapper } from '@shared/components/modal-wrapper';
 import { useModal } from '@shared/lib';
+
 import { MenuModal } from '@entities/menu-modal';
+
 import { ReactComponent as MenuIcon } from '@svg/menu.svg';
+
 import { HEADER_MODALS } from '../constants/header-content';
 import { HeaderModal } from './header-modal';
 
@@ -19,7 +23,8 @@ export const Header = () => {
           <Button
             modalRef={btnRef}
             variant={ButtonVariants.PRIMARY}
-            onClick={handleModalButtonClick}>
+            onClick={handleModalButtonClick}
+          >
             <MenuIcon className="pointer-events-none" />
           </Button>
           <span className="text-base-1000 text-2xl font-bold">Admin Users</span>

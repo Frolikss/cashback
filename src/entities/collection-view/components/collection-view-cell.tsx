@@ -1,6 +1,9 @@
 import { FC } from 'react';
+
 import { User } from '@shared/types';
+
 import { ReactComponent as MoreIcon } from '@svg/itemMore.svg';
+
 import {
   COLLECTION_VIEW_CELL_VARIANTS,
   CollectionViewCellVariants

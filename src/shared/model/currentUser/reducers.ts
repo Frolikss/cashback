@@ -1,5 +1,7 @@
 import { ActionReducerMapBuilder, PayloadAction } from '@reduxjs/toolkit';
+
 import { CurrentUserState, User } from '@shared/types';
+
 import { asyncGetCurrentUser, setSelfAction } from './actions';
 
 export const getCurrentUserReducer = (builder: ActionReducerMapBuilder<CurrentUserState>) => {
