@@ -3,52 +3,50 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "e-Ukraine-Bold";
-    src: local("eUkraineBold"),
-    url("assets/fonts/e-Ukraine/e-Ukraine-Bold.otf") format("opentype");
+  font-family: 'e-Ukraine-Bold';
+  src: local('eUkraineBold'), url('assets/fonts/e-Ukraine/e-Ukraine-Bold.otf') format('opentype');
 }
 @font-face {
-    font-family: "e-Ukraine-Medium";
-    src: local("eUkraineMedium"),
-    url("assets/fonts/e-Ukraine/e-Ukraine-Medium.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "e-Ukraine-Regular";
-    src: local("eUkraineRegular"),
-    url("assets/fonts/e-Ukraine/e-Ukraine-Regular.otf") format("opentype");
+  font-family: 'e-Ukraine-Medium';
+  src: local('eUkraineMedium'),
+    url('assets/fonts/e-Ukraine/e-Ukraine-Medium.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "e-Ukraine-Light";
-    src: local("eUkraineLight"),
-    url("assets/fonts/e-Ukraine/e-Ukraine-Light.otf") format("opentype");
+  font-family: 'e-Ukraine-Regular';
+  src: local('eUkraineRegular'),
+    url('assets/fonts/e-Ukraine/e-Ukraine-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'e-Ukraine-Light';
+  src: local('eUkraineLight'), url('assets/fonts/e-Ukraine/e-Ukraine-Light.otf') format('opentype');
 }
 
 .rc-pagination-item-active {
-    @apply bg-accent-primary text-base-100 rounded-lg;
+  @apply bg-accent-primary text-base-100 rounded-lg;
 }
 
 table {
-    @apply w-full;
+  @apply w-full;
 }
 
 th {
-    @apply text-right text-base-600 font-medium;
+  @apply text-right text-base-600 font-medium;
 }
 
 th:not(:last-child) {
-    @apply text-left py-6;
+  @apply text-left py-6;
 }
 
 td:last-child {
-    @apply text-right flex items-center justify-end py-6;
+  @apply text-right flex items-center justify-end py-6;
 }
 
 tr {
-    @apply border-b-1 border-base-300;
+  @apply border-b-1 border-base-300;
 }
 
 .react-loading-skeleton {
-    @apply h-24 my-2;
+  @apply h-24 my-2;
 }

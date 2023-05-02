@@ -2,51 +2,15 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@app":[
-        "App.tsx"
-      ],
-      "@components": [
-        "components"
-      ],
-      "@constants": [
-        "constants"
-      ],
-      "@config": [
-        "config"
-      ],
-      "@apis": [
-        "apis"
-      ],
-      "@modules": [
-        "modules"
-      ],
-      "@interfaces": [
-        "interfaces"
-      ],
-      "@store": [
-        "store.ts"
-      ],
-      "@svg/*": [
-        "assets/svg/*"
-      ],
-      "@png/*": [
-        "assets/png/*"
-      ],
-      "@pages": [
-        "pages"
-      ],
-      "@routes": [
-        "routes"
-      ],
-      "@hooks": [
-        "hooks"
-      ],
-      "@helpers": [
-        "helpers"
-      ],
-      "@styles": [
-        "index.css"
-      ]
+      "@app": ["app"],
+      "@features/*": ["features/*"],
+      "@widgets/*": ["widgets/*"],
+      "@entities/*": ["entities/*"],
+      "@shared/*": ["shared/*"],
+      "@svg/*": ["assets/svg/*"],
+      "@png/*": ["assets/png/*"],
+      "@pages": ["pages"],
+      "@styles": ["index.css"]
     }
   }
 }
